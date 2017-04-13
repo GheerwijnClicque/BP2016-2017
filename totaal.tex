@@ -1,0 +1,133 @@
+\documentclass[a4,11pt,dutch,oneside,openany]{book} %twoside for rectoverso
+\usepackage[dutch,english]{babel}
+\usepackage{float}
+\usepackage{epsfig}
+\usepackage{amssymb,listings,color,textcomp,marvosym,flafter,longtable,subfigure,amsfonts,rotating}
+\usepackage[sumlimits]{amsmath}
+\usepackage{verbatim}
+\usepackage{latexsym}
+\usepackage{amsthm}
+
+\usepackage{multirow}
+\usepackage{array,pstricks,listings}
+\usepackage[vlined,ruled]{algorithm2e}
+\usepackage[a4paper,verbose, centering,reversemp]{geometry}
+\usepackage[latin1]{inputenc}
+\usepackage{fancyhdr}
+\usepackage{hhline}     
+\usepackage[times]{quotchap}
+\usepackage[font={small},labelfont={bf},center]{caption}
+\usepackage{times}
+\usepackage{wrapfig}
+\usepackage{floatflt}
+\usepackage{xcolor}
+\usepackage{xspace,upgreek}
+\usepackage[calcwidth,newparttoc]{titlesec}
+\usepackage{titletoc}
+\usepackage{listings}
+\usepackage{url}
+\usepackage{enumitem}
+
+\definecolor{chaptergray}{rgb}{0.85,0.85,0.85}
+\parskip=\medskipamount
+\usepackage[version=3]{mhchem}
+\usepackage[Gray, squaren, thinqspace,thinspace]{SIunits}
+\DeclareGraphicsExtensions{jpg,png}
+\newcommand{\chpijlr}{\ensuremath{\hspace{1em}\longrightarrow\hspace{1em}}}
+
+
+
+\renewcommand{\familydefault}{\sfdefault}
+
+
+% Cuz arial is not supported? DIG DEEPER!
+%\usepackage{helvet}
+%\renewcommand{\familydefault}{\sfdefault}
+
+\input{page_layout_definition}
+\input{hyphenation.tex}
+
+
+\lstdefinelanguage{JavaScript}{
+	keywords={break, case, catch, continue, debugger, default, delete, do, else, false, finally, for, function, if, in, instanceof, new, null, return, switch, this, throw, true, try, typeof, var, void, while, with},
+	morecomment=[l]{//},
+	morecomment=[s]{/*}{*/},
+	morestring=[b]',
+	morestring=[b]",
+	ndkeywords={class, export, boolean, throw, implements, import, this, get},
+	keywordstyle=\color{blue}\bfseries,
+	ndkeywordstyle=\color{darkgray}\bfseries,
+	identifierstyle=\color{black},
+	commentstyle=\color{purple}\ttfamily,
+	stringstyle=\color{red}\ttfamily,
+	sensitive=true
+}
+
+\lstset{
+	language=JavaScript,
+	backgroundcolor=\color{lightgray},
+	extendedchars=true,
+	basicstyle=\footnotesize\ttfamily,
+	showstringspaces=false,
+	showspaces=false,
+	numbers=left,
+	numberstyle=\footnotesize,
+	numbersep=9pt,
+	tabsize=2,
+	breaklines=true,
+	showtabs=false,
+	captionpos=b
+}
+
+\lstset{language=JavaScript,keywordstyle={\bfseries \color{red}}}
+
+\begin{document}
+%language=Matlab,commentstyle=
+\selectlanguage{dutch}
+\definecolor{licht-grijs}{gray}{0.95}
+\lstset{language=Matlab, framexleftmargin=5mm,belowcaptionskip=5mm,
+frame=none,basicstyle={\ttfamily\small},
+stringstyle=\small,commentstyle=\textcolor[rgb]{0.53,0.53,0.53},
+backgroundcolor=\color{licht-grijs},showspaces=false,framexleftmargin=-2pt,showstringspaces=false,upquote=true}
+
+\frontmatter
+
+\include{Titelpagina}
+%\include{Copyright}
+
+
+\include{Samenvatting}
+\include{Voorwoord}
+
+\tableofcontents
+
+
+\include{LijstMetAfkortingen}
+
+
+\mainmatter
+
+%\newacronym{cem}{CEM}{Customer Experience Management}
+%\newacronym{cx}{CX}{Consumer Experience}
+%\newacronym{kpi}{KPI}{Key Performance Indicator}
+
+
+%\gls{ny} and \gls{la} are in \gls{us}. 
+%\printglossary[type=\acronymtype,title=Lijst met gebruikte afkortingen]
+
+\include{Deel1}
+\include{Deel2}
+%\include{Conclusies}
+
+%\backmatter
+
+\bibliographystyle{ieeetr}
+\mainmatter
+\addcontentsline{toc}{chapter}{Bibliografie}
+
+
+\bibliography{Bibliografie}
+
+\include{Bijlage}
+
+\end{document}

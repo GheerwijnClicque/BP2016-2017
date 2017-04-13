@@ -1,0 +1,20 @@
+% This file was created with JabRef 2.7.
+% Encoding: Cp1252
+
+@ARTICLE{poli2007,
+  author = {R. Poli and J. Kennedy and T. Blackwell},
+  title = {Particle swarm optimization, {An} overview},
+  journal = {Springer Science and Business Media},
+  year = {2007},
+  volume = {14},
+  pages = {33--57}
+}
+
+@BOOK{bijbel,
+  title = {A {New} {Kind} of {Science}},
+  publisher = {Wolfram {Media}},
+  year = {2002},
+  author = {S. Wolfram },
+  pages = {1192}
+}
+

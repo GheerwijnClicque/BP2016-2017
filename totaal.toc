@@ -1,0 +1,31 @@
+\select@language {english}
+\select@language {dutch}
+\contentsline {chapter}{Samenvatting}{i}
+\contentsline {chapter}{Woord vooraf}{ii}
+\contentsline {chapter}{Lijst met gebruikte afkortingen}{v}
+\contentsline {chapter}{\numberline {1}Voorstelling van het stagebedrijf}{1}
+\contentsline {section}{\numberline {1.1}Ontstaan en geschiedenis}{1}
+\contentsline {section}{\numberline {1.2}CX Social}{2}
+\contentsline {chapter}{\numberline {2}Stageopdracht}{6}
+\contentsline {chapter}{\numberline {3}Omschrijving bachelorproef}{7}
+\contentsline {chapter}{\numberline {4}Voorstudie}{8}
+\contentsline {section}{\numberline {4.1}Vereisten}{8}
+\contentsline {section}{\numberline {4.2}Frontend afbeelding manipulatie}{8}
+\contentsline {subsection}{\numberline {4.2.1}Fabric.js}{8}
+\contentsline {subsection}{\numberline {4.2.2}Konva.js}{13}
+\contentsline {subsection}{\numberline {4.2.3}EaselJS}{16}
+\contentsline {subsection}{\numberline {4.2.4}VanillaJS \& JQuery}{18}
+\contentsline {subsection}{\numberline {4.2.5}Vergelijking van beschreven bibliotheken}{20}
+\contentsline {subsection}{\numberline {4.2.6}Performantie van beschreven bibliotheken}{20}
+\contentsline {section}{\numberline {4.3}Backend afbeelding manipulatie}{21}
+\contentsline {subsection}{\numberline {4.3.1}PHP bibliotheken}{21}
+\contentsline {subsection}{\numberline {4.3.2}Python bibliotheken}{21}
+\contentsline {subsection}{\numberline {4.3.3}Node.js}{21}
+\contentsline {section}{\numberline {4.4}Functioneel ontwerp}{22}
+\contentsline {section}{\numberline {4.5}Afbeelding compressie}{23}
+\contentsline {chapter}{\numberline {5}Praktische uitwerking}{24}
+\contentsline {section}{\numberline {5.1}Frontend implementatie}{24}
+\contentsline {section}{\numberline {5.2}Backend implementatie}{24}
+\contentsline {chapter}{Bibliografie}{1}
+\contentsline {chapter}{\numberline {A}Bijlage}{3}
+\contentsfinish 

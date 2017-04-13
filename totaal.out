@@ -1,0 +1,27 @@
+\BOOKMARK [0][-]{chapter*.1}{Samenvatting}{}% 1
+\BOOKMARK [0][-]{chapter*.2}{Woord vooraf}{}% 2
+\BOOKMARK [0][-]{chapter*.4}{Lijst met gebruikte Afkortingen}{}% 3
+\BOOKMARK [0][-]{chapter.1}{Voorstelling van het stagebedrijf}{}% 4
+\BOOKMARK [1][-]{section.1.1}{Ontstaan en geschiedenis}{chapter.1}% 5
+\BOOKMARK [1][-]{section.1.2}{CX Social}{chapter.1}% 6
+\BOOKMARK [0][-]{chapter.2}{Stageopdracht}{}% 7
+\BOOKMARK [0][-]{chapter.3}{Omschrijving bachelorproef}{}% 8
+\BOOKMARK [0][-]{chapter.4}{Voorstudie}{}% 9
+\BOOKMARK [1][-]{section.4.1}{Vereisten}{chapter.4}% 10
+\BOOKMARK [1][-]{section.4.2}{Frontend afbeelding manipulatie}{chapter.4}% 11
+\BOOKMARK [2][-]{subsection.4.2.1}{Fabric.js}{section.4.2}% 12
+\BOOKMARK [2][-]{subsection.4.2.2}{Konva.js}{section.4.2}% 13
+\BOOKMARK [2][-]{subsection.4.2.3}{EaselJS}{section.4.2}% 14
+\BOOKMARK [2][-]{subsection.4.2.4}{JQuery}{section.4.2}% 15
+\BOOKMARK [2][-]{subsection.4.2.5}{Performantie van beschreven bibliotheken}{section.4.2}% 16
+\BOOKMARK [1][-]{section.4.3}{Backend afbeelding manipulatie}{chapter.4}% 17
+\BOOKMARK [2][-]{subsection.4.3.1}{PHP bibliotheken}{section.4.3}% 18
+\BOOKMARK [2][-]{subsection.4.3.2}{Python bibliotheken}{section.4.3}% 19
+\BOOKMARK [2][-]{subsection.4.3.3}{Node.js}{section.4.3}% 20
+\BOOKMARK [1][-]{section.4.4}{Functioneel ontwerp}{chapter.4}% 21
+\BOOKMARK [1][-]{section.4.5}{Afbeelding compressie}{chapter.4}% 22
+\BOOKMARK [0][-]{chapter.5}{Praktische uitwerking}{}% 23
+\BOOKMARK [1][-]{section.5.1}{Frontend implementatie}{chapter.5}% 24
+\BOOKMARK [1][-]{section.5.2}{Backend implementatie}{chapter.5}% 25
+\BOOKMARK [1][-]{section.5.2}{Bibliography}{chapter.5}% 26
+\BOOKMARK [0][-]{appendix.A}{Bijlage}{}% 27

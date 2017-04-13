@@ -1,0 +1,79 @@
+
+\appendix
+\chapter{Bijlage}
+\iffalse
+\section{Naive Bayes op basis van ingredi\"{e}nten }
+\begin{lstlisting}
+# inladen van de data
+ReceptenJO.binair <- read.table("ReceptenJO.binair.csv", 
+	header=TRUE, quote="\"")
+
+# SPLITSEN VAN DE DATASET IN TEST EN TRAIN DATA
+nfolds <- 4
+
+id <- rep(1: nfolds,length.out=dim(ReceptenJO.binair)[1])
+id <- sample(id,dim(ReceptenJO.binair)[1])
+id.test <- (1:dim(ReceptenJO.binair)[1])[id==1]
+id.train <- (1:dim(ReceptenJO.binair)[1])[id!=1]
+
+Recepten.test <- ReceptenJO.binair[id.test,]
+Recepten.train <- ReceptenJO.binair[id.train,] 
+
+Bernoulli_NB <- function(ReceptenJO.train, ingredienten){
+# SCHRIJVEN VAN NAIVE BAYES MODEL OBV INGREDIENTEN
+# De input is een binaire vector 
+# die de aan- & afwezigheid van ingredienten weergeeft
+# De output is het keukentype waarin het recept geclassificeerd werd
+  
+# kans dat een ingredient in een gegeven keuken voorkomt
+# pseudocounts = 0.01
+Recepten.train[1:372] <- as.matrix(Recepten.train[1:372]) + 0.01 
+IngredientenJO <- Recepten.train[,1:373] 
+likelihoodIngred <-aggregate(.~cuisine, IngredientenJO, mean)
+likelihoodIngred$cuisine <- NULL
+
+# enkel de ingredienten nodig als input, niet het keukentype
+# en de nutritionele waarden: 
+# kolom 1 tem 372 wordt dus geselecteerd
+input <- as.matrix(ingredienten[1:372]) 
+
+# initialisatie: er zijn 10 keukentypes met 372 ingredienten    
+likelihood <- matrix(0,10,372) 
+  for (j in 1:10){
+    for (k in 1:372){
+      likelihood[j,k] = input[k]* likelihoodIngred[j,k] + 
+												(1-input[k])*(1-likelihoodIngred[j,k])
+    }
+  }
+	
+# matrix met dimensies 10x372
+loglikelihood <- log(likelihood)
+# wanneer likelihood = 1, is de loglikelihood = 0
+# DUS corrigeren met pseudocounts 0.01 => log(0.99) ipv log(1)
+loglikelihood[is.na(loglikelihood)] <- log(0.99) 
+# loglikelihood geeft nu per keukentype de kans dat de ingegeven
+# ingredientenCOMBINATIE (input) in die bepaalde keuken voorkomt 
+# DUS matrix met dimensies 10x1
+  
+loglikelihood <- apply(loglikelihood,1,sum) 
+
+keukentypes <- levels(Recepten.train$cuisine)
+maximum <- max(loglikelihood)
+index <- loglikelihood==maximum
+keukentype <- keukentypes[index]
+  
+  return(keukentype)
+}
+
+
+# TESTEN OP TESTDATA + CONFUSIONMATRIX OPSTELLEN
+voorspelling <- matrix(0,length(Recepten.test[,1]), 1)
+
+for (i in 1 : length(Recepten.test[,1])){
+  voorspelling[i] <-Bernoulli_NB(Recepten.train,Recepten.test[i,])
+}
+
+confusionTable <- table(voorspelling, as.matrix(Recepten.test$cuisine))
+
+\end{lstlisting}
+\fi

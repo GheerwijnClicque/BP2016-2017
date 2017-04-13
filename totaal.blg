@@ -1,0 +1,58 @@
+This is BibTeX, Version 0.99d (TeX Live 2016)
+Capacity: max_strings=35307, hash_size=35307, hash_prime=30011
+The top-level auxiliary file: totaal.aux
+A level-1 auxiliary file: Titelpagina.aux
+A level-1 auxiliary file: Copyright.aux
+A level-1 auxiliary file: Voorwoord.aux
+A level-1 auxiliary file: LijstMetAfkortingen.aux
+A level-1 auxiliary file: Deel1.aux
+A level-1 auxiliary file: Deel2.aux
+The style file: ieeetr.bst
+A level-1 auxiliary file: Bijlage.aux
+Database file #1: Bibliografie.bib
+Repeated entry---line 373 of file Bibliografie.bib
+ : @misc{EaselMouseInteraction
+ :                            ,
+I'm skipping whatever remains of this entry
+You've used 22 entries,
+            1876 wiz_defined-function locations,
+            596 strings with 6673 characters,
+and the built_in function-call counts, 3356 in all, are:
+= -- 311
+> -- 166
+< -- 0
++ -- 69
+- -- 47
+* -- 165
+:= -- 528
+add.period$ -- 44
+call.type$ -- 22
+change.case$ -- 22
+chr.to.int$ -- 0
+cite$ -- 22
+duplicate$ -- 88
+empty$ -- 397
+format.name$ -- 47
+if$ -- 827
+int.to.chr$ -- 0
+int.to.str$ -- 22
+missing$ -- 0
+newline$ -- 91
+num.names$ -- 22
+pop$ -- 132
+preamble$ -- 1
+purify$ -- 0
+quote$ -- 0
+skip$ -- 65
+stack$ -- 0
+substring$ -- 0
+swap$ -- 0
+text.length$ -- 0
+text.prefix$ -- 0
+top$ -- 0
+type$ -- 0
+warning$ -- 0
+while$ -- 22
+width$ -- 24
+write$ -- 222
+(There was 1 error message)

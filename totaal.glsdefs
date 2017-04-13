@@ -1,0 +1,90 @@
+\ifglsentryexists{cem}{}%
+{%
+\gls@defglossaryentry{cem}%
+{%
+name={CEM},%
+sort={CEM},%
+type={acronym},%
+first={Customer Experience Management\glsspace (CEM)},%
+firstplural={Customer Experience Managements\glsspace (CEMs)},%
+text={CEM},%
+plural={CEMs},%
+description={Customer Experience Management},%
+descriptionplural={Customer Experience Management\acrpluralsuffix },%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={Customer Experience Management},%
+longplural={Customer Experience Managements},%
+short={CEM},%
+shortplural={CEMs},%
+counter={page},%
+parent={},%
+%
+}%
+}%
+\ifglsentryexists{cx}{}%
+{%
+\gls@defglossaryentry{cx}%
+{%
+name={CX},%
+sort={CX},%
+type={acronym},%
+first={Consumer Experience\glsspace (CX)},%
+firstplural={Consumer Experiences\glsspace (CXs)},%
+text={CX},%
+plural={CXs},%
+description={Consumer Experience},%
+descriptionplural={Consumer Experience\acrpluralsuffix },%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={Consumer Experience},%
+longplural={Consumer Experiences},%
+short={CX},%
+shortplural={CXs},%
+counter={page},%
+parent={},%
+%
+}%
+}%
+\ifglsentryexists{kpi}{}%
+{%
+\gls@defglossaryentry{kpi}%
+{%
+name={KPI},%
+sort={KPI},%
+type={acronym},%
+first={Key Performance Indicator\glsspace (KPI)},%
+firstplural={Key Performance Indicators\glsspace (KPIs)},%
+text={KPI},%
+plural={KPIs},%
+description={Key Performance Indicator},%
+descriptionplural={Key Performance Indicator\acrpluralsuffix },%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={Key Performance Indicator},%
+longplural={Key Performance Indicators},%
+short={KPI},%
+shortplural={KPIs},%
+counter={page},%
+parent={},%
+%
+}%
+}%

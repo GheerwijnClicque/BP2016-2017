@@ -1,0 +1,121 @@
+\begin{thebibliography}{10}
+
+\bibitem{bp1}
+F.~Lemaitre, ``Engagor, now a part of clarabridge.''
+  \url{http://cxsocial.clarabridge.com/engagor-now-a-part-of-clarabridge/},
+  2015.
+\newblock Geraadpleegd op 26/02/17.
+
+\bibitem{Clarabridge.com}
+Clarabridge, ``Customer experience management software - clarabridge.''
+  \url{https://clarabridge.com}, 2017.
+\newblock Geraadpleegd op 09/03/17.
+
+\bibitem{ClarabridgeOffices}
+Clarabridge, ``Contact clarabridge.''
+  \url{http://www.clarabridge.com/contact/}, 2015.
+\newblock Geraadpleegd op 09/03/17.
+
+\bibitem{EngagorTeam}
+nn, ``Cx social - developer documentation.''
+  \url{https://developers.engagor.com/team}, 2017.
+\newblock Geraadpleegd op 09/03/17.
+
+\bibitem{DooPHP}
+darkredz, ``Doophp.'' \url{https://github.com/darkredz/DooPHP}, 2011.
+\newblock Geraadpleegd op 05/03/17.
+
+\bibitem{React}
+Facebook, ``A javascript library for building user interfaces - react.''
+  \url{https://facebook.github.io/react/}, 2017.
+\newblock Geraadpleegd op 09/03/17.
+
+\bibitem{EngagorScreenshots}
+Engagor, ``Engagor webapplicatie.'' \url{https://app.engagor.com/}, 2017.
+\newblock Geraadpleegd op 09/03/17.
+
+\bibitem{EngagorApp}
+Engagor, ``Clarabrige cx social dev stage.'' \url{https://app.engagor.com/},
+  2017.
+\newblock Geraadpleegd op 10/03/17.
+
+\bibitem{EditThemeMockup}
+J.~Dierickx, ``Cx social preview mode - invision.''
+  \url{https://projects.invisionapp.com/d/main#/console/5000066/213989606/preview},
+  2017.
+\newblock Geraadpleegd op 09/03/17.
+
+\bibitem{FabricJSDocs}
+J.~Zaytsev, ``Jsdoc: Home.'' \url{http://fabricjs.com/docs/}, 2015.
+\newblock Geraadpleegd op 13/03/17.
+
+\bibitem{FabricJSIntro}
+J.~Zaytsev, ``Intro to fabric.js. part 1.''
+  \url{http://fabricjs.com/fabric-intro-part-1}, 2008.
+\newblock Geraadpleegd op 13/03/17.
+
+\bibitem{MozillaCanvas-DrawingText}
+RegalVapor, nmve, teoli, fscholz, Jeremie, ethertank, Sheppy, jviereck, markg,
+  lmorchard, and ernestd, ``Drawing text - web apis.''
+  \url{https://developer.mozilla.org/en-US/docs/Web/API/Canvas_API/Tutorial/Drawing_text},
+  2017.
+\newblock Geraadpleegd op 15/03/17.
+
+\bibitem{Fabricsupportedbrowsers}
+J.~Zaytsev, ``Fabricjs - javascript canvas library.''
+  \url{https://github.com/kangax/fabric.js/}, 2017.
+\newblock Geraadpleegd op 18/03/17.
+
+\bibitem{FabricJSIntro3Serialization}
+J.~Zaytsev, ``Intro to fabric.js. part 3.''
+  \url{http://fabricjs.com/fabric-intro-part-3#serialization}, 2008.
+\newblock Geraadpleegd op 15/03/17.
+
+\bibitem{SVGElement}
+abbycar, Sebastianz, Sheppy, tifosi, jpmedley, fscholz, kscarfone, and Jeremie,
+  ``Svg element - web apis.''
+  \url{https://developer.mozilla.org/en-US/docs/Web/API/SVGElement}, 2016.
+\newblock Geraadpleegd op 18/03/17.
+
+\bibitem{KonvaSerialize}
+A.~Lavrenov, ``Html5 canvas stage data url tutorial.''
+  \url{https://konvajs.github.io/docs/data_and_serialization/Serialize_a_Stage.html},
+  2017.
+\newblock Geraadpleegd op 20/03/17.
+
+\bibitem{KonvaLoad}
+A.~Lavrenov, ``Load html5 canvas stage from json tutorial.''
+  \url{https://konvajs.github.io/docs/data_and_serialization/Complex_Load.html},
+  2017.
+\newblock Geraadpleegd op 20/03/17.
+
+\bibitem{KonvaToImage}
+A.~Lavrenov, ``Save html5 canvas stage as json string.''
+  \url{https://konvajs.github.io/docs/data_and_serialization/Stage_Data_URL.html},
+  2017.
+\newblock Geraadpleegd op 20/03/17.
+
+\bibitem{EaselMouseInteraction}
+L.~McNie, ``Easeljs mouse interaction.''
+  \url{http://www.createjs.com/tutorials/Mouse%20Interaction/}, 2017.
+\newblock Geraadpleegd op 23/03/17.
+
+\bibitem{URI}
+HTMLValidator, Peppesterest, fscholz, teoli, Jonathan\_Watt, oldhill,
+  groovecoder, ModMaker, and jsx, ``Data uris - http.''
+  \url{https://developer.mozilla.org/en-US/docs/Web/HTTP/Basics_of_HTTP/Data_URIs},
+  2016.
+\newblock Geraadpleegd op 20/03/17.
+
+\bibitem{EaselDocs}
+L.~McNie, ``Easeljs v0.8.2 api documentation : Easeljs.''
+  \url{http://www.createjs.com/docs/easeljs/modules/EaselJS.html}, 2017.
+\newblock Geraadpleegd op 23/03/17.
+
+\bibitem{SVGExporter}
+lannymcnie, ``Svgexporter.''
+  \url{https://github.com/CreateJS/EaselJS/tree/master/extras/SVGExporter},
+  2015.
+\newblock Geraadpleegd op 20/03/17.
+
+\end{thebibliography}

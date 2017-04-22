@@ -312,10 +312,11 @@ Exporteren van een canvas is niet zo vanzelfsprekend. Uiteraard bezit het canvas
 						& Standaard manipulatie (schalen, verplaatsen...) van elk object &  \\
 						& Node.js ondersteuning () &  \\
 						& & \\
-	\textbf{Konva.js} 	& Object geori\"{e}nteerd & Geen Node.js ondersteuning \\
-						& Voldoende ruim assortiment aan objecten & Geen interactieve tekst \\
+	\textbf{Konva.js} 	& Object geori\"{e}nteerd & Geen interactieve tekst \\
+						& Voldoende ruim assortiment aan objecten &  \\
 						& Mogelijkheid tot splitsen van lagen met statische en dynamische objecten &  \\
 						& Aparte canvas voor hit-detectie in elke laag &  \\
+						& Node.js ondersteuning & \\
 						& & \\
 	\textbf{Easel.js} 	& Object geori\"{e}nteerd & Geen Node.js ondersteuning \\
 						& Voldoende groot assortiment aan objecten & Geen interactieve tekst \\
@@ -340,23 +341,91 @@ Aangezien het project enkel basis manipulatie van objecten in het canvas vereist
 
 \newpage
 \section{Backend afbeelding manipulatie}
-Eens de gebruiker zijn/haar afbeelding heeft samengesteld, moet deze opgeslagen worden in de database. Voor de foto immers ge\"{u}pload wordt naar Facebook of Twitter, moeten de KPI's namelijk aangepast worden naar de huidige waarden. Dit gebeurt in een microservice die bijvoorbeeld om de 5 minuten de nodige KPI's berekend en daarmee een gepaste foto aanmaakt. Zoals eerder besproken zal het aangemaakte canvas geserialiseerd worden zodat het later terug opgesteld kan worden met de correcte waarden. Wat hier vooral een probleem is, is de nauwkeurigheid van het omzetten van de geserialiseerde objecten naar een identiek canvas. Wordt het canvas clientside aangemaakt, dan kan het zijn dat het serverside renderen van dit canvas niet helemaal hetzelfde verloopt. 
+Eens de gebruiker zijn/haar afbeelding heeft samengesteld, moet deze opgeslagen worden in de database. Voor de foto ge\"{u}pload wordt naar Facebook of Twitter, moeten de KPI's namelijk aangepast worden naar de huidige waarden. Dit gebeurt in een microservice die bijvoorbeeld om de 5 minuten de nodige KPI's berekend en met deze waarden een foto genereerd. Zoals eerder besproken zal het aangemaakte canvas geserialiseerd worden zodat het later opnieuw aangemaakt kan worden met de correcte waarden. Wat hier vooral een probleem vormt, is de nauwkeurigheid van de omzetting. De afbeelding die gegenereerd wordt moet namelijk identiek zijn aan de afbeelding die de gebruiker samenstelt. 
 
-\subsection{PHP bibliotheken}
-Het omzetten van een JSON object naar een afbeelding vormt een hele uitdaging aangezien het niet meer op een canvas geplaatst kan worden. 
+Het is vanzelfsprekend dat de backend in staat is om het object, dat gegenereerd werd in de frontend, te interpreteren en de nodige bewerkingen (zoals het veranderen van KPI's) kan uitvoeren. Er kan gebruik gemaakt worden van verschillende programmeertalen en omgevingen om de afbeeldingen te genereren. 
 
-https://www.thesitewizard.com/php/create-image.shtml
-http://php.net/manual/en/book.image.php
-http://php.net/manual/en/ref.image.php
-http://jaguar.readthedocs.io/en/v1.0.0/usage/Canvas.html
-https://zinoui.com/docs/canvas
+\subsection{PHP} // http://php.net/manual/en/book.image.php
+Het omzetten van een JSON object naar een afbeelding vormt een hele uitdaging aangezien het niet meer op een canvas geplaatst kan worden. In PHP kunnen afbeeldingen aangemaakt worden met behulp van de GD bibliotheek. Deze bibliotheek bezit heel wat functies om afbeeldingen aan te maken en/of te manipuleren. Zo wordt een afbeelding ingeladen via de \lstinline{imagecreatefromjpeg()} methode, Waarna deze geschaald kan worden naar de correcte dimensies met de \lstinline{imagecopyresampled()} methode. Deze zal een kopie van de afbeelding maken en hierbij de pixel waarden interpoleren om de kwaliteit van de afbeelding zo goed mogelijkt te behouden. Eens de afbeelding de geschaald is, kan de tekst er op geplaatst worden met behulp van de \lstinline{imagefttext()} methode. Aan deze methode kunnen de afbeelding, lettergrootte, rotatiehoek, co\"{o}rdinaten, kleur, lettertype en tekst meegegeven worden. 
 
+Volgend script laadt een afbeelding in, herschaald deze naar de correcte dimensies voor Twitter en plaatst de tekst "Hello World" op de afbeelding.
+\begin{lstlisting}[language=PHP]
+<?php
+	$fileName = "image.jpeg";
+	$image = imagecreatefromjpeg($fileName);
+	$destination = imagecreatetruecolor(1500, 500);
+	list($width, $height) = getimagesize($fileName);
+	imagecopyresampled($destination, $image, 0, 0, 0, 0, 1500, 500, $width, $height);
+	$fontSize = 60;
+	$angle = 0;
+	$x = 600;
+	$y = 250;
+	$color = imagecolorallocate($image, 255, 255, 255); // white
+	$fontFile = "helvetica.ttf";
+	$text = "Hello World";
+	imagefttext($destination, $fontSize, $angle, $x, $y, $color, $fontFile, $text);
+	imagejpeg($destination, "test.jpeg", 99);
+?>
+\end{lstlisting}
 
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=1\textwidth]{Figuren/PHP_rendering.jpeg}
+	\caption{PHP afbeelding \cite{}}
+	\label{fig:PHP}
+\end{figure} 
+%
+%https://www.thesitewizard.com/php/create-image.shtml%
+%http://php.net/manual/en/book.image.php
+%http://php.net/manual/en/ref.image.php
+%http://jaguar.readthedocs.io/en/v1.0.0/usage/Canvas.html
+%https://zinoui.com/docs/canvas
 
-
-\subsection{Python bibliotheken}
+\'{E}\'{e}n van de nadelen van het gebruik van PHP is dat het object, dat ge\"{e}xporteerd wordt door de frontend, niet rechtstreeks omgezet kan worden. Ieder object in het ge\"{e}xporteerde canvas moet overlopen worden en met de juiste eigenschappen op de afbeelding geplaatst worden. Zo moet voor elk tekst object de lettergrootte, kleur, lettertype, gewicht en tekst uit de JSON representatie van het canvas gehaald worden. In het geval van een KPI moet dan ook de tekst vervangen worden. Hoewel dit perfect mogelijk is, is het niet erg efficient en zelfs wat omslachtig. Ook kan het voorkomen dat bepaalde eigenschappen niet ondersteund of anders ge\"{i}mplementeerd zijn. 
 
 \subsection{Node.js}
+Veel gemakkelijker is het gebruiken van Node.js. Hiermee kan in de backend gebruik gemaakt worden van JavaScript code. Dit betekend dat dezelfde bibliotheken, die gebruikt worden om in de frontend de afbeeldingen te editeren, gebruikt kunnen worden in de backend. Het merendeel van de eerder besproken JavaScript bibliotheken bezit ondersteuning voor Node.js. 
+
+Omdat alle Fabric, Konva en Easel allen gebaseerd zijn op het HTML canvas element, moet ook een canvas implementatie aanwezig zijn voor Node.js. De \lstinline{npm-canvas} \textit{package} is gebaseerd op Cairo, een 2D \textit{graphics} bibliotheek geschreven in C. %https://github.com/Automattic/node-canvas 
+Konva, Fabric en Easel werken in een Node omgeving hetzelfde als in een frontend omgeving. Een canvas wordt aangemaakt waaraan afbeeldingen, tekst, vormen en animaties toegevoegd kunnen worden. Zowel met Fabric als met Konva is het mogelijk om geserialiseerde data, in JSON formaat, terug om te zetten in een canvas. Bij Easel moeten alle objecten in het canvas opnieuw opgebouwd worden aangezien het met deze bibliotheek niet mogelijk is om JSON data om te zetten naar een canvas. 
+
+Het omzetten van een JSON data naar een afbeelding gebeurt als volgt:
+\textbf{Fabric.js}
+\begin{lstlisting}[language=javascript]
+	var fabric = require('fabric').fabric;
+	var fs = require('fs');
+	var data = {...};
+	
+	var canvas = fabric.createCanvasForNode(1500, 500);
+	canvas.loadFromJSON(data, function() {
+		canvas.renderAll();
+	});
+	
+	var stream = canvas.createPNGStream();
+	
+	
+	var out = fs.createWriteStream(__dirname + '/test-' + service + '.png');
+\end{lstlisting}
+\textbf{Konva.js}
+\begin{lstlisting}[language=javascript]
+	
+	var canvas = Konva.Node.create(data, 'container');
+
+\end{lstlisting}
+\textbf{Easel.js}
+\begin{lstlisting}[language=javascript]
+// MISSCHIEN HIER CODE VOORBEELDJE FZO?
+\end{lstlisting}
+
+Zoals te zien in de voorbeeldcode bezit Fabric methodes specifiek voor gebruik met Node.js. De \lstinline{createCanvasForNode} methode maakt een canvas aan zonder dat hiervoor een HTML canvas element nodig is. De \lstinline{createPNGStream} methode geeft een Node Stream object terug, waarmee het canvas opgeslagen kan worden als een PNG bestand. Het Stream object kan ook de data teruggeven in een base64 formaat. Aangezien dit eenvoudigweg een tekstuele representatie van binaire data is, is dit uitermate geschikt voor dit project. Wordt een Node.js service opgezet, die als input JSON data verwacht. Dan kan de response de base64 ge\"{e}ncodeerde afbeelding bevatten. Zo wordt het mogelijk om de afbeelding bijvoorbeeld naar Facebook of Twitter te uploaden. 
+
+Konva....
+
+Easel....
+
+
+
+(zie sectie \ref{vereisten})
 
 \newpage
 \section{Functioneel ontwerp}

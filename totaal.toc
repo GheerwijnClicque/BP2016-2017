@@ -18,14 +18,13 @@
 \contentsline {subsection}{\numberline {4.2.5}Vergelijking van beschreven bibliotheken}{20}
 \contentsline {subsection}{\numberline {4.2.6}Performantie van beschreven bibliotheken}{20}
 \contentsline {section}{\numberline {4.3}Backend afbeelding manipulatie}{21}
-\contentsline {subsection}{\numberline {4.3.1}PHP bibliotheken}{21}
-\contentsline {subsection}{\numberline {4.3.2}Python bibliotheken}{21}
-\contentsline {subsection}{\numberline {4.3.3}Node.js}{21}
-\contentsline {section}{\numberline {4.4}Functioneel ontwerp}{22}
-\contentsline {section}{\numberline {4.5}Afbeelding compressie}{23}
-\contentsline {chapter}{\numberline {5}Praktische uitwerking}{24}
-\contentsline {section}{\numberline {5.1}Frontend implementatie}{24}
-\contentsline {section}{\numberline {5.2}Backend implementatie}{24}
+\contentsline {subsection}{\numberline {4.3.1}PHP}{21}
+\contentsline {subsection}{\numberline {4.3.2}Node.js}{22}
+\contentsline {section}{\numberline {4.4}Functioneel ontwerp}{24}
+\contentsline {section}{\numberline {4.5}Afbeelding compressie}{25}
+\contentsline {chapter}{\numberline {5}Praktische uitwerking}{26}
+\contentsline {section}{\numberline {5.1}Frontend implementatie}{26}
+\contentsline {section}{\numberline {5.2}Backend implementatie}{26}
 \contentsline {chapter}{Bibliografie}{1}
 \contentsline {chapter}{\numberline {A}Bijlage}{3}
 \contentsfinish 

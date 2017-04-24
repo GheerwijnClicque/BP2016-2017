@@ -241,7 +241,7 @@ Bevat een stage afbeeldingen of events, dan moeten deze opnieuw aangemaakt worde
 
 Om een stage te exporteren als afbeelding kan gebruik gemaakt worden van de \lstinline{toDataURL()} methode. Dit zal een URL teruggeven die voorafgegaan wordt door de data van de afbeelding. Standaard is dit een PNG afbeelding die base64 gecodeerd wordt. Via parameters kunnen het type van de afbeelding (JPEG/PNG), x-en y-co\"{o}rdinaten, hoogte, breedte en kwaliteit (enkel van toepassing bij JPEG) ingesteld worden. Belangrijk hierbij is dat afbeeldingen zich op een webserver moeten bevinden op hetzelfde domein als waar de uitgevoerde code staat \cite{KonvaToImage}. 
 
-\subsection{EaselJS}
+\subsection{EaselJS} \label{easeljs}
 EaselJS is \'{e}\'{e}n van de bibliotheken behorende tot de CreateJS suite. CreateJS is een verzameling van \textit{open source} bibliotheken en tools om interactieve web applicaties te maken. Zo bezit CreateJS ondermeer bibliotheken voor het cre\"{e}ren van animaties (TweenJS), om te werken met audio (SoundJS) en om het laden van data in een applicatie te regelen (PreloadJS). EaselJS maakt interactie met het HTML5 canvas element in JavaScript zeer eenvoudig. Het is een zeer krachtige bibliotheek die ondersteuning biedt voor zowel statische afbeeldingen als animaties. Ook bezit het enkele experimentele features om onder andere HTML elementen te beheren alsof ze deel uit maken van het canvas zelf. Dit kan handig zijn om een elementen bovenop het canvas te plaatsen, zonder dat deze tot het canvas zelf behoren, zoals een toolbar die een tekst editor bevat. 
 
 \textbf{Functionaliteit} \break
@@ -339,6 +339,8 @@ Exporteren van een canvas is niet zo vanzelfsprekend. Uiteraard bezit het canvas
 Aangezien het project enkel basis manipulatie van objecten in het canvas vereist, speelt performantie niet zo'n grote rol. Op het canvas zullen op een gegeven tijdstip enkel een afbeelding en wat tekst objecten aanwezig zijn. Dit zal in geen enkel geval invloed hebben op de performantie. 
 
 
+
+
 \newpage
 \section{Backend afbeelding manipulatie}
 Eens de gebruiker zijn/haar afbeelding heeft samengesteld, moet deze opgeslagen worden in de database. Voor de foto ge\"{u}pload wordt naar Facebook of Twitter, moeten de KPI's namelijk aangepast worden naar de huidige waarden. Dit gebeurt in een microservice die bijvoorbeeld om de 5 minuten de nodige KPI's berekend en met deze waarden een foto genereerd. Zoals eerder besproken zal het aangemaakte canvas geserialiseerd worden zodat het later opnieuw aangemaakt kan worden met de correcte waarden. Wat hier vooral een probleem vormt, is de nauwkeurigheid van de omzetting. De afbeelding die gegenereerd wordt moet namelijk identiek zijn aan de afbeelding die de gebruiker samenstelt. 
@@ -394,48 +396,67 @@ Het omzetten van een JSON data naar een afbeelding gebeurt als volgt:
 \begin{lstlisting}[language=javascript]
 	var fabric = require('fabric').fabric;
 	var fs = require('fs');
-	var data = {...};
+	var json = {...};
 	
 	var canvas = fabric.createCanvasForNode(1500, 500);
-	canvas.loadFromJSON(data, function() {
+	canvas.loadFromJSON(json, function() {
 		canvas.renderAll();
 	});
 	
 	var stream = canvas.createPNGStream();
 	
-	
 	var out = fs.createWriteStream(__dirname + '/test-' + service + '.png');
 \end{lstlisting}
+Zoals te zien in de voorbeeldcode bezit Fabric methodes specifiek voor gebruik met Node.js. De \lstinline{createCanvasForNode()} methode maakt een canvas aan zonder dat hiervoor een HTML canvas element nodig is. De \lstinline{createPNGStream()} functie geeft een Node Stream object terug, waarmee het canvas opgeslagen kan worden als een PNG bestand. Het Stream object kan ook de data teruggeven in een base64 formaat. Aangezien dit eenvoudigweg een tekstuele representatie van binaire data is, is dit uitermate geschikt voor dit project. Wordt een Node.js service opgezet, die als input JSON data verwacht. Dan kan de response de base64 ge\"{e}ncodeerde afbeelding bevatten. Zo wordt het mogelijk om de afbeelding bijvoorbeeld naar Facebook of Twitter te uploaden. 
+
+https://nodejs.org/api/stream.html
+
 \textbf{Konva.js}
 \begin{lstlisting}[language=javascript]
+	var konva = require('konva');
+	var json = {...};
+	var stage = Konva.Node.create(json);
 	
-	var canvas = Konva.Node.create(data, 'container');
+	stage.toDataUrl({
+		callback: function(data){
+			// Convert image data to png or base64 
+		}
+	})
+\end{lstlisting} %https://github.com/konvajs/konva/blob/master/resources/nodejs-demo.js
+Konva bezit geen extra methodes voor gebruik met Node.js. Maar de container parameter kan weggelaten worden bij het cre\"{e}ren van de stage aangezien er geen DOM elementen aanwezig zijn. Met behulp van de \lstinline{Konva.Node.create()} methode kan JSON data omgezet worden naar een stage/canvas. Daarna kan de stage ge\"{e}xproteerd worden naar een PNG bestand of in base64 formaat met behulp van \lstinline{toDataUrl()}. 
 
-\end{lstlisting}
-\textbf{Easel.js}
-\begin{lstlisting}[language=javascript]
-// MISSCHIEN HIER CODE VOORBEELDJE FZO?
-\end{lstlisting}
+\textbf{Easel.js} 
 
-Zoals te zien in de voorbeeldcode bezit Fabric methodes specifiek voor gebruik met Node.js. De \lstinline{createCanvasForNode} methode maakt een canvas aan zonder dat hiervoor een HTML canvas element nodig is. De \lstinline{createPNGStream} methode geeft een Node Stream object terug, waarmee het canvas opgeslagen kan worden als een PNG bestand. Het Stream object kan ook de data teruggeven in een base64 formaat. Aangezien dit eenvoudigweg een tekstuele representatie van binaire data is, is dit uitermate geschikt voor dit project. Wordt een Node.js service opgezet, die als input JSON data verwacht. Dan kan de response de base64 ge\"{e}ncodeerde afbeelding bevatten. Zo wordt het mogelijk om de afbeelding bijvoorbeeld naar Facebook of Twitter te uploaden. 
+Hoewel voor Easel een node-wrapper beschikbaar is %https://github.com/CreateJS/EaselJS-NodeJS
+, bezit deze verre van de gewenste functionaliteit. Easel bezit geen methodes om JSON data te exporteren of importeren wat het dus moeilijk maakt om een canvas eenvoudig op te slaan voor later gebruik. Zoals eerder vermeld (zie sectie \ref{easeljs}) kan een canvas in Easel opgeslagen worden door alle objecten binnen dit canvas te overlopen en naar een JSON object om te zetten. Het inlezen gebeurt op gelijkaardige manier. Voor elk ingelezen object wordt het corresponderende object aangemaakt in de stage/canvas. Het is duidelijk dat deze manier van werken om veel meer code vraagt en omslachtiger is dan bij de andere bibliotheken.  
 
-Konva....
-
-Easel....
-
-
-
-(zie sectie \ref{vereisten})
+%https://www.taaltelefoon.be
+%http://woordenlijst.org/#/?q=hoek
 
 \newpage
 \section{Functioneel ontwerp}
-
+// Insert mockups?
 \newpage
 \section{Afbeelding compressie}
 
 \chapter{Praktische uitwerking}
-\vspace{-3cm}
+%\vspace{-3cm}
+Het annoteren van afbeeldingen is \"{e}\"{e}n van de onderdelen binnen de \textit{Profile Manager} van CX Social. De \textit{Profile Manager} is een nieuwe feature die gebruikers moet helpen bij het beheren van hun sociale media profielen. Een thema kan aangemaakt worden voor Facebook of Twitter die een omslag-en/of profielfoto bevatten. Eens een omslagfoto ge\"{u}pload is, is het mogelijk om annotaties toe te voegen. Dit kan simpelweg tekst zijn maar ook performantie indicatoren kunnen op de afbeelding geplaatst worden. Gebruikers kunnen voor geconnecteerde profielen instellen welk thema op welk tijdstip actief moet zijn. De aangemaakte afbeeldingen worden dan op de ingestelde tijdstippen ge\"{u}pload naar het juiste profiel. 
+
+
 \section{Frontend implementatie}
+Een groot deel van de frontend code van CX Social is geschreven met React. %Zo zijn er heel wat componenten beschikbaar waarmee gemakkelijk functionaliteit aan een pagina kan toegevoegd worden.
+Eens een thema aangemaakt is, kan het later ook aangepast worden. Omdat dezelfde functionaliteit op twee verschillende pagina's nodig is, wordt hiervoor een React component aangemaakt. Bij het aanmaken van de component dienen enkele eigenschappen meegegeven te worden. Eerst en vooral wordt het uit de databank opgehaalde thema meegegeven indien dit beschikbaar is. %ADD SOME INFO OVER HOW IT IS IN VIEW, WHEN NO THEME IS SELECTED!
+Het account \textit{Identity Document} (ID), \textit{Cross-site requrest forgery} (CSRF) Token, beschikbare services, en de annotatiepermissie zijn verplichte eigenschappen. 
+
+
+
+
+
+Deze \textit{Theme} component heeft inputvelden om het thema een naam en een service (Facebook of Twitter) in te geven. 
+
+
+
 \section{Backend implementatie}
 
 

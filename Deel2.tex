@@ -440,14 +440,30 @@ Hoewel voor Easel een node-wrapper beschikbaar is %https://github.com/CreateJS/E
 \section{Afbeelding compressie}
 
 \chapter{Praktische uitwerking}
-%\vspace{-3cm}
-Het annoteren van afbeeldingen is \"{e}\"{e}n van de onderdelen binnen de \textit{Profile Manager} van CX Social. De \textit{Profile Manager} is een nieuwe feature die gebruikers moet helpen bij het beheren van hun sociale media profielen. Een thema kan aangemaakt worden voor Facebook of Twitter die een omslag-en/of profielfoto bevatten. Eens een omslagfoto ge\"{u}pload is, is het mogelijk om annotaties toe te voegen. Dit kan simpelweg tekst zijn maar ook performantie indicatoren kunnen op de afbeelding geplaatst worden. Gebruikers kunnen voor geconnecteerde profielen instellen welk thema op welk tijdstip actief moet zijn. De aangemaakte afbeeldingen worden dan op de ingestelde tijdstippen ge\"{u}pload naar het juiste profiel. 
+\vspace{-3cm}
+Het annoteren van afbeeldingen is \'{e}\'{e}n van de onderdelen binnen de \textit{Profile Manager} van CX Social. De \textit{Profile Manager} is een nieuwe feature die gebruikers moet helpen bij het beheren van hun sociale media profielen. Een thema kan aangemaakt worden voor Facebook of Twitter die een omslag-en/of profielfoto bevatten. Eens een omslagfoto ge\"{u}pload is, is het mogelijk om annotaties toe te voegen. Dit kan simpelweg tekst zijn maar ook performantie indicatoren kunnen op de afbeelding geplaatst worden. Gebruikers kunnen voor geconnecteerde profielen instellen welk thema op welk tijdstip actief moet zijn. De aangemaakte afbeeldingen worden dan op de ingestelde tijdstippen ge\"{u}pload naar het juiste profiel. 
 
 
 \section{Frontend implementatie}
 Een groot deel van de frontend code van CX Social is geschreven met React. %Zo zijn er heel wat componenten beschikbaar waarmee gemakkelijk functionaliteit aan een pagina kan toegevoegd worden.
 Eens een thema aangemaakt is, kan het later ook aangepast worden. Omdat dezelfde functionaliteit op twee verschillende pagina's nodig is, wordt hiervoor een React component aangemaakt. Bij het aanmaken van de component dienen enkele eigenschappen meegegeven te worden. Eerst en vooral wordt het uit de databank opgehaalde thema meegegeven indien dit beschikbaar is. %ADD SOME INFO OVER HOW IT IS IN VIEW, WHEN NO THEME IS SELECTED!
-Het account \textit{Identity Document} (ID), \textit{Cross-site requrest forgery} (CSRF) Token, beschikbare services, en de annotatiepermissie zijn verplichte eigenschappen. 
+Het account \textit{Identity Document} (ID), \textit{Cross-site requrest forgery} (CSRF) token, beschikbare services, en de annotatiepermissie zijn verplichte eigenschappen van de component. Deze eigenschappen zullen nooit veranderen tijdens de levensduur van het component, het zijn dus constanten. Het CSRF token wordt aan het formulier toegevoegd om ongeauthoriseerde acties in applicaties te voorkomen. Met het token wordt ervoor gezorgd dat geen ongeldige \textit{requests} gemaakt kunnen worden. %http://stackoverflow.com/questions/5207160/what-is-a-csrf-token-what-is-its-importance-and-how-does-it-work
+Niet elke gebruiker heeft dezelfde rechten in CX Social. Binnen een bepaald plan zijn verschillende gebruikersrollen beschikbaar. Zo zijn er gewone gebruikers, \textit{admins}, managers, \textit{editors}, \textit{contributors} en \textit{analytics users}, elk met hun eigen rechten. Permissies, die aan de gebruiker werden toegekend, worden meegegeven aan de Theme component om de annoteer \textit{feature} al dan niet beschikbaar te stellen. Aan de hand van de meegegeven eigenschappen wordt React component aangemaakt. Ieder inputveld bevat een \lstinline{onChange} event waarmee veranderingen afgehandeld kunnen worden. Zoals te zien in het codevoorbeeld 8888REFERENCE VOORBEELD8888 wordt de state van de component ge\"{u}pdatet wanneer een verandering aan de inputvelden plaatsvindt. De state van de component kan, in tegenstelling tot de eigenschappen (props), wel veranderen binnen het component. Deze state kan aangepast worden met behulp van  de \lstinline{setState()} methode. 
+
+\begin{lstlisting}[caption={Theme component - Dropdown}\label{ThemeComponentDropdown},language=javascript]
+<select className={this.state.saving && this.state.service === '' ? 'error 		fieldset-input' : 'fieldset-input'} id="service" name="service" ref="service" value={this.getService()}
+	onChange={function (event) {
+		this.setState({service: event.target.value});
+	}.bind(this)}>
+	{this.props.services.map(function (service) {
+		return <option key={service} value={service}>{this.capitalize(service)}</option>
+	}.bind(this))}
+</select>
+\end{lstlisting}
+
+Het uploaden van afbeeldingen wordt afgehandeld door een reeds bestaande component. Deze zal een, door de gebruiker geselecteerde, foto uploaden naar de \textit{fileserver} en op de pagina weergeven. Eens een afbeelding aanwezig is, kan deze geannoteerd worden. 
+
+dialog, fabric, blablabla
 
 
 

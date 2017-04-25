@@ -2,78 +2,280 @@
 \appendix
 \chapter{Bijlage}
 \iffalse
-\section{Naive Bayes op basis van ingredi\"{e}nten }
-\begin{lstlisting}
-# inladen van de data
-ReceptenJO.binair <- read.table("ReceptenJO.binair.csv", 
-	header=TRUE, quote="\"")
+\section{Theme Component}
+\begin{lstlisting}[language=javascript]
+var Theme = React.createClass({
+propTypes: {
+action: React.PropTypes.string.isRequired,
+accountId: React.PropTypes.string.isRequired,
+colors: React.PropTypes.array,
+csrfToken: React.PropTypes.string.isRequired,
+theme: React.PropTypes.object,
+services: React.PropTypes.array.isRequired,
+initialCoverImage: React.PropTypes.array,
+initialAvatarImage: React.PropTypes.array,
+selectedColor: React.PropTypes.string,
+annotations: React.PropTypes.string,
+showButton: React.PropTypes.bool,
+isAllowedAnnotationsUpdate: React.PropTypes.bool.isRequired
+},
+getInitialState: function () {
+return {
+saving: false,
+}
+},
+getActiveColor: function () {
+return (
+this.state.selectedColor || this.props.selectedColor
+).slice(0);
+},
+getDefaultProps: function () {
+return {
+themeSets: []
+};
+},
+getAnnotations: function () {
+return (
+this.state.annotations || this.props.annotations
+);
+},
+componentDidUpdate: function () {
+//window.secretProfileManagerAnnotations = this.getAnnotations();
 
-# SPLITSEN VAN DE DATASET IN TEST EN TRAIN DATA
-nfolds <- 4
+},
+componentWillUnmount: function () {
+$(ThemeDispatcher).off('annotations', this.annotationHandler);
+$(ThemeDispatcher).off('request-annotations', this.handleAnnotations);
 
-id <- rep(1: nfolds,length.out=dim(ReceptenJO.binair)[1])
-id <- sample(id,dim(ReceptenJO.binair)[1])
-id.test <- (1:dim(ReceptenJO.binair)[1])[id==1]
-id.train <- (1:dim(ReceptenJO.binair)[1])[id!=1]
-
-Recepten.test <- ReceptenJO.binair[id.test,]
-Recepten.train <- ReceptenJO.binair[id.train,] 
-
-Bernoulli_NB <- function(ReceptenJO.train, ingredienten){
-# SCHRIJVEN VAN NAIVE BAYES MODEL OBV INGREDIENTEN
-# De input is een binaire vector 
-# die de aan- & afwezigheid van ingredienten weergeeft
-# De output is het keukentype waarin het recept geclassificeerd werd
-  
-# kans dat een ingredient in een gegeven keuken voorkomt
-# pseudocounts = 0.01
-Recepten.train[1:372] <- as.matrix(Recepten.train[1:372]) + 0.01 
-IngredientenJO <- Recepten.train[,1:373] 
-likelihoodIngred <-aggregate(.~cuisine, IngredientenJO, mean)
-likelihoodIngred$cuisine <- NULL
-
-# enkel de ingredienten nodig als input, niet het keukentype
-# en de nutritionele waarden: 
-# kolom 1 tem 372 wordt dus geselecteerd
-input <- as.matrix(ingredienten[1:372]) 
-
-# initialisatie: er zijn 10 keukentypes met 372 ingredienten    
-likelihood <- matrix(0,10,372) 
-  for (j in 1:10){
-    for (k in 1:372){
-      likelihood[j,k] = input[k]* likelihoodIngred[j,k] + 
-												(1-input[k])*(1-likelihoodIngred[j,k])
-    }
-  }
-	
-# matrix met dimensies 10x372
-loglikelihood <- log(likelihood)
-# wanneer likelihood = 1, is de loglikelihood = 0
-# DUS corrigeren met pseudocounts 0.01 => log(0.99) ipv log(1)
-loglikelihood[is.na(loglikelihood)] <- log(0.99) 
-# loglikelihood geeft nu per keukentype de kans dat de ingegeven
-# ingredientenCOMBINATIE (input) in die bepaalde keuken voorkomt 
-# DUS matrix met dimensies 10x1
-  
-loglikelihood <- apply(loglikelihood,1,sum) 
-
-keukentypes <- levels(Recepten.train$cuisine)
-maximum <- max(loglikelihood)
-index <- loglikelihood==maximum
-keukentype <- keukentypes[index]
-  
-  return(keukentype)
+//delete window.secretProfileManagerAnnotations;
+},
+getThemeName: function () {
+return (
+(this.refs.name) ? this.refs.name.value : '' || this.state.name || this.props.theme.name
+).slice(0);
+},
+capitalize: function (string) {
+return string.substring(0, 1).toUpperCase() + string.slice(1);
+},
+onSubmit: function () {
+if (this.shouldDisableSubmit()) {
+event.preventDefault();
 }
 
+this.setState({saving: true});
+},
+annotationHandler: function (event, annotations) {
+this.setState({annotations: annotations});
+},
+componentWillMount: function () {
+//window.secretProfileManagerAnnotations = this.getAnnotations();
+},
+handleAnnotations: function () {
+$(ThemeDispatcher).trigger('response-annotations', this.getAnnotations());
+},
+componentDidMount: function () {
+$(ThemeDispatcher).on('annotations', this.annotationHandler);
+$(ThemeDispatcher).on('request-annotations', this.handleAnnotations);
 
-# TESTEN OP TESTDATA + CONFUSIONMATRIX OPSTELLEN
-voorspelling <- matrix(0,length(Recepten.test[,1]), 1)
+},
+shouldDisableSubmit: function () {
+return (
+(!this.refs.name || (this.refs.name && this.refs.name.value.trim() === '')) ||
+(!this.refs.service || (this.refs.service && this.refs.service.value === ''))
+//|| !this.state.imagesChanged
+);
+},
+onImageChange: function () {
+this.setState({imagesChanged: true});
+},
+getService: function () {
+return (
+this.state.service || this.props.theme.service
+).slice(0);
+},
+renderError: function (error) {
+return (
+<p className="color-error">{error}</p>
+);
+},
+renderTheme: function () {
+var profileDesign = this.renderProfileDesign();
 
-for (i in 1 : length(Recepten.test[,1])){
-  voorspelling[i] <-Bernoulli_NB(Recepten.train,Recepten.test[i,])
+
+var deleteButton = null;
+if (this.props.theme.id) {
+var action = '/account/' + this.props.accountId + '/profile-manager/' + this.props.theme.id + '/delete';
+deleteButton = (
+<a href={action} className="button danger">
+Delete
+</a>
+);
 }
 
-confusionTable <- table(voorspelling, as.matrix(Recepten.test$cuisine))
+return (
+<form className="profile-form" action={this.props.action} method="POST" onSubmit={this.onSubmit}>
+<CsrfInput token={this.props.csrfToken}/>
+<section className="profile-general fieldset-enclosed">
+<h4 className="fieldset-title">General</h4>
+<div className="default-row">
+<div className="default-label">
+<label htmlFor="themeName">
+Name
+</label>
+</div>
+<div className="default-field">
+<input type="text" id="themeName" name="name" value={this.getThemeName()}
+className={this.state.saving && this.getThemeName() === '' ? 'error fieldset-input' : 'fieldset-input'}
+ref="name" onChange={function (event) {
+this.setState({name: event.target.value});
+}.bind(this)}/>
+</div>
+</div>
+<div className="default-row">
+<div className="default-label">
+<label htmlFor="service">
+Service
+</label>
+</div>
+<div className="default-field">
+<select
+className={this.state.saving && this.state.service === '' ? 'error fieldset-input' : 'fieldset-input'}
+id="service" name="service" ref="service" value={this.getService()}
+onChange={function (event) {
+this.props.theme.service = event.target.value;
+this.setState({service: event.target.value});
+}.bind(this)}>
+{this.props.services.map(function (service) {
+return <option key={service} value={service}>{this.capitalize(service)}</option>
+}.bind(this))}
+</select>
+</div>
+</div>
+</section>
+<section className="profile-design fieldset-enclosed left">
+<h4 className="fieldset-title">Design</h4>
+<div className="profile-design-preview">
+{profileDesign}
+</div>
+<input type="hidden" name="annotations" value={this.getAnnotations()}/>
+<div className="profile-actions right">
+<button type="submit" name="submit" className="primary" value="Save"
+disabled={this.shouldDisableSubmit() || this.state.saving}>
+Save
+</button>
+<a href={'/account/' + this.props.accountId + '/profile-manager'} className="button">
+Cancel
+</a>
+{deleteButton}
+</div>
+</section>
+</form>
+)
+},
+renderProfileDesign: function () {
+var profileDesign = null;
+var service = this.getService();
 
+if (service == 'facebook') {
+profileDesign = (
+<div className="profile-design-page facebook-design left">
+<ProfileManagerImageUploader initialImages={this.props.initialCoverImage} type="cover"
+service={this.getService()}
+onImageChange={this.onImageChange}
+isAllowedAnnotationsUpdate={this.props.isAllowedAnnotationsUpdate}></ProfileManagerImageUploader>
+<div className="profile-first-col left">
+<ProfileManagerImageUploader initialImages={this.props.initialAvatarImage} type="avatar"
+service={this.getService()}
+onImageChange={this.onImageChange}></ProfileManagerImageUploader>
+<div className="fake-title left-col-text-placeholder left-col-titles-placeholder"></div>
+<div className="fake-sub-title-large sub-title-placeholder left-col-titles-placeholder"></div>
+
+<div
+className="fake-sub-title-large sub-title-placeholder left-col-titles-placeholder second-paragraph"></div>
+<div className="fake-sub-title-small sub-title-placeholder left-col-titles-placeholder"></div>
+<div className="fake-sub-title-large sub-title-placeholder left-col-titles-placeholder"></div>
+</div>
+<div className="profile-second-col left">
+<div className="profile-sub-cover-placeholder"></div>
+<div>
+<div className="profile-sub-cover-left left">
+<div className="profile-left-box-placeholder"></div>
+<div className="profile-left-box-placeholder"></div>
+</div>
+<div className="profile-sub-cover-right right">
+<div className="profile-right-box-placeholder"></div>
+<div className="profile-right-box-placeholder"></div>
+<div className="profile-right-box-placeholder"></div>
+</div>
+</div>
+</div>
+</div>
+);
+}
+else {
+profileDesign = (
+<div>
+<ProfileManagerImageUploader initialImages={this.props.initialCoverImage} type="cover"
+service={this.getService()}
+onImageChange={this.onImageChange}
+isAllowedAnnotationsUpdate={this.props.isAllowedAnnotationsUpdate}></ProfileManagerImageUploader>
+<div className="profile-design-page left">
+<ProfileManagerImageUploader initialImages={this.props.initialAvatarImage} type="avatar"
+service={this.getService()}
+onImageChange={this.onImageChange}></ProfileManagerImageUploader>
+<div className="profile-first-col left">
+<div className="fake-title left-col-text-placeholder left-col-titles-placeholder"></div>
+<div
+className="fake-sub-title-large sub-title-placeholder left-col-titles-placeholder"></div>
+
+<div
+className="fake-sub-title-large sub-title-placeholder left-col-titles-placeholder second-paragraph"></div>
+<div
+className="fake-sub-title-small sub-title-placeholder left-col-titles-placeholder"></div>
+<div
+className="fake-sub-title-large sub-title-placeholder left-col-titles-placeholder"></div>
+<div className="link-button-container">
+<div className="link-color">
+<ColorPicker selectedColor={this.props.selectedColor}
+showButton={this.props.showButton}
+colors={this.props.colors} buttonText='Link Color'
+onChange={function (color) {
+this.setState({selectedColor: color});
+}.bind(this)}></ColorPicker>
+</div>
+</div>
+</div>
+<div className="profile-second-col left">
+<div className="avatar-feed left"></div>
+<div className="post-feed left">
+<div className="post-feed-title-placeholder text-placeholder"></div>
+<div className="post-feed-image-placeholder"></div>
+<div className="post-feed-title-placeholder text-placeholder second-post"></div>
+<div className="post-feed-text-placeholder-large text-placeholder"></div>
+<div className="post-feed-text-placeholder-medium text-placeholder"></div>
+<div className="post-feed-text-placeholder-large text-placeholder"></div>
+<div className="post-feed-text-placeholder-small text-placeholder"></div>
+</div>
+</div>
+<div className="profile-third-col left"></div>
+</div>
+</div>
+);
+}
+
+return (
+<div>
+{profileDesign}
+</div>
+);
+},
+render: function () {
+return (
+<div>
+{this.renderTheme()}
+</div>
+);
+}
+});
 \end{lstlisting}
 \fi

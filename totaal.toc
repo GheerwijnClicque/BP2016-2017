@@ -24,7 +24,7 @@
 \contentsline {section}{\numberline {4.5}Afbeelding compressie}{25}
 \contentsline {chapter}{\numberline {5}Praktische uitwerking}{26}
 \contentsline {section}{\numberline {5.1}Frontend implementatie}{26}
-\contentsline {section}{\numberline {5.2}Backend implementatie}{26}
+\contentsline {section}{\numberline {5.2}Backend implementatie}{27}
 \contentsline {chapter}{Bibliografie}{1}
 \contentsline {chapter}{\numberline {A}Bijlage}{3}
 \contentsfinish 

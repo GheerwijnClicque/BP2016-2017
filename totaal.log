@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016) (preloaded format=pdflatex 2017.3.25)  24 APR 2017 22:38
+This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016) (preloaded format=pdflatex 2017.3.25)  25 APR 2017 22:02
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1422,9 +1422,9 @@ Package pdftex.def Info: Figuren/PHP_rendering.jpeg used on input line 375.
  [21] [22 <./Figuren/PHP_rendering.jpeg>]
 [23] [24] [25]
 Hoofdstuk 5.
-) [26
+[26
 
-] (./totaal.bbl
+]) [27] (./totaal.bbl
 Underfull \hbox (badness 2671) in paragraph at lines 10--13
 []\OT1/phv/m/n/10.95 Clarabridge, ``Cus-to-mer ex-pe-rience ma-na-ge-ment soft-
 ware - cla-ra-bridge.'' $\OT1/pcr/m/n/10.95 https : / /
@@ -1461,10 +1461,10 @@ B"ylage A.
 ### simple group (level 1) entered at line 1061 ({)
 ### bottom level 
 Here is how much of TeX's memory you used:
- 28785 strings out of 493014
- 504655 string characters out of 6133351
- 923482 words of memory out of 5000000
- 31773 multiletter control sequences out of 15000+600000
+ 28805 strings out of 493014
+ 504883 string characters out of 6133351
+ 923491 words of memory out of 5000000
+ 31793 multiletter control sequences out of 15000+600000
  41561 words of font info for 82 fonts, out of 8000000 for 9000
  1219 hyphenation exceptions out of 8191
  53i,12n,92p,10405b,11348s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -1476,10 +1476,10 @@ exlive/2016/texmf-dist/fonts/type1/urw/courier/ucrb8a.pfb></usr/local/texlive/2
 f-dist/fonts/type1/urw/helvetic/uhvb8a.pfb></usr/local/texlive/2016/texmf-dist/
 fonts/type1/urw/helvetic/uhvr8a.pfb></usr/local/texlive/2016/texmf-dist/fonts/t
 ype1/urw/helvetic/uhvro8a.pfb>
-Output written on totaal.pdf (35 pages, 3482897 bytes).
+Output written on totaal.pdf (36 pages, 3485900 bytes).
 PDF statistics:
- 159 PDF objects out of 1000 (max. 8388607)
- 101 compressed objects within 2 object streams
+ 162 PDF objects out of 1000 (max. 8388607)
+ 103 compressed objects within 2 object streams
  0 named destinations out of 1000 (max. 500000)
  36 words of extra memory for PDF output out of 10000 (max. 10000000)
 

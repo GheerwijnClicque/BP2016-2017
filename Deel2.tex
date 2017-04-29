@@ -297,7 +297,7 @@ Een voordeel van het gebruiken van \textit{VanillaJS} is dat de code niet afhank
 Exporteren van een canvas is niet zo vanzelfsprekend. Uiteraard bezit het canvas enkele methodes, waaronder de \lstinline{toDataUrl()} methode, die instaan voor serialisatie. Deze methodes kunnen echter het canvas enkel als afbeelding exporteren. Dit is natuurlijk niet erg handig aangezien de KPI's op de afbeelding variabel zijn. Om een canvas in de huidige staat te exporteren moet over elk object in het canvas gegaan worden en alle eigenschappen weggeschreven worden. Op deze manier kunnen dan de objecten er uit gehaald worden die een andere waarde moeten krijgen en kan uiteindelijk de afbeelding gegenereerd worden. 
 
 \newpage
-\subsection{Vergelijking van beschreven bibliotheken}
+\subsection{Vergelijking van beschreven bibliotheken} \label{vergelijkingBibliotheken}
 
 \begin{table}[ht!]
 	\begin{center}
@@ -334,7 +334,11 @@ Exporteren van een canvas is niet zo vanzelfsprekend. Uiteraard bezit het canvas
 	\end{center}
 	\end{table} 
 	
+	
+// MEER UITLEG GEVEN EN DZEGGEN DAT FABRIC BESTE KEUZE IS!!
+
 //VERWIJDER DIT!!!
+
 \subsection{Performantie van beschreven bibliotheken}
 Aangezien het project enkel basis manipulatie van objecten in het canvas vereist, speelt performantie niet zo'n grote rol. Op het canvas zullen op een gegeven tijdstip enkel een afbeelding en wat tekst objecten aanwezig zijn. Dit zal in geen enkel geval invloed hebben op de performantie. 
 
@@ -445,10 +449,10 @@ Het annoteren van afbeeldingen is \'{e}\'{e}n van de onderdelen binnen de \texti
 
 
 \section{Frontend implementatie}
-Een groot deel van de frontend code van CX Social is geschreven met React. %Zo zijn er heel wat componenten beschikbaar waarmee gemakkelijk functionaliteit aan een pagina kan toegevoegd worden.
-Eens een thema aangemaakt is, kan het later ook aangepast worden. Omdat dezelfde functionaliteit op twee verschillende pagina's nodig is, wordt hiervoor een React component aangemaakt. Bij het aanmaken van de component dienen enkele eigenschappen meegegeven te worden. Eerst en vooral wordt het uit de databank opgehaalde thema meegegeven indien dit beschikbaar is. %ADD SOME INFO OVER HOW IT IS IN VIEW, WHEN NO THEME IS SELECTED!
+Een groot deel van de frontend code van CX Social is geschreven met React. Met React kunnen makkelijk componenten aangemaakt worden om zo complexe interfaces aan te maken. %2o zijn er heel wat componenten beschikbaar waarmee gemakkelijk functionaliteit aan een pagina kan toegevoegd worden.
+Eens een thema aangemaakt is, kan het later ook aangepast worden. Omdat dezelfde functionaliteit op twee verschillende pagina's nodig is, wordt hiervoor een React component aangemaakt: de \lstinline{Theme} component. Bij het aanmaken van de component dienen enkele eigenschappen meegegeven te worden. Eerst en vooral wordt het, uit de databank opgehaalde, thema meegegeven indien dit beschikbaar is. %ADD SOME INFO OVER HOW IT IS IN VIEW, WHEN NO THEME IS SELECTED!
 Het account \textit{Identity Document} (ID), \textit{Cross-site requrest forgery} (CSRF) token, beschikbare services, en de annotatiepermissie zijn verplichte eigenschappen van de component. Deze eigenschappen zullen nooit veranderen tijdens de levensduur van het component, het zijn dus constanten. Het CSRF token wordt aan het formulier toegevoegd om ongeauthoriseerde acties in applicaties te voorkomen. Met het token wordt ervoor gezorgd dat geen ongeldige \textit{requests} gemaakt kunnen worden. %http://stackoverflow.com/questions/5207160/what-is-a-csrf-token-what-is-its-importance-and-how-does-it-work
-Niet elke gebruiker heeft dezelfde rechten in CX Social. Binnen een bepaald plan zijn verschillende gebruikersrollen beschikbaar. Zo zijn er gewone gebruikers, \textit{admins}, managers, \textit{editors}, \textit{contributors} en \textit{analytics users}, elk met hun eigen rechten. Permissies, die aan de gebruiker werden toegekend, worden meegegeven aan de Theme component om de annoteer \textit{feature} al dan niet beschikbaar te stellen. Aan de hand van de meegegeven eigenschappen wordt React component aangemaakt. Ieder inputveld bevat een \lstinline{onChange} event waarmee veranderingen afgehandeld kunnen worden. Zoals te zien in het codevoorbeeld 8888REFERENCE VOORBEELD8888 wordt de state van de component ge\"{u}pdatet wanneer een verandering aan de inputvelden plaatsvindt. De state van de component kan, in tegenstelling tot de eigenschappen (props), wel veranderen binnen het component. Deze state kan aangepast worden met behulp van  de \lstinline{setState()} methode. 
+Niet elke gebruiker heeft dezelfde rechten in CX Social. Binnen een bepaald plan zijn verschillende gebruikersrollen beschikbaar. Zo zijn er gewone gebruikers, \textit{admins}, managers, \textit{editors}, \textit{contributors} en \textit{analytics users}, elk met hun eigen rechten. Permissies, die aan de gebruiker werden toegekend, worden meegegeven aan de Theme component om de annoteer \textit{feature} al dan niet beschikbaar te stellen. Ieder inputveld bevat een \lstinline{onChange} event waarmee veranderingen afgehandeld kunnen worden. Zoals te zien in het codevoorbeeld 8888REFERENCE VOORBEELD8888 wordt de state van de component ge\"{u}pdatet wanneer een verandering aan de inputvelden plaatsvindt. De state van de component kan, in tegenstelling tot de eigenschappen (props), wel veranderen binnen het component. De state kan aangepast worden met behulp van  de \lstinline{setState()} methode. 
 
 \begin{lstlisting}[caption={Theme component - Dropdown}\label{ThemeComponentDropdown},language=javascript]
 <select className={this.state.saving && this.state.service === '' ? 'error 		fieldset-input' : 'fieldset-input'} id="service" name="service" ref="service" value={this.getService()}
@@ -461,10 +465,147 @@ Niet elke gebruiker heeft dezelfde rechten in CX Social. Binnen een bepaald plan
 </select>
 \end{lstlisting}
 
-Het uploaden van afbeeldingen wordt afgehandeld door een reeds bestaande component. Deze zal een, door de gebruiker geselecteerde, foto uploaden naar de \textit{fileserver} en op de pagina weergeven. Eens een afbeelding aanwezig is, kan deze geannoteerd worden. 
+Naast het ingeven van een naam en \textit{service} voor het thema, kunnen ook een omslag-en profielfoto toegevoegd worden. Het uploaden van de afbeeldingen wordt afgehandeld door een reeds bestaande component. Deze zal een, door de gebruiker geselecteerde, foto uploaden naar de \textit{fileserver} en op de pagina weergeven. Eens een afbeelding aanwezig is, is het mogelijk om annotaties toe te voegen. Om een afbeelding te annoteren wordt een pop-upvenster geopend. Aangezien deze pop-up een volledig nieuwe \textit{template}is, dienen enkele eigenschappen van het thema meegegeven te worden. Als parameters in de URL worden zowel de \textit{service} als de bestandsnaam van de afbeelding op de fileserver meegegeven. Beide parameters zijn nodig om het canvas op te stellen. De \textit{service} bepaald immers de dimensies van het canvas aangezien deze verschillen voor zowel Facebook als Twitter. Via de bestandsnaam kan de correcte afbeelding ingeladen worden in het pop-upvenster.
 
-dialog, fabric, blablabla
+Zoals reeds besproken in sectie \ref{vergelijkingBibliotheken}, lijkt Fabric.js de beste keuze te zijn om dit project uit te werken. Aangezien niet alle functionaliteit van deze bibliotheek van toepassing zijn op dit project, wordt een \textit{custom build} aangemaakt. Deze bevat de tekst, interactieve tekst, animatie, serialisatie, interactie en node \textit{features}. Bij het openen van het pop-upvenster wordt het \lstinline{ThemeAnnotations} component ge\"{i}nitialiseerd met de nodige eigenschappen. Deze zijn het account ID, de bestandsnaam van de afbeelding, de \textit{service} en een kleurenpallet. Tussen deze kleuren en eender welke hexadecimale waarde kan gekozen worden tijdens het stylen van de annotaties.
 
+\begin{lstlisting}[caption={ThemeAnnotations component - initialisatie}\label{ThemeComponentDropdown},language=javascript]
+$(document).ready(function() {
+	var annotationProps = {
+		accountId: '{{account.id}}',
+		image: '{{image}}',
+		service: '{{service}}',
+		colors:  [
+		"#FF691F",
+		"#FAB81E",
+		"#7FDBB6",
+		"#19CF86"
+		]};
+		
+	Engagor.App.renderer.render(
+		React.createElement(ThemeAnnotations, annotationProps),
+		document.getElementById('annotations'),
+		$.noop()
+	);
+});
+\end{lstlisting}
+
+Wanneer het element aanwezig is in het DOM, wordt het canvas ge\"{i}nitialiseerd. Dit gebeurt in de \lstinline{componentDidMount()} functie van de React component. Zowel Facebook als Twitter verwachten omslagfoto's van een bepaalde resolutie. Wordt hier niet aan voldaan, zullen de foto's worden geschaald. Om kwaliteitsverlies te voorkomen, worden de foto's dus best in volle resolutie g\"{u}pload. Helaas kan het canvas niet aangemaakt worden met de originele dimensies van de foto's. Bij Facebook zou dit een canvas van 828 op 315 pixels zijn terwijl dit voor Twitter een canvas van 1500 op 500 pixels zou zijn. Het is helemaal niet handig voor een gebruiker om op een canvas met een breedte van 1500 pixels te werken. Daarom worden de dimensies van het canvas dynamisch berekend. Dankzij de berekeningen kan ook de ratio (hoogte ten opzichte van breedte) van de afbeeldingen behouden worden. Wanneer de afbeelding dan uiteindelijk gegenereerd wordt, moeten de dimensies simpelweg met dezelfde verkleiningsfactor vermenigvuldigd worden om zo een afbeelding met gewenste dimensies te bereiken. Het canvas wordt als volgt aangemaakt:
+
+\begin{lstlisting}[language=javascript]
+getInitialState: function () {
+	return {
+		facebookCover: {width: '828', height: '315'},
+		twitterCover: {width: '1500', height: '500'}
+	}
+},
+componentDidMount: function () {
+	var dimensions = {};
+	if (this.props.service === 'twitter') {
+		ratio = this.state.twitterCover.width / this.state.twitterCover.height;
+		dimensions = this.state.twitterCover;
+	}
+	else if (this.props.service === 'facebook') {
+		ratio = this.state.facebookCover.width / this.state.facebookCover.height;
+		dimensions = this.state.facebookCover;
+	}
+		
+	this.canvas = new fabric.Canvas('annotationCanvas', {
+		width: this.refs.container.offsetWidth,
+		height: this.refs.container.offsetWidth / ratio,
+		preserveObjectStacking: true,
+		renderOnAddRemove: true,
+		multiply: ratio,
+		service: this.props.service,
+		dimensions: dimensions,
+	});
+}
+\end{lstlisting}
+
+Eens het canvas bestaat, kunnen objecten toegevoegd worden. Eerst en vooral moet de, door de gebruiker ge\"{u}ploade, afbeelding op het canvas geplaatst worden. 
+
+
+\begin{lstlisting}[language=javascript]
+handleAnnotations: function (event, data) {
+	if (data) {
+		this.canvas.loadFromJSON(data, function () {
+		if (this.props.service === 'twitter') {
+			this.renderLimitationBars(40);
+		}
+		
+		this.canvas.getObjects().forEach(function (object) {
+			if (object.type === 'image') {
+				object.remove();
+			}
+		});
+		
+		fabric.Image.fromURL(this.getSource(this.props.image), function (image) {
+				image.center();
+				image.scaleToWidth(this.refs.container.offsetWidth);
+				image.setCoords();
+				this.canvas.add(image);
+				this.canvas.sendToBack(image);
+			}.bind(this));
+		
+			this.canvas.renderAll();
+		
+			this.setState({rendering: false, annotations: data});
+		}.bind(this));
+	}
+	else {
+		fabric.Image.fromURL(this.getSource(this.props.image), function (image) {
+			image.center();
+			image.scaleToWidth(this.refs.container.offsetWidth);
+			image.setCoords();
+			this.canvas.add(image);
+			this.canvas.sendToBack(image);
+		}.bind(this));
+	}
+}
+\end{lstlisting}
+
+/// PUT IN BIJLAGE
+\begin{lstlisting}[language=javascript]
+componentDidMount: function () {
+this.canvas.on({'object:selected': function () {
+	var object = null;
+	if (this.isTextSelected()) {
+		object = this.canvas.getActiveObject();
+
+		var kpiType = '';
+		if (object.textType === 'kpi') {
+			kpiType = object.kpiType;
+				object.set({'borderColor': '#f68d2e', 'cornerColor': '#f68d2e'});
+			} else if (object.textType === 'textbox') {
+				object.set({'borderColor': '#00b4d0', 'cornerColor': '#00b4d0'});
+			}
+
+			this.setState({
+				currentSettings: {
+					fontSize: object.getFontSize(),
+					fontWeight: object.getFontWeight(),
+					fontFamily: object.getFontFamily(),
+					fontStyle: object.getFontStyle(),
+					fontColor: object.getFill(),
+					textAlign: object.getTextAlign(),
+				}, textSelected: true, objectInfo: kpiType
+			});
+		}
+		else {
+			this.setState({
+				currentSettings: {
+					fontSize: '',
+					fontWeight: '',
+					fontFamily: '',
+					fontStyle: '',
+					fontColor: '#FFF',
+					textAlign: '',
+				}, textSelected: false
+			});
+		}
+	}.bind(this)});
+}
+\end{lstlisting}
 
 
 

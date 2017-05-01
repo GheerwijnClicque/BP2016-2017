@@ -278,4 +278,91 @@ return (
 }
 });
 \end{lstlisting}
+
+
+
+
+\begin{lstlisting}[language=javascript]
+handleAnnotations: function (event, data) {
+if (data) {
+this.canvas.loadFromJSON(data, function () {
+if (this.props.service === 'twitter') {
+this.renderLimitationBars(40);
+}
+
+this.canvas.getObjects().forEach(function (object) {
+if (object.type === 'image') {
+object.remove();
+}
+});
+
+fabric.Image.fromURL(this.getSource(this.props.image), function (image) {
+image.center();
+image.scaleToWidth(this.refs.container.offsetWidth);
+image.setCoords();
+this.canvas.add(image);
+this.canvas.sendToBack(image);
+}.bind(this));
+
+this.canvas.renderAll();
+
+this.setState({rendering: false, annotations: data});
+}.bind(this));
+}
+else {
+fabric.Image.fromURL(this.getSource(this.props.image), function (image) {
+image.center();
+image.scaleToWidth(this.refs.container.offsetWidth);
+image.setCoords();
+this.canvas.add(image);
+this.canvas.sendToBack(image);
+}.bind(this));
+}
+}
+\end{lstlisting}
+
+/// PUT IN BIJLAGE
+\begin{lstlisting}[language=javascript]
+componentDidMount: function () {
+this.canvas.on({'object:selected': function () {
+var object = null;
+if (this.isTextSelected()) {
+object = this.canvas.getActiveObject();
+
+var kpiType = '';
+if (object.textType === 'kpi') {
+kpiType = object.kpiType;
+object.set({'borderColor': '#f68d2e', 'cornerColor': '#f68d2e'});
+} else if (object.textType === 'textbox') {
+object.set({'borderColor': '#00b4d0', 'cornerColor': '#00b4d0'});
+}
+
+this.setState({
+currentSettings: {
+fontSize: object.getFontSize(),
+fontWeight: object.getFontWeight(),
+fontFamily: object.getFontFamily(),
+fontStyle: object.getFontStyle(),
+fontColor: object.getFill(),
+textAlign: object.getTextAlign(),
+}, textSelected: true, objectInfo: kpiType
+});
+}
+else {
+this.setState({
+currentSettings: {
+fontSize: '',
+fontWeight: '',
+fontFamily: '',
+fontStyle: '',
+fontColor: '#FFF',
+textAlign: '',
+}, textSelected: false
+});
+}
+}.bind(this)});
+}
+\end{lstlisting}
+
+
 \fi

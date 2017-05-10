@@ -2,11 +2,12 @@ This is BibTeX, Version 0.99d (TeX Live 2016)
 Capacity: max_strings=35307, hash_size=35307, hash_prime=30011
 The top-level auxiliary file: totaal.aux
 A level-1 auxiliary file: Titelpagina.aux
-A level-1 auxiliary file: Copyright.aux
+A level-1 auxiliary file: Samenvatting.aux
 A level-1 auxiliary file: Voorwoord.aux
 A level-1 auxiliary file: LijstMetAfkortingen.aux
 A level-1 auxiliary file: Deel1.aux
 A level-1 auxiliary file: Deel2.aux
+A level-1 auxiliary file: Deel3.aux
 The style file: ieeetr.bst
 A level-1 auxiliary file: Bijlage.aux
 Database file #1: Bibliografie.bib
@@ -14,36 +15,48 @@ Repeated entry---line 373 of file Bibliografie.bib
  : @misc{EaselMouseInteraction
  :                            ,
 I'm skipping whatever remains of this entry
-You've used 22 entries,
+I was expecting a `,' or a `}'---line 457 of file Bibliografie.bib
+ :  
+ :  author={Clarabridge},
+(Error may have been on previous line)
+I'm skipping whatever remains of this entry
+I was expecting a `,' or a `}'---line 473 of file Bibliografie.bib
+ :  
+ :  author={Node.js Foundation},
+(Error may have been on previous line)
+I'm skipping whatever remains of this entry
+Warning--all relevant fields are empty in CXSOcialLogo
+Warning--all relevant fields are empty in NodeJS
+You've used 25 entries,
             1876 wiz_defined-function locations,
-            596 strings with 6673 characters,
-and the built_in function-call counts, 3356 in all, are:
-= -- 311
-> -- 166
+            608 strings with 6921 characters,
+and the built_in function-call counts, 3652 in all, are:
+= -- 330
+> -- 176
 < -- 0
-+ -- 69
-- -- 47
-* -- 165
-:= -- 528
-add.period$ -- 44
-call.type$ -- 22
-change.case$ -- 22
++ -- 74
+- -- 49
+* -- 174
+:= -- 557
+add.period$ -- 48
+call.type$ -- 25
+change.case$ -- 23
 chr.to.int$ -- 0
-cite$ -- 22
-duplicate$ -- 88
-empty$ -- 397
-format.name$ -- 47
-if$ -- 827
+cite$ -- 27
+duplicate$ -- 100
+empty$ -- 445
+format.name$ -- 49
+if$ -- 902
 int.to.chr$ -- 0
-int.to.str$ -- 22
+int.to.str$ -- 25
 missing$ -- 0
-newline$ -- 91
-num.names$ -- 22
-pop$ -- 132
+newline$ -- 101
+num.names$ -- 23
+pop$ -- 146
 preamble$ -- 1
 purify$ -- 0
 quote$ -- 0
-skip$ -- 65
+skip$ -- 85
 stack$ -- 0
 substring$ -- 0
 swap$ -- 0
@@ -51,8 +64,8 @@ text.length$ -- 0
 text.prefix$ -- 0
 top$ -- 0
 type$ -- 0
-warning$ -- 0
-while$ -- 22
-width$ -- 24
-write$ -- 222
-(There was 1 error message)
+warning$ -- 2
+while$ -- 23
+width$ -- 27
+write$ -- 240
+(There were 3 error messages)

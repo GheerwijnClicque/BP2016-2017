@@ -2,17 +2,20 @@
 \chapter{Voorstudie}
 \vspace{-3cm}
 \section{Vereisten} \label{vereisten}
-Alle bibliotheken en technologie\"{e}n die besproken zullen worden, moeten aan enkele voorwaarden voldoen. Zo moeten afbeeldingen en tekst verplaatst, geschaald, geroteerd en over elkaar geplaatst kunnen worden (wat dus inhoudt dat de gebruikte bibliotheek/technologie lagen moet ondersteunen). Idealiter kan tekst, eens op het canvas geplaatst, ook aangepast worden. Dit vooral om interactie met tekst voor de gebruikers gemakkelijker te maken. Nadien moeten de afbeeldingen ge\"{e}xporteerd en hun properties (tekst, KPI's etc.) bewaard kunnen worden. Aangezien KPI's aanwezig zijn op de afbeelding, moeten deze later nog aangepast kunnen worden. De afbeeldingen zullen dus om de zoveel tijd opnieuw gerenderd worden met aangepaste KPI`s. Dimensies van omslagfoto's kunnen redelijk groot uitvallen. Twitter verwacht bijvoorbeeld een afbeelding van 1500 op 500 pixels. Dit is natuurlijk niet gebruiksvriendelijk weer te geven in een browservenster. Daarom moet herschalen van het volledige canvas met elk van zijn objecten mogelijk zijn. Hierbij is het belangrijk dat alle verhoudingen behouden blijven om uiteindelijk dezelfde afbeelding te bekomen zoals die door de gebruiker gemaakt werd. Naast de frontend manipulatie van afbeeldingen zal ook manipulatie in de backend onderzocht moeten worden.  
+Alle bibliotheken en technologie\"{e}n die besproken zullen worden, moeten aan enkele voorwaarden voldoen. Zo moeten afbeeldingen en tekst verplaatst, geschaald, geroteerd en over elkaar geplaatst kunnen worden (wat dus inhoudt dat de gebruikte bibliotheek/technologie 'lagen' moet ondersteunen). Idealiter kan tekst, eens op het canvas geplaatst, nog aangepast worden. Dit vooral om interactie met tekst voor de gebruikers eenvoudiger te maken. Nadien moeten de afbeeldingen ge\"{e}xporteerd en hun eigenschappen (tekst, KPI's, kleur, lettertype etc.) bewaard kunnen worden. Aangezien KPI's aanwezig zijn op de afbeelding, moeten deze later ook aangepast kunnen worden. De afbeeldingen zullen dus om de zoveel tijd opnieuw gegenereerd worden met nieuwe, aangepaste KPI`s. 
+
+Veel sociale media verwachten dat omslag-en profielfoto's bepaalde dimensies bezitten.  Vereiste dimensies van omslagfoto's kunnen redelijk groot uitvallen om problemen met schaling te voorkomen. Twitter verwacht bijvoorbeeld een afbeelding van 1500 op 500 pixels. Dit is natuurlijk niet gebruiksvriendelijk weer te geven in een browservenster. Daarom moet herschalen van het volledige canvas met elk van zijn objecten mogelijk zijn. Hierbij is het belangrijk dat alle verhoudingen behouden blijven om uiteindelijk dezelfde afbeelding te bekomen zoals die door de gebruiker gemaakt werd. Naast de frontend manipulatie van afbeeldingen zal dus ook manipulatie in de backend onderzocht moeten worden.  
 
 \section{Frontend afbeelding manipulatie}
 \subsection{Fabric.js}
-Redelijk wat bilbiotheken om afbeeldingen te manipuleren zijn beschikbaar. De meeste hiervan zijn gericht op het gebruiken van filters op afbeeldingen of het maken van animaties in een canvas. Hoewel deze bibliotheken veel te bieden hebben, zijn ze minder geschikt voor deze toepassing. Het is hier namelijk de bedoeling om elementen op een canvas te positioneren, zowel tekst als afbeeldingen en deze op gepaste wijze op te slaan. 
+Redelijk wat bilbiotheken om afbeeldingen te manipuleren zijn reeds te vinden. De meeste hiervan zijn gericht op het gebruiken van filters op afbeeldingen of het maken van animaties in een canvas. Hoewel deze bibliotheken veel te bieden hebben, zijn ze minder geschikt voor deze toepassing. Het is hier namelijk de bedoeling om elementen op een canvas te positioneren, zowel tekst als de afbeeldingen zelf en deze op gepaste wijze op te slaan. 
 
-Een bibliotheek die onmiddellijk veelbelovend lijkt te zijn is Fabric.js. Het is een JavaScript bibliotheek die HTML5 canvas manipulatie gemakkelijker maakt. Het maakt het mogelijk om object-geori\"{e}nteerd te werken binnen een canvas in plaats van simpelweg te `tekenen' op het canvas. Dit maakt het veel gemakkelijker om met deze objecten te werken. Selecteren, verplaatsen, herschalen, roteren en dergelijke transformaties kunnen ondernomen worden zonder veel problemen. 
+Een bibliotheek die onmiddellijk veelbelovend lijkt te zijn is Fabric.js. Het is een JavaScript bibliotheek die HTML5 canvas manipulatie gemakkelijker maakt. Het maakt het mogelijk om object-geori\"{e}nteerd te werken binnen een canvas in plaats van simpelweg vormen te `tekenen' op het canvas. Dit maakt het veel gemakkelijker om complexe interacties met het canvas uit te voeren. Selecteren, verplaatsen, herschalen, roteren en dergelijke transformaties kunnen ondernomen worden zonder veel problemen. 
 
 \textbf{Functionaliteit} \break 
-In plaats van te functioneren op de context van het canvas zal Fabric gebruik maken van objecten die aan het canvas toegevoegd worden \cite{FabricJSDocs}. Fabric bezit zeven verschillende standaard vormen: 
+In plaats van te functioneren op de context van het canvas zal Fabric gebruik maken van objecten die aan het canvas toegevoegd worden \cite{FabricJSDocs}. Fabric bezit zeven verschillende standaard vormen: cirkels, ellips, lijn, polygon, polylijn, rechthoek en driehoek.
 
+\iffalse
 \begin{itemize}
 	\item Cirkel
 	\item Ellips
@@ -22,13 +25,15 @@ In plaats van te functioneren op de context van het canvas zal Fabric gebruik ma
 	\item Rechthoek
 	\item Driehoek
 \end{itemize}
+\fi
 
 Alle objecten erven over van het \textit{root object}. Dit stelt een tweedimensionale vorm voor in het tweedimensionaal canvas en bezit een positie in het canvas (x-en y-co\"{o}rdinaat), een hoogte en een breedte. Aangezien elk objct dus overerft van deze klasse, ontstaat een soort van hi\"{e}rarchie en kunnen methodes geschreven worden die bruikbaar zijn voor elke instantie van een object \cite{FabricJSIntro}. 
 
-Interessanter voor deze implementatie zijn de tekst en afbeelding objecten. Naast het gewone fabric.Text object, wat enkel statische tekst voorstelt, is ook de fabric.IText beschikbaar. Met dit object kan interactieve tekst aan het canvas toegevoegd worden. Deze tekst kan dus in het canvas zelf aangepast worden. Het Text object bezit properties om grootte, stijl (vet/schuin/normaal), gewicht en de familie (font type) aan te passen. Het standaard HTML canvas bezit slechts twee methodes om tekst te renderen: \lstinline|{strokeText(text, x, y [, maxWidth])}| en \lstinline|{fillText(text, x, y [, maxWidth])}| \cite{MozillaCanvas-DrawingText}. De eerste methode zal ingevulde tekst op het canvas tekenen op de meegegeven x-en y-positie. De tweede zal enkel de omtrek van de meegegeven tekst op het canvas tekenen. Naast deze methodes zijn ook enkele properties beschikbaar zoals font (e.g. 20px comic-sans), textAlign (e.g. center), textBaseline (e.g. alphabetic) en direction (e.g. ltr). Functionaliteit hiervan is eerder beperkt. Zeker niet uitgebreid genoeg om aan de gestelde eisen (zie sectie \ref{vereisten}) te kunnen voldoen. 
+Interessanter voor deze implementatie zijn de tekst en afbeelding objecten. Naast het gewone fabric.Text object, wat enkel statische tekst voorstelt, is ook de fabric.IText beschikbaar. Met dit object kan interactieve tekst aan het canvas toegevoegd worden. Deze tekst kan dus in het canvas zelf aangepast worden. Het Text object bezit properties om grootte, stijl (vet/schuin/normaal), gewicht en de familie (font type) aan te passen. Het standaard HTML canvas bezit slechts twee methodes om tekst te renderen: \lstinline|{strokeText(text, x, y [, maxWidth])}| en \lstinline|{fillText(text, x, y [, maxWidth])}| \cite{MozillaCanvas-DrawingText}. De eerste methode zal ingevulde tekst op het canvas tekenen op de meegegeven x-en y-positie. De tweede zal enkel de omtrek van de meegegeven tekst op het canvas tekenen. Naast deze methodes zijn ook heel wat eigenschappen beschikbaar zoals font (e.g. 20px comic-sans), textAlign (e.g. center), textBaseline (e.g. alphabetic) en direction (e.g. ltr). Functionaliteit hiervan is eerder beperkt. Zeker niet uitgebreid genoeg om aan de gestelde eisen (zie sectie \ref{vereisten}) te kunnen voldoen. 
 
-Het tekst object die Fabric voorziet voegt heel wat nieuwe functionaliteit toe zoals: 
+Het tekst object die Fabric voorziet voegt heel wat nieuwe functionaliteit toe zoals: multiline ondersteuning, tekst decoratie, uitlijning, lijnhoogte en nog meer.
 
+\iffalse
 \begin{itemize}
 	\item Multiline ondersteuning
 	\item Tekst achtergrond
@@ -36,10 +41,11 @@ Het tekst object die Fabric voorziet voegt heel wat nieuwe functionaliteit toe z
 	\item Uitlijning
 	\item Lijnhoogte
 \end{itemize}
+\fi
 
-Vooral ondersteuning van multiline tekst en uitlijning hiervan zijn zeer handige \textit{features}. Alle objecten op het canvas kunnen \textit{by default} geselecteerd en verplaatst worden. Natuurlijk is dit met het standaard canvas element ook mogelijk, maar code hiervoor zou steeds complexer worden naarmate meer functionaliteit toegevoegd wordt. Daarom is onderzoek naar een gepaste bibliotheek hier zeker niet misplaatst. Wordt even stilgestaan bij het \textit{draggable} of verplaatsbaar maken van tekst in een standaard HTML canvas, is al snel duidelijk dat hier heel wat code voor nodig is. 
+Vooral ondersteuning van multiline tekst en uitlijning hiervan zijn zeer handige \textit{features}. Alle objecten op het canvas kunnen \textit{by default} geselecteerd en verplaatst worden. Natuurlijk is dit met het standaard canvas element ook mogelijk, maar code hiervoor zou steeds complexer worden naarmate meer functionaliteit toegevoegd wordt. Daarom is onderzoek naar een gepaste bibliotheek hier zeker niet misplaatst. 
 
-Alle tekst, die op het canvas geplaatst wordt, moet bijgehouden worden in een lijst of array. Wanneer een \textit{mouse-down} event plaatsvindt, moet berekend worden of de klik daadwerkelijk op een item in het canvas gebeurde. Is dit het geval dan moet de index van het geselecteerde item opgeslagen worden. Bij het triggeren van een \textit{mouse-move} event moeten de co\"{o}rdinaten van dit item aangepast worden naar deze van de cursor, waarna ieder item terug op het canvas getekend moet worden. 
+Wordt even stilgestaan bij het \textit{draggable} of verplaatsbaar maken van tekst in een standaard HTML canvas, is al snel duidelijk dat hier heel wat code voor nodig is. Alle tekst, die op het canvas geplaatst wordt, moet bijgehouden worden in een lijst of array. Wanneer een \textit{mouse-down} event plaatsvindt, moet berekend worden of de klik daadwerkelijk op een item in het canvas gebeurde. Is dit het geval dan moet de index van het geselecteerde item opgeslagen worden. Bij het triggeren van een \textit{mouse-move} event moeten de co\"{o}rdinaten van dit item aangepast worden naar deze van de cursor, waarna ieder item terug op het canvas getekend moet worden. 
 
 \begin{lstlisting}[language=javascript]
 	document.getElementById('addTextButton').click(function() {
@@ -66,9 +72,14 @@ Naast de mogelijkheid tot inladen van afbeeldingen, kunnen hierop ook filters to
 	\item Ruis
 \end{itemize}
 
-Een belangrijke vereiste is de ondersteuning van lagen aangezien tekst bovenop de afbeelding geplaatst moet kunnen worden. Hiervoor bezit Fabric verschillende methodes. Objecten kunnen een positie hoger of lager in de stack van objecten, die op dat moment op het canvas aanwezig zijn, geplaatst worden met behulp van de \lstinline|sendBackwards(object)| of \lstinline|bringForward(object)| methodes. Deze methodes bezitten een optionele \textit{intersecting} parameter \lstinline{(boolean)} die het object net voor of na het volgende snijdende object in de stack zal plaatsen. 
+Een belangrijke vereiste is de ondersteuning van lagen aangezien tekst bovenop de afbeelding geplaatst moet kunnen worden. Hiervoor bezit Fabric verschillende methodes. Objecten kunnen een positie hoger of lager in de stack van objecten, die op dat moment op het canvas aanwezig zijn, geplaatst worden met behulp van de \lstinline|sendBackwards(object)| of \lstinline|bringForward(object)| methodes. Deze methodes bezitten een optionele \textit{intersecting} parameter \lstinline{(boolean)} die het object net voor of na het volgende snijdende object in de stack zal plaatsen (zie Figuur~\ref{fig:FabricLayers}). 
 
-%AFBEELDING!!!!
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=1\textwidth]{Figuren/FabricLayers.png}
+	\caption{Lagen in Fabric.js} %\cite{Pouladzadeh}
+	\label{fig:FabricLayers}
+\end{figure} 
 
 Het canvas bezit ook twee methodes om objecten volledig onderaan of bovenaan de stack te plaatsen: \lstinline{sendToBack(object)} en \lstinline{bringToFront(object)}. Deze methodes zijn perfect om de afbeelding in te stellen als achtergrond van het canvas. Naast deze methodes bezit het canvas ook een belangrijke property, \lstinline{preserveObjectStacking}. Wanneer \lstinline{true} zal de positie van alle objecten op de stack bewaard blijven. Dit zorgt er voor dat objecten niet plots bovenaan de stack komen te staan als ze geselecteerd worden. Voor uitwerking van het project is de mogelijkheid tot het gebruiken van lagen onontbeerlijk. Het standaard canvas element bezit deze functionaliteit niet, althans niet zo naadloos ge\"{i}mplementeerd. 
 %Het is wel mogelijk met wat tricks (zie sectie over vanilla js/jquery).
@@ -334,10 +345,12 @@ Exporteren van een canvas is niet zo vanzelfsprekend. Uiteraard bezit het canvas
 	\end{center}
 	\end{table} 
 	
+Bij het vergelijken van de bibliotheken is het duidelijk dat elke bibliotheek ongeveer dezelfde functionaliteiten aanbiedt. Wordt gekeken naar de vereisten van het project blijkt Fabric.js toch als winnaar uit de bus te komen. De ondersteuning van interactieve tekst is een grote meerwaarde van deze bibliotheek. 
 	
-// MEER UITLEG GEVEN EN DZEGGEN DAT FABRIC BESTE KEUZE IS!!
+	
+% MEER UITLEG GEVEN EN DZEGGEN DAT FABRIC BESTE KEUZE IS!!
 
-//VERWIJDER DIT!!!
+%VERWIJDER DIT!!! MSS
 
 \subsection{Performantie van beschreven bibliotheken}
 Aangezien het project enkel basis manipulatie van objecten in het canvas vereist, speelt performantie niet zo'n grote rol. Op het canvas zullen op een gegeven tijdstip enkel een afbeelding en wat tekst objecten aanwezig zijn. Dit zal in geen enkel geval invloed hebben op de performantie. 
@@ -392,7 +405,7 @@ Volgend script laadt een afbeelding in, herschaald deze naar de correcte dimensi
 \subsection{Node.js}
 Veel gemakkelijker is het gebruiken van Node.js. Hiermee kan in de backend gebruik gemaakt worden van JavaScript code. Dit betekend dat dezelfde bibliotheken, die gebruikt worden om in de frontend de afbeeldingen te editeren, gebruikt kunnen worden in de backend. Het merendeel van de eerder besproken JavaScript bibliotheken bezit ondersteuning voor Node.js. 
 
-Omdat alle Fabric, Konva en Easel allen gebaseerd zijn op het HTML canvas element, moet ook een canvas implementatie aanwezig zijn voor Node.js. De \lstinline{npm-canvas} \textit{package} is gebaseerd op Cairo, een 2D \textit{graphics} bibliotheek geschreven in C. %https://github.com/Automattic/node-canvas 
+Omdat Fabric, Konva en Easel allen gebaseerd zijn op het HTML canvas element, moet ook een canvas implementatie aanwezig zijn voor Node.js. De \lstinline{npm-canvas} \textit{package} is gebaseerd op Cairo, een 2D \textit{graphics} bibliotheek geschreven in C. %https://github.com/Automattic/node-canvas 
 Konva, Fabric en Easel werken in een Node omgeving hetzelfde als in een frontend omgeving. Een canvas wordt aangemaakt waaraan afbeeldingen, tekst, vormen en animaties toegevoegd kunnen worden. Zowel met Fabric als met Konva is het mogelijk om geserialiseerde data, in JSON formaat, terug om te zetten in een canvas. Bij Easel moeten alle objecten in het canvas opnieuw opgebouwd worden aangezien het met deze bibliotheek niet mogelijk is om JSON data om te zetten naar een canvas. 
 
 Het omzetten van een JSON data naar een afbeelding gebeurt als volgt:
@@ -441,7 +454,12 @@ Hoewel voor Easel een node-wrapper beschikbaar is %https://github.com/CreateJS/E
 \section{Functioneel ontwerp}
 // Insert mockups?
 \newpage
-\section{Afbeelding compressie}
+%\section{Afbeelding compressie}
+
+
+%NAUwKEURIGHEID VAN DE BIBLIOTHEKEN? -> maak afbeelding met zelfde dimensies, zelfde tekst op zelfde plaats (x, y) en vergelijk. (op elkaar leggen om te zien waar ze verschillen?) <- nie echt van toepassing
+
+
 
 
 %

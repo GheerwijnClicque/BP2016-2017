@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016) (preloaded format=pdflatex 2017.3.25)  1 MAY 2017 15:02
+This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016) (preloaded format=pdflatex 2017.3.25)  10 MAY 2017 21:25
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1039,6 +1039,10 @@ LaTeX Warning: Unused global option(s):
 
 LaTeX Warning: Label `ThemeComponentDropdown' multiply defined.
 
+
+LaTeX Warning: Label `lst:ThemeDispatcherEventsThemeAnnotations' multiply defin
+ed.
+
 ) (./Bijlage.aux))
 \openout1 = `totaal.aux'.
 
@@ -1271,61 +1275,65 @@ LaTeX Font Info:    Font shape `OT1/pag/b/n' in size <26> not available
 LaTeX Font Info:    Font shape `OT1/pag/b/n' in size <14> not available
 (Font)              Font shape `OT1/pag/db/n' tried instead on input line 3.
 LaTeX Font Info:    Font shape `OT1/phv/m/it' in size <10.95> not available
-(Font)              Font shape `OT1/phv/m/sl' tried instead on input line 9.
-[1
+(Font)              Font shape `OT1/phv/m/sl' tried instead on input line 7.
+<Figuren/CXSocialLogo.png, id=25, 481.8pt x 105.39375pt>
+File: Figuren/CXSocialLogo.png Graphic file (type png)
+
+<use Figuren/CXSocialLogo.png>
+Package pdftex.def Info: Figuren/CXSocialLogo.png used on input line 15.
+(pdftex.def)             Requested size: 469.47046pt x 102.69977pt.
+LaTeX Font Info:    Font shape `OT1/phv/bx/n' in size <10> not available
+(Font)              Font shape `OT1/phv/b/n' tried instead on input line 16.
+ [1
 
 
 
 
-] <Figuren/Organigram.png, id=31, 1380.15625pt x 777.90625pt>
+ <./Figuren/CXSocialLogo.png>]
+<Figuren/Organigram.png, id=33, 1380.15625pt x 777.90625pt>
 File: Figuren/Organigram.png Graphic file (type png)
 
 <use Figuren/Organigram.png>
-Package pdftex.def Info: Figuren/Organigram.png used on input line 21.
+Package pdftex.def Info: Figuren/Organigram.png used on input line 28.
 (pdftex.def)             Requested size: 469.47046pt x 264.61519pt.
-LaTeX Font Info:    Font shape `OT1/phv/bx/n' in size <10> not available
-(Font)              Font shape `OT1/phv/b/n' tried instead on input line 22.
  [2 <./Figuren/Organigram.png>]
-<Figuren/Inbox.png, id=37, 1844.8925pt x 971.63pt>
+<Figuren/Inbox.png, id=39, 1844.8925pt x 971.63pt>
 File: Figuren/Inbox.png Graphic file (type png)
  <use Figuren/Inbox.png>
-Package pdftex.def Info: Figuren/Inbox.png used on input line 40.
+Package pdftex.def Info: Figuren/Inbox.png used on input line 44.
 (pdftex.def)             Requested size: 469.47046pt x 247.25089pt.
 
-<Figuren/Insights.png, id=38, 1925.1925pt x 1784.6675pt>
+<Figuren/Insights.png, id=40, 1925.1925pt x 1784.6675pt>
 File: Figuren/Insights.png Graphic file (type png)
 
 <use Figuren/Insights.png>
-Package pdftex.def Info: Figuren/Insights.png used on input line 49.
+Package pdftex.def Info: Figuren/Insights.png used on input line 53.
 (pdftex.def)             Requested size: 469.47046pt x 435.19136pt.
  [3 <./Figuren/Inbox.png>]
-<Figuren/Performance.png, id=43, 1926.19624pt x 1049.9225pt>
+<Figuren/Performance.png, id=45, 1926.19624pt x 1049.9225pt>
 File: Figuren/Performance.png Graphic file (type png)
 
 <use Figuren/Performance.png>
-Package pdftex.def Info: Figuren/Performance.png used on input line 58.
+Package pdftex.def Info: Figuren/Performance.png used on input line 62.
 (pdftex.def)             Requested size: 469.47046pt x 255.89555pt.
  [4 <./Figuren/Insights.png>] [5 <./Figuren/Performance.png>]
 Hoofdstuk 2.
-<Figuren/EditThemeMockup.png, id=52, 1044.90375pt x 837.1275pt>
+<Figuren/EditThemeMockup.png, id=54, 1044.90375pt x 837.1275pt>
 File: Figuren/EditThemeMockup.png Graphic file (type png)
 
 <use Figuren/EditThemeMockup.png>
-Package pdftex.def Info: Figuren/EditThemeMockup.png used on input line 76.
+Package pdftex.def Info: Figuren/EditThemeMockup.png used on input line 82.
 (pdftex.def)             Requested size: 281.68513pt x 225.66978pt.
  [6
 
- <./Figuren/EditThemeMockup.png>]
-Hoofdstuk 3.
-) [7
-
-]
+ <./Figuren/EditThemeMockup.png>]) [7]
 \openout2 = `Deel2.aux'.
 
- (./Deel2.tex
-Hoofdstuk 4.
 
-Underfull \hbox (badness 10000) in paragraph at lines 13--15
+(./Deel2.tex
+Hoofdstuk 3.
+
+Underfull \hbox (badness 10000) in paragraph at lines 15--17
 []\OT1/phv/b/n/10.95 Functionaliteit 
  []
 
@@ -1334,38 +1342,45 @@ Underfull \hbox (badness 10000) in paragraph at lines 13--15
 
 
 ]
-LaTeX Font Info:    Try loading font information for OT1+pcr on input line 28.
+LaTeX Font Info:    Try loading font information for OT1+pcr on input line 32.
  (/usr/local/texlive/2016/texmf-dist/tex/latex/psnfss/ot1pcr.fd
 File: ot1pcr.fd 2001/06/04 font definitions for OT1/pcr.
 )
 LaTeX Font Info:    Font shape `OT1/pcr/bx/n' in size <10> not available
-(Font)              Font shape `OT1/pcr/b/n' tried instead on input line 28.
-LaTeX Font Info:    Try loading font information for TS1+pcr on input line 45.
+(Font)              Font shape `OT1/pcr/b/n' tried instead on input line 32.
+LaTeX Font Info:    Try loading font information for TS1+pcr on input line 51.
 
 (/usr/local/texlive/2016/texmf-dist/tex/latex/psnfss/ts1pcr.fd
 File: ts1pcr.fd 2001/06/04 font definitions for TS1/pcr.
-) [9] [10]
-Underfull \hbox (badness 10000) in paragraph at lines 78--80
+) [9]
+<Figuren/FabricLayers.png, id=71, 818.05624pt x 307.1475pt>
+File: Figuren/FabricLayers.png Graphic file (type png)
+
+<use Figuren/FabricLayers.png>
+Package pdftex.def Info: Figuren/FabricLayers.png used on input line 79.
+(pdftex.def)             Requested size: 469.47046pt x 176.271pt.
+ [10 <./Figuren/FabricLayers.png>]
+Underfull \hbox (badness 10000) in paragraph at lines 89--91
 []\OT1/phv/b/n/10.95 Gebruiksgemak 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 92--94
+Underfull \hbox (badness 10000) in paragraph at lines 103--105
 []\OT1/phv/b/n/10.95 Serialisatie \OT1/phv/m/n/10.95 [[]] 
  []
 
 [11] [12]
-Underfull \hbox (badness 10000) in paragraph at lines 138--140
+Underfull \hbox (badness 10000) in paragraph at lines 149--151
 []\OT1/phv/b/n/10.95 Functionaliteit 
  []
 
 [13] [14]
-Underfull \hbox (badness 10000) in paragraph at lines 171--175
+Underfull \hbox (badness 10000) in paragraph at lines 182--186
 []\OT1/phv/b/n/10.95 Gebruiksgemak 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 176--178
+Underfull \hbox (badness 10000) in paragraph at lines 187--189
 []\OT1/phv/b/n/10.95 Serialisatie 
  []
 
@@ -1375,37 +1390,37 @@ File: lstlang1.sty 2015/06/04 1.6 listings language file
 (/usr/local/texlive/2016/texmf-dist/tex/latex/listings/lstmisc.sty
 File: lstmisc.sty 2015/06/04 1.6 (Carsten Heinz)
 )
-Underfull \hbox (badness 10000) in paragraph at lines 247--249
+Underfull \hbox (badness 10000) in paragraph at lines 258--260
 []\OT1/phv/b/n/10.95 Functionaliteit 
  []
 
 [16]
-Underfull \hbox (badness 10000) in paragraph at lines 256--259
+Underfull \hbox (badness 10000) in paragraph at lines 267--270
 []\OT1/phv/b/n/10.95 Gebruiksgemak 
  []
 
 [17]
-Underfull \hbox (badness 10000) in paragraph at lines 263--265
+Underfull \hbox (badness 10000) in paragraph at lines 274--276
 []\OT1/phv/b/n/10.95 Serialisatie 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 274--276
+Underfull \hbox (badness 10000) in paragraph at lines 285--287
 []\OT1/phv/b/n/10.95 Functionaliteit 
  []
 
 [18]
-Underfull \hbox (badness 10000) in paragraph at lines 291--293
+Underfull \hbox (badness 10000) in paragraph at lines 302--304
 []\OT1/phv/b/n/10.95 Gebruiksgemak 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 296--298
+Underfull \hbox (badness 10000) in paragraph at lines 307--309
 []\OT1/phv/b/n/10.95 Serialisatie 
  []
 
 [19]
-Overfull \hbox (244.54375pt too wide) in paragraph at lines 304--332
+Overfull \hbox (244.54375pt too wide) in paragraph at lines 315--343
  [] 
  []
 
@@ -1415,30 +1430,36 @@ File: lstlang1.sty 2015/06/04 1.6 listings language file
 (/usr/local/texlive/2016/texmf-dist/tex/latex/listings/lstlang2.sty
 File: lstlang2.sty 2015/06/04 1.6 listings language file
 )
-<Figuren/PHP_rendering.jpeg, id=104, 1505.625pt x 501.875pt>
+<Figuren/PHP_rendering.jpeg, id=108, 1505.625pt x 501.875pt>
 File: Figuren/PHP_rendering.jpeg Graphic file (type jpg)
 
 <use Figuren/PHP_rendering.jpeg>
-Package pdftex.def Info: Figuren/PHP_rendering.jpeg used on input line 379.
+Package pdftex.def Info: Figuren/PHP_rendering.jpeg used on input line 392.
 (pdftex.def)             Requested size: 469.47046pt x 156.49094pt.
  [21] [22 <./Figuren/PHP_rendering.jpeg>]
-[23] [24]) [25]
+[23] [24])
 \openout2 = `Deel3.aux'.
 
  (./Deel3.tex
-Hoofdstuk 5.
-[26
+Hoofdstuk 4.
+[25
 
 
 
-] [27] [28] [29] [30] [31] [32]) [33] (./totaal.bbl
+] [26] [27] [28] [29] [30] [31] [32]
+Overfull \hbox (5.4142pt too wide) in paragraph at lines 272--273
+[]\OT1/phv/m/n/10.95 Voor het op-ha-len van an-no-ta-ties zor-gen de [][][][][]
+[][][][][][][] en [][][][][][][]
+ []
+
+[33] [34]) [35] (./totaal.bbl
 Underfull \hbox (badness 2671) in paragraph at lines 10--13
 []\OT1/phv/m/n/10.95 Clarabridge, ``Cus-to-mer ex-pe-rience ma-na-ge-ment soft-
 ware - cla-ra-bridge.'' $\OT1/pcr/m/n/10.95 https : / /
  []
 
 
-Underfull \hbox (badness 3179) in paragraph at lines 75--79
+Underfull \hbox (badness 3179) in paragraph at lines 78--82
 \OT1/phv/m/n/10.95 ele-ment - web apis.'' $\OT1/pcr/m/n/10.95 https : / / devel
 oper . mozilla . org / en-[]US / docs / Web / API /
  []
@@ -1448,7 +1469,7 @@ oper . mozilla . org / en-[]US / docs / Web / API /
 
 
 ]
-Underfull \hbox (badness 10000) in paragraph at lines 116--120
+Underfull \hbox (badness 10000) in paragraph at lines 119--123
 []\OT1/phv/m/n/10.95 lannymcnie, ``Svg-ex-por-ter.'' $\OT1/pcr/m/n/10.95 https 
 : / / github . com / CreateJS / EaselJS / tree /
  []
@@ -1473,13 +1494,13 @@ LaTeX Warning: There were multiply-defined labels.
 ### simple group (level 1) entered at line 1061 ({)
 ### bottom level 
 Here is how much of TeX's memory you used:
- 28902 strings out of 493014
- 506322 string characters out of 6133351
- 939129 words of memory out of 5000000
- 31883 multiletter control sequences out of 15000+600000
+ 28946 strings out of 493014
+ 507113 string characters out of 6133351
+ 932305 words of memory out of 5000000
+ 31925 multiletter control sequences out of 15000+600000
  41561 words of font info for 82 fonts, out of 8000000 for 9000
  1219 hyphenation exceptions out of 8191
- 53i,12n,92p,10405b,11348s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 53i,12n,92p,10405b,11358s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/local/texlive/2016/texmf-dist/fonts/enc/dvips/base/8r.enc
 }</usr/local/texlive/2016/texmf-dist/fonts/type1/urw/avantgar/uagd8a.pfb></usr/
 local/texlive/2016/texmf-dist/fonts/type1/urw/avantgar/uagk8a.pfb></usr/local/t
@@ -1488,10 +1509,10 @@ exlive/2016/texmf-dist/fonts/type1/urw/courier/ucrb8a.pfb></usr/local/texlive/2
 f-dist/fonts/type1/urw/helvetic/uhvb8a.pfb></usr/local/texlive/2016/texmf-dist/
 fonts/type1/urw/helvetic/uhvr8a.pfb></usr/local/texlive/2016/texmf-dist/fonts/t
 ype1/urw/helvetic/uhvro8a.pfb>
-Output written on totaal.pdf (42 pages, 3506903 bytes).
+Output written on totaal.pdf (44 pages, 3955746 bytes).
 PDF statistics:
- 183 PDF objects out of 1000 (max. 8388607)
- 118 compressed objects within 2 object streams
+ 194 PDF objects out of 1000 (max. 8388607)
+ 123 compressed objects within 2 object streams
  0 named destinations out of 1000 (max. 500000)
- 36 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 46 words of extra memory for PDF output out of 10000 (max. 10000000)
 

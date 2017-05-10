@@ -5,7 +5,7 @@ Het annoteren van afbeeldingen is \'{e}\'{e}n van de onderdelen binnen de \texti
 
 
 \section{Frontend implementatie}
-\subsection{Creatie van een thema}
+\subsection{Aanmaken van een thema}
 Een groot deel van de frontend code van CX Social is geschreven met React. Met React kunnen makkelijk componenten aangemaakt worden om zo complexe interfaces aan te maken. %2o zijn er heel wat componenten beschikbaar waarmee gemakkelijk functionaliteit aan een pagina kan toegevoegd worden.
 Eens een thema aangemaakt is, kan het later ook aangepast worden. Omdat dezelfde functionaliteit op twee verschillende pagina's nodig is, wordt hiervoor een React component aangemaakt: de \lstinline{Theme} component. Bij het aanmaken van de component dienen enkele eigenschappen meegegeven te worden. Eerst en vooral wordt het, uit de databank opgehaalde, thema meegegeven indien dit beschikbaar is. %ADD SOME INFO OVER HOW IT IS IN VIEW, WHEN NO THEME IS SELECTED!
 Het account \textit{Identity Document} (ID), \textit{Cross-site requrest forgery} (CSRF) token, beschikbare services, en de annotatiepermissie zijn verplichte eigenschappen van de component. Deze eigenschappen zullen nooit veranderen tijdens de levensduur van het component, het zijn dus constanten. Het CSRF token wordt aan het formulier toegevoegd om ongeauthoriseerde acties in applicaties te voorkomen. Met het token wordt ervoor gezorgd dat geen ongeldige \textit{requests} gemaakt kunnen worden. %http://stackoverflow.com/questions/5207160/what-is-a-csrf-token-what-is-its-importance-and-how-does-it-work
@@ -22,7 +22,7 @@ Niet elke gebruiker heeft dezelfde rechten in CX Social. Binnen een bepaald plan
 </select>
 \end{lstlisting}
 
-Naast het ingeven van een naam en \textit{service} voor het thema, kunnen ook een omslag-en profielfoto toegevoegd worden. Het uploaden van de afbeeldingen wordt afgehandeld door een reeds bestaande component. Deze zal een, door de gebruiker geselecteerde, foto uploaden naar de \textit{fileserver} en op de pagina weergeven. Eens een afbeelding aanwezig is, is het mogelijk om annotaties toe te voegen. Om een afbeelding te annoteren wordt een pop-upvenster geopend. Aangezien deze pop-up een volledig nieuwe \textit{template}is, dienen enkele eigenschappen van het thema meegegeven te worden. Als parameters in de URL worden zowel de \textit{service} als de bestandsnaam van de afbeelding op de fileserver meegegeven. Beide parameters zijn nodig om het canvas op te stellen. De \textit{service} bepaald immers de dimensies van het canvas aangezien deze verschillen voor zowel Facebook als Twitter. Via de bestandsnaam kan de correcte afbeelding ingeladen worden in het pop-upvenster.
+Naast het ingeven van een naam en \textit{service} voor het thema, kunnen ook een omslag-en profielfoto toegevoegd worden. Het uploaden van de afbeeldingen wordt afgehandeld door een reeds bestaande component. Deze zal een, door de gebruiker geselecteerde, foto uploaden naar de \textit{fileserver} en op de pagina weergeven. Eens een afbeelding aanwezig is, is het mogelijk om annotaties toe te voegen. Om een afbeelding te annoteren wordt een pop-upvenster geopend. Aangezien deze pop-up een volledig nieuwe \textit{template} is, dienen enkele eigenschappen van het thema meegegeven te worden. Als parameters in de URL worden zowel de \textit{service} als de bestandsnaam van de afbeelding op de fileserver meegegeven. Beide parameters zijn nodig om het canvas op te stellen. De \textit{service} bepaald immers de dimensies van het canvas aangezien deze verschillen voor zowel Facebook als Twitter. Via de bestandsnaam kan de correcte afbeelding ingeladen worden in het pop-upvenster.
 
 Zoals reeds besproken in sectie \ref{vergelijkingBibliotheken}, lijkt Fabric.js de beste keuze te zijn om dit project uit te werken. Aangezien niet alle functionaliteit van deze bibliotheek van toepassing zijn op dit project, wordt een \textit{custom build} aangemaakt. Deze bevat de tekst, interactieve tekst, animatie, serialisatie, interactie en node \textit{features}. Bij het openen van het pop-upvenster wordt het \lstinline{ThemeAnnotations} component ge\"{i}nitialiseerd met de nodige eigenschappen. Deze zijn het account ID, de bestandsnaam van de afbeelding, de \textit{service} en een kleurenpallet. Tussen deze kleuren en eender welke hexadecimale waarde kan gekozen worden tijdens het stylen van de annotaties.
 
@@ -80,9 +80,12 @@ componentDidMount: function () {
 }
 \end{lstlisting}
 
-Eens het canvas bestaat, kunnen objecten toegevoegd worden. Met behulp van de \lstinline{fromUrl(url, callback)} methode van het \textit{Image} object kan een afbeelding aan het canvas toegevoegd worden. De URL wordt simpelweg opgesteld aan de hand van de meegegeven bestandsnaam. Eens de afbeelding ingeladen is worden enkele transformaties uitgevoerd om de afbeelding gepast weer te geven. Zo wordt de afbeelding gecentreerd, geschaald tot de volledige breedte van het canvas en naar de achtergrond van het canvas geplaatst. Deze transformaties zorgen ervoor dat het volledige canvas bedekt wordt door de afbeelding en dat alle andere objecten, zoals tekst en KPI's, bovenop de afbeelding terecht zullen komen. ZIE BIJLAGE HANDLEANNOTATIONS FUNCTION VANAF REGEL ..... (gwn inladen van afbeelding)
+Eens het canvas bestaat, kunnen objecten toegevoegd worden. Met behulp van de \lstinline{fromUrl(url, callback)} methode van het \textit{Image} object kan een afbeelding aan het canvas toegevoegd worden. De URL wordt simpelweg opgesteld aan de hand van de meegegeven bestandsnaam. Eens de afbeelding ingeladen is worden enkele transformaties uitgevoerd om de afbeelding gepast weer te geven. Zo wordt de afbeelding gecentreerd, geschaald tot de volledige breedte van het canvas en naar de achtergrond van het canvas geplaatst. Deze transformaties zorgen ervoor dat het volledige canvas bedekt wordt door de afbeelding en dat alle andere objecten, zoals tekst en KPI's, bovenop de afbeelding terecht zullen komen. 
 
-Gewone tekst wordt als een \lstinline{IText} object toegevoegd aan het canvas. Hierdoor is de gebruiker in staat om de tekst aan te passen in het canvas zelf en hoeft dus geen extra inputveld te worden voorzien. Een tekst object wordt als volgt aan het canvas toegevoegd:
+
+%ZIE BIJLAGE HANDLEANNOTATIONS FUNCTION VANAF REGEL ..... (gwn inladen van afbeelding)
+
+Gewone tekst wordt als een \lstinline{IText} object toegevoegd aan het canvas. Hierdoor is de gebruiker in staat om de tekst aan te passen in het canvas zelf en hoeft dus geen extra inputveld te worden voorzien. Net zoals de afbeelding naar de achtergrond wordt gestuurd, worden tekst objecten naar de voorgrond gebracht met behulp van de \lstinline{bringToFront()} functie van het canvas. Een tekst object wordt als volgt aan het canvas toegevoegd:
 
 \begin{lstlisting}[language=javascript]
 var text = new fabric.IText('click here to add your text', {
@@ -105,8 +108,8 @@ this.canvas.bringToFront(text);
 
 Naast de standaard eigenschappen zoals tekstgrootte, lettertype en positie op het canvas bevat het object een extra \lstinline{textType} eigenschap. Deze maakt duidelijk dat het om gewoon tekst object gaat en niet over een KPI. Na het toevoegen van het object aan het canvas wordt het naar de voorgrond gebracht om er zeker van te zijn dat de tekst bovenop de afbeelding terecht komt. 
 
-De gebruiker kan kiezen tussen vier verschillende soorten KPI's: respons tijdens het laatste uur, respons tijdens de laatste dag, geholpen gebruikers de laatste dag en geholpen gebruikers de laatste zeven dagen. Bij het toevoegen van een KPI aan het canvas moet het soort KPI dus ook opgeslagen worden.% Ook dient een waarde toegekend te worden zodat de gebruiker een idee heeft van de uiteindelijke afbeelding. 
-Wat een probleem vormde tijdens de uitwerking was de positionering van de KPI's. Aangezien dit variabele getallen zijn, is een getal van vier of vijf cijfers lang niet uit te sluiten. Hoewel de inhoud van een \lstinline{IText} object uit te lijnen is (links, rechts of gecenteerd), is dit pas merkbaar bij tekst bestaande uit meerdere lijnen. Daarom wordt geopteerd voor een \lstinline{Textbox} object om de KPI's weer te geven. Tijdens het initialiseren van dit object kan de breedte ingesteld worden waardoor ook een enkel woord uitgelijnd kan worden. Via een \textit{switch} statement wordt de correcte type KPI aan het object toegekend (zie onderstaand code fragment). 
+De gebruiker kan kiezen tussen vier verschillende soorten KPI's: 'respons tijdens het laatste uur', 'respons tijdens de laatste dag', 'geholpen gebruikers de laatste dag' en 'geholpen gebruikers de laatste zeven dagen'. Bij het toevoegen van een KPI aan het canvas moet het soort KPI dus ook opgeslagen worden.% Ook dient een waarde toegekend te worden zodat de gebruiker een idee heeft van de uiteindelijke afbeelding. 
+Wat een probleem vormt tijdens de uitwerking is de positionering van de KPI's. Aangezien dit variabele getallen zijn, is een getal van vier of vijf cijfers lang niet uit te sluiten. Hoewel de inhoud van een \lstinline{IText} object uit te lijnen is (links, rechts of gecenteerd), is dit pas merkbaar bij tekst bestaande uit meerdere lijnen. Daarom wordt geopteerd voor een \lstinline{Textbox} object om de KPI's weer te geven. Tijdens het initialiseren van dit object kan de breedte ingesteld worden waardoor ook een enkel woord uitgelijnd kan worden. Via een \textit{switch} statement wordt de correcte type KPI aan het object toegekend (zie onderstaand code fragment). 
 
 \begin{lstlisting}[language=javascript]
 var mockValue = '';
@@ -143,12 +146,11 @@ this.canvas.add(KPI);
 this.canvas.bringToFront(KPI);
 \end{lstlisting}
 
-%MAYBE DELETE
-Gebruikers zijn ook in staat om een \textit{template} te gebruiken. Dit zal enkele tekst objecten op het canvas plaatsen alsook de gekozen KPI. Alle elementen worden gecentreerd op het canvas en kunnen door de gebruiker zelf nog aangepast worden. 
-% De \lstinline{lockUniScaling} eigenschap zal ervoor zorgen <- zet bij bespreken van scalen!
+%ADD CoDE FRAGMENT TO DIS OR JUST DELETE?
+Gebruikers kunnen ook een \textit{template} gebruiken. Dit zal enkele tekst objecten op het canvas plaatsen alsook de gekozen KPI. Zo kunnen gebruikers zeer eenvoudig hun afbeeldingen annoteren met bijvoorbeeld: 'We took care of 500 customers last week'. Alle elementen worden gecentreerd op het canvas en kunnen door de gebruiker zelf nog aangepast worden. 
 
-\subsection{Teksteditor????}
-\"{E}\"{e}n van de \textit{features} tijdens het annoteren van een afbeelding is het stylen van de tekst. Zo is het mogelijk eigenschappen zoals tekstgrootte, lettertype, kleur en gewicht (vet of schuin) aan te passen. Om dit op een modulaire manier te verwezenlijken, wordt gebruik gemaakt van een React component. Aan de \lstinline{TextEditor} component worden enkele eigenschappen meegegeven om een bestaand tekst object aan te kunnen passen. Onder deze eigenschappen valt een \lstinline{onChange()} functie, een \lstinline{currentSettings} object en een \lstinline{selectedColor} string. Wanneer een object in het canvas wordt geselecteerd, wordt het  \lstinline{object:selected} event getriggered. In de \textit{handler} van dit event wordt, na confirmatie dat het om een tekst object gaat, de state van de \lstinline{Theme} component aangepast naar de huidige instellingen van het object: 
+\subsection{Editeren van tekst}
+\"{E}\"{e}n van de \textit{features} tijdens het annoteren van een afbeelding is het stylen van de tekst. Dit maakt het mogelijk eigenschappen zoals tekstgrootte, lettertype, kleur en gewicht (vet of schuin) aan te passen. Om dit op een modulaire manier te verwezenlijken, wordt gebruik gemaakt van een React component. Aan de \lstinline{TextEditor} component worden enkele eigenschappen meegegeven om een bestaand tekst object aan te kunnen passen. Onder deze eigenschappen valt een \lstinline{onChange()} functie, een \lstinline{currentSettings} object en een \lstinline{selectedColor} string. Wanneer een object in het canvas wordt geselecteerd, wordt het  \lstinline{object:selected} event getriggered. In de \textit{handler} van dit event wordt, na confirmatie dat het om een tekst object gaat, de state van de \lstinline{Theme} component aangepast naar de huidige instellingen van het object: 
 
 \begin{lstlisting}[language=javascript]
 this.canvas.on({'object:selected': function () {
@@ -169,8 +171,8 @@ this.canvas.on({'object:selected': function () {
 	}}.bind(this)
 });
 \end{lstlisting}
-~\ref{lst:ThemeComponentTextEditor}
-De update van de state zal ervoor zorgen dat de component opnieuw gerendered wordt. Met behulp van een check in de \lstinline{render} functie van de \lstinline{Theme} component kan de \lstinline{TextEditor} component ge\"{i}nitialiseerd worden met de nodige eigenschappen [\ref{lst:ThemeComponentTextEditor}]. De belangrijkste eigenschap is de \lstinline{onChange()} functie die vanuit de \lstinline{TextEditor} component getriggered kan worden. Het triggeren gebeurt wanneer een inputveld van de editor verandert. De huidige instellingen worden opgehaald en de nodige aanpassingen worden gemaakt. Uiteindelijk wordt de state aangepast en wordt de \lstinline{onChange()} functie aageroepen met de nieuwe instellingen als parameter [\ref{lst:TextEditorComponentBold}]. Bij het triggeren van de \lstinline{onChange()} zal het geselecteerde object in de \lstinline{Theme} component aangepast worden met de nieuwe instellingen. Hierna wordt de \lstinline{renderAll()} functie van het Fabric.js canvas aangeroepen om de aangepassingen op het canvas te tonen [\ref{lst:ThemeComponentTextEditor}].
+
+De update van de state zal ervoor zorgen dat de component opnieuw gerendered wordt. Met behulp van een check in de \lstinline{render} functie van de \lstinline{Theme} component kan de \lstinline{TextEditor} component ge\"{i}nitialiseerd worden met de nodige eigenschappen (codefragment \ref{lst:ThemeComponentTextEditor}). De belangrijkste eigenschap is de \lstinline{onChange()} functie die vanuit de \lstinline{TextEditor} component getriggered kan worden. Het triggeren gebeurt wanneer een inputveld van de editor verandert. De huidige instellingen worden opgehaald en de nodige aanpassingen worden gemaakt. Uiteindelijk wordt de state aangepast en wordt de \lstinline{onChange()} functie aageroepen met de nieuwe instellingen als parameter (codefragment \ref{lst:TextEditorComponentBold}). Bij het triggeren van de \lstinline{onChange()} zal het geselecteerde object in de \lstinline{Theme} component aangepast worden met de nieuwe instellingen. Hierna wordt de \lstinline{renderAll()} functie van het Fabric.js canvas aangeroepen om de aangepassingen op het canvas te tonen (codefragment \ref{lst:ThemeComponentTextEditor}).
 
 \begin{lstlisting}[caption={Theme component - Text editor},label=lst:ThemeComponentTextEditor,language=javascript]
 <TextEditor onChange={function (value) {
@@ -201,12 +203,12 @@ De update van de state zal ervoor zorgen dat de component opnieuw gerendered wor
 </li>
 \end{lstlisting}
 
-// THEME DISPATCHER???
+% THEME DISPATCHER???
 
-\subsection{Schalen van tekst????}
-Objecten in het canvas kunnen onmiddellijk verplaatst, geschaald en geroteerd worden met Fabric.js. Zo kan de gebruiker zeer gemakkelijk de achtergrond afbeelding naar wens manipularen. Enkel het schalen van tekst en KPI's vormt een probleem. Wanneer een tekst object namelijk geschaald wordt, wordt de lettergrootte niet aangepast. Het schalen zorgt er enkel voor dat er als het ware wordt ingezoomd op het object zelf. Tijdens het ontwerpen van een canvas (clientside) vormt dit geen probleem maar wanneer de afbeelding moet gegenereerd worden in de backend kan dit problematisch zijn. Alle eigenschappen van het object (hoogte, breedte, positie) zullen namelijk ook met dezelfde schaalfactor vermenigvuldigd worden. Wanneer de positionering dan nog eens vermenigvuldigd wordt met de ratio (zie \ref{AnnoterenVanAfbeelding}), kan het voorkomen dat enkele negatieve waarden bekomen worden. Dit vormt vooral een probleem wanneer tekst op de uitersten van het canvas (dus bijvoorbeeld in hoekpunten) geplaatst wordt. 
+\subsection{Transformaties van tekst}
+Objecten in het canvas kunnen onmiddellijk verplaatst, geschaald en geroteerd worden. Zo kan de gebruiker zeer gemakkelijk de achtergrondafbeelding herpositioneren en herschalen. Enkel het schalen van tekst en KPI's vormt een probleem in de Fabric bibliotheek. Wanneer een tekst object namelijk geschaald wordt, wordt de lettergrootte niet aangepast. Het schalen zorgt er enkel voor dat er als het ware wordt ingezoomd op het object zelf. Tijdens het ontwerpen van een canvas (clientside) vormt dit geen probleem maar wanneer de afbeelding moet gegenereerd worden in de backend kan dit problematisch zijn. Dan moet immers een canvas aangemaakt worden met grotere afmetingen zodat de afbeelding in volledige resolutie bekomen wordt.  Alle eigenschappen van ieder object (hoogte, breedte, positie) zullen dan ook met dezelfde schaalfactor (als het canvas) vermenigvuldigd worden om een correcte afbeelding te verkrijgen. Wanneer de positionering dan nog eens vermenigvuldigd wordt met het berekende ratio (zie \ref{AnnoterenVanAfbeelding}), kan het voorkomen dat negatieve waarden bekomen worden. Dit vormt vooral een probleem wanneer tekst op de uitersten van het canvas (dus bijvoorbeeld in hoekpunten) geplaatst wordt. 
 
-Om dit te voorkomen wordt ervoor gezorgd dat tekst in het canvas op een andere manier schaalt. Door gebruik te maken van het \lstinline{object:scaling} event wordt de tekstgrootte aangepast in plaats van de schaal van het object (zie \ref{lst:ThemeAnnotationsScalingText}). Bij het triggeren van het event wordt gekeken of het wel degelijk om een tekst object gaat (de afbeelding kan immers normaal geschaald worden). Daarna wordt de huidige tekstgrootte vermenigvuldigd met de horizontale schalingsfactor (merk op: de horizontale schalingsfactor wordt gebruikt omdat de \lstinline{lockUniScaling} eigenschap van het object actief is waardoor zowel x-als y-as met dezelfde factor geschaald worden). Uiteindelijk wordt de tekstgrootte afgerond naar een geheel getal omdat pixels als eenheid gebruikt worden. Zowel de horizontale als verticale schaal wordt opnieuw op 1 geplaatst om eerder beschreven probleem met schaling te voorkomen. 
+Om dit te voorkomen wordt ervoor gezorgd dat tekst in het canvas op een andere manier schaalt. Door gebruik te maken van het \lstinline{object:scaling} event wordt de tekstgrootte aangepast in plaats van de schaal van het object (zie codefragment \ref{lst:ThemeAnnotationsScalingText}). Bij het triggeren van het event wordt gekeken of het wel degelijk om een tekst object gaat (de afbeelding kan immers normaal geschaald worden). Daarna wordt de huidige tekstgrootte vermenigvuldigd met de horizontale schalingsfactor (merk op: de horizontale schalingsfactor wordt gebruikt omdat de \lstinline{lockUniScaling} eigenschap van het object actief is waardoor zowel x-als y-as met dezelfde factor geschaald worden). Uiteindelijk wordt de tekstgrootte afgerond naar een geheel getal omdat pixels als eenheid gebruikt worden. Zowel de horizontale als verticale schaal wordt opnieuw op 1 geplaatst om eerder beschreven probleem met schaling te voorkomen. 
 
 \begin{lstlisting}[caption={ThemeAnnotations component - text scaling},label=lst:ThemeAnnotationsScalingText,language=javascript]
 this.canvas.on('object:scaling', function (e) {
@@ -229,7 +231,7 @@ this.canvas.on('object:scaling', function (e) {
 }.bind(this));
 \end{lstlisting}
 
-\subsection{Verwijderen van objecten en groepen???? MSS WEGLATEN?}
+\subsection{Verwijderen van objecten}
 Naast het toevoegen van tekst moet de gebruiker in staat zijn om tekst te verwijderen. De Fabric.js bibliotheek bezit hiervoor reeds de benodigde functionaliteit. Via de \lstinline{remove()} functie van het canvas, kan een object van het canvas verwijdert worden. Gebruikers mogen niet in staat zijn om de afbeelding te verwijderen dus moet eerst bepaald worden of de geselecteerde objecten wel degelijk tekst objecten zijn. Wanneer slechts \'{e}\'{e}n object geselecteerd wordt, is dit eenvoudig te verwezenlijken. Moeilijker wordt het wanneer meerdere objecten geselecteerd worden. Hiervoor moeten alle objecten in de actieve groep (de geselecteerde objecten) overlopen worden. Wanneer het type van de objecten overeen komt met deze van tekst, kan het object verwijdert worden. 
 
 \begin{lstlisting}[caption={ThemeAnnotations component - delete group},label=lst:ThemeAnnotationsDeleteGroup,language=javascript]
@@ -243,26 +245,114 @@ if (this.canvas.getActiveGroup()) {
 }
 \end{lstlisting}
 
-\subsection{Importeren van bestaande annotaties??????!!!?????}
-Logischerwijze kan een thema later aangepast worden. Vanuit de databank wordt alle informatie van het thema aan de \lstinline{Theme} component meegegeven. Om de annotaties aan te passen, moeten deze dus vanuit de \lstinline{Theme} component doorgestuurd worden naar het pop-upvenster, de \lstinline{ThemeAnnotations} component. In eerste instatie lijkt de eenvoudigste oplossing om alle vereiste informatie van het thema mee te geven als URL parameters aan de pop-up. Dit vormt geen probleem voor de bestandsnaam van de afbeelding en de service maar het doorsturen van JSON data in de URL kan voor problemen zorgen. Hoewel geen limiet staat op de lengte van een URL ( -> RFC7230) BLABLABLA %https://tools.ietf.org/html/rfc7230#section-3.1.1
+\subsection{Importeren van een canvas}
+Logischerwijze kan een thema later aangepast worden. Vanuit de databank wordt alle informatie van het thema aan de \lstinline{Theme} component meegegeven. Om de annotaties aan te passen, moeten deze dus vanuit de \lstinline{Theme} component doorgestuurd worden naar het pop-upvenster, de \lstinline{ThemeAnnotations} component. In eerste instantie lijkt de eenvoudigste oplossing om de vereiste informatie van het thema mee te geven als URL parameters aan de pop-up. Dit vormt geen probleem voor de bestandsnaam van de afbeelding en de service maar het doorsturen van een lange JSON string in de URL is niet bepaald handig. Volgens het RFC7230 document moeten alle Hypertext Transfer Protocol (HTTP) zenders en ontvangers \textit{request lines} van minimaal 8000 octetten (8 bits) lang \cite{RFC7230}. Of dit daadwerkelijk het geval is hangt af van gebruikte software. %mss http://stackoverflow.com/questions/417142/what-is-the-maximum-length-of-a-url-in-different-browsers met de tests?
+Hoewel dus geen limiet staat op de lengte van een URL is het aangeraden om niet meer dan 2000 karakters te gebruiken. Dit verzekerd dat elke client-en serverside combinatie de URL kan verwerken. %http://stackoverflow.com/questions/29458445/what-is-a-safe-maximum-length-a-segment-in-a-url-path-should-be/33733386#33733386
 
-ThemeDispatcher....
+Om de annotaties over te brengen naar de \lstinline{ThemeAnnotations} component wordt gebruik gemaakt van events. Een globaal \lstinline{ThemeDispatcher} object wordt gedefinieerd waar verschillende events aan toegevoegd worden. Wanneer de \lstinline{Theme} component gemount is, worden de nodige events aangemaakt in de \lstinline{ThemeDispatcher} (zie codefragment \ref{lst:ThemeDispatcherEventsTheme}). Ook worden de nodige \textit{handlers} voor deze events uitgewerkt.
 
+\begin{lstlisting}[caption={Theme component - events},label=lst:ThemeDispatcherEventsTheme,language=javascript]
+componentDidMount: function () {
+	$(ThemeDispatcher).on('annotations', this.annotationHandler);
+	$(ThemeDispatcher).on('request-annotations', this.requestHandler);
+},
+requestsHandler: function () {
+	$(ThemeDispatcher).trigger('response-annotations', this.getAnnotations());
+},
+annotationHandler: function (event, annotations) {
+	this.setState({annotations: annotations});
+},
+getAnnotations: function () {
+	return (
+		this.state.annotations || this.props.annotations
+	);
+},
+\end{lstlisting}
 
-\subsection{Exporteren van het canvas????}
+Voor het ophalen van annotaties zorgen de \lstinline{'request-annotations'} en \lstinline{'response-annotations'} events. Bij het afhandelen van het \textit{request} event wordt onmiddellijk een \textit{response} gestuurd naar de \lstinline{ThemeAnnotations} component met ofwel de annotaties uit de database of de reeds aangepaste annotaties uit de state. 
 
+\begin{lstlisting}[caption={ThemeAnnotations component - events},label=lst:ThemeDispatcherEventsThemeAnnotations,language=javascript]
+componentDidMount: function () {
+  	$(ThemeDispatcher).on('response-annotations', this.handleAnnotations);
+	$(ThemeDispatcher).trigger('request-annotations');
+},
+onSubmit: function (e) {
+	e.preventDefault();
+	$(ThemeDispatcher).trigger('annotations', this.exportCanvas());
+},
+\end{lstlisting}
+
+Bij het ontvangen van de annotaties worden deze ingeladen in het canvas met behulp van de \lstinline{loadFromJSON()} functie. Na het inladen van alle objecten in het canvas, moeten nog enkele objecten aangepast worden. Tijdens het opslaan van het canvas worden alle objecten met hun eigenschappen geserialiseerd, dus ook de link naar de achtergrondafbeeling. Dit is nodig om vanuit de JSON data opnieuw een exacte kopie van het canvas te genereren. Maar dit kan voor problemen zorgen wanneer een gebruiker er voor kiest om zijn/haar afbeelding te veranderen. Dan zal de ge\"{u}ploade afbeelding wel aanwezig zijn in de state maar de annotaties zullen nog niet aangepast zijn waardoor, bij het openen van het annotatie venster, de oude afbeelding ingeladen wordt. Om dit te voorkomen wordt de afbeelding verwijdert uit het canvas en wordt een nieuw \lstinline{fabric.Image} object aangemaakt met de nieuwe afbeelding. Op die manier kan de gebruiker simpelweg de afbeelding veranderen zonder reeds aangemaakte annotaties te verliezen. 
+
+\subsection{Exporteren van een canvas}
+Wanneer de gebruiker zijn/haar annotaties opslaat (zie codefragment \ref{lst:ThemeDispatcherEventsThemeAnnotations}, \lstinline{onSubmit()}), wordt het \lstinline{'annotations'} event getriggered. Aan dit event wordt het volledige canvas meegegeven als een JSON string. De \textit{handler} in de \lstinline{Theme} component zorgt er voor dat deze annotaties opgeslagen worden in de state van de component. Zo worden de annotaties telkens up-to-date gehouden. 
+
+Het omzetten van het canvas naar JSON data is zeer eenvoudig te verwezenlijken dankzij de \lstinline{toJSON()} methode die het canvas bezit. Als argument van deze functie kan een array met extra eigenschappen, die ge\"{e}xporteerd moeten worden, meegegeven worden. Dit is zeer handig wanneer extra informatie noodzakelijk is tijdens het terug opbouwen van het canvas. Zo worden de breedte, hoogte, ratio (breedt/hoogte), service, tekst type, KPI type en de dimensies van het canvas ook opgeslagen. Elk van deze eigenschappen zijn onmisbaar tijdens het heropbouwen van het canvas in de backend.Meer hierover in sectie \ref{BackendImplementatie}. 
+
+\begin{lstlisting}[caption={ThemeAnnotations component - exporteren van het canvas},label=lst:ThemeDispatcherEventsThemeAnnotations,language=javascript]
+exportCanvas: function () {
+	if (this.canvas) {
+		var data = JSON.stringify(this.canvas.toJSON(['width', 'height', 'multiply', 'service', 'textType', 'kpiType', 'dimensions']));
+		return (data);
+	}
+}
+\end{lstlisting}
+
+% Limitation bars
+Normaal gezien is het de bedoeling dat ieder object op het canvas ge\"{e}xporteerd wordt om later exact hetzelfde canvas op te kunnen bouwen. Een uitzondering hierop is het annoteren van een omslagfoto voor Twitter. De foto wordt namelijk niet volledig weergegeven op een profiel. Langs de boven-en onderkant wordt de omslagfoto bedekt door een stuk van de Twitter header. Om duidelijk te maken aan de gebruiker dat deze zones niet zichtbaar zullen zijn, worden twee afbeeldingen bovenop het canvas geplaatst. 
+
+%PIC OF THE IMAGES!
+
+Natuurlijk mogen deze afbeeldingen niet behouden blijven wanneer de afbeelding aangemaakt moet worden. Daarom wordt er voor gezorgd dat deze afbeeldingen niet opgenomen worden in de JSON string. Dit wordt verwezenlijkt door de \lstinline{excludeFromExport} eigenschap van deze afbeeldingen.
 
 % Kleur selecteren mss?
-% Limitation bars
+%\subsection{Sluiten van het annotatievenster????}
+%registerOnclose + componentUnmount
+%Wanneer een gebruiker een afbeelding geannoteerd heeft, kan het canvas logischerwijze opgeslagen worden. Niet enkel bij het opslaan maar ook bij het al dan niet per ongeluk sluiten van het annotatievenster moet actie ondernomen worden. 
+
+
+\section{Backend implementatie}\label{BackendImplementatie}
+
+Eenmaal de gebruiker een thema met omslagfoto heeft aangemaakt, kan deze toegekend worden aan een profiel. Op het moment dat het thema actief moet worden, moet vanuit de annotaties de afbeelding aangemaakt worden. Deze kan dan via de Facebook of Twitter API
+
+\subsection{Opzetten van de Node.js service}
+Uit de, door de gebruiker opgeslagen, annotaties moet op een gegeven tijdstip een afbeelding gegenereerd worden. Om deze annotaties in te lezen en om het canvas terug op te bouwen moet er logischerwijze opnieuw gebruik gemaakt worden van de Fabric.js bibliotheek. Er is dus nood aan een manier om de JavaScript bibliotheek buiten de browser te kunnen gebruiken. Dit kan verwezenlijkt worden met Node.js. Deze JavaScript \textit{runtime} is gebouwd op de V8 JavaScript \textit{engine} \cite{NodeJS}. De Fabric.js bibliotheek voorziet zelfs enkele methodes om speficiek in een Node omgeving te gebruiken.
+
+Via de Node Package Manager (NPM) worden de vereiste paketten gedownload. Hiertoe behoren zowel de Fabric module als Express, \lstinlint{body-parser} en \lstinlint{cors}. Express is een van de meest gebruikte Node.js \textit{frameworks} en maakt het opzetten van een server zeer eenvoudig. Met een weinig aan code kan met Express een server opgezet worden met de vereiste functionaliteit. Na het opzetten van de Express app kunnen de nodige routes toegevoegd worden. Het belangrijkst is een route die meegekregen annotaties en KPI's omzet naar een afbeelding voor de correcte service. Dit moet dus een route zijn die een POST \textit{request} afhandelt \ref{lst:ExpressIndexServer}. Zowel de annotaties als de KPI's worden doorgestuurd in de \textit{request body}. Deze worden als een JSON string doorgestuurd waardoor deze nog geparst moeten worden om ze te gebruiken in de code. De x-www-form-urlencoded \textit{body} van de request kan met behulp van de \lstinlint{body-parser} module correct ingelezen worden. De doorgestuurde annotaties kunnen zeer veel objecten bevatten waardoor de JSON strings zeer lang worden. Door gebruik te maken van de \textit{extended} optie van de \lstinlint{body-parser}, kunnen lange objecten en arrays ge\"{e}ncodeerd worden. 
+
+\begin{lstlisting}[caption={index.js - Node.js server},label=lst:ExpressIndexServer,language=javascript]
+app.use(bodyParser.urlencoded({
+	extended: true
+}));
+
+app.post('/render', function (request, response) {
+	var data = JSON.parse(request.body.data);
+	var KPIs = JSON.parse(request.body.kpis);
+	
+	renderer.render(data, KPIs).then((data) => {
+		return response.status(200).send({status: 'Image successfully generated', image: 	data.toString('base64')});
+	}).catch((error) => {
+		return response.status(400).send(error);
+	});
+});
+}
+\end{lstlisting}
 
 
 
 
+Eens het Fabric pakket via de Node Package Manager (NPM) gedownload is. Naast Fabric zijn nog enkele andere modules nodig. Er is namelijk een manier nodig om deze service aan te spreken van buitenaf. Met behulp van het Express \textit{web framework} kan een eenvoudige server opgesteld worden. 
+
+
+Er wordt voor het Express \textit{framework} gekozen om dat dit een van de meest gebruikte Node.js \textit{frameworks} is en perfect in staat is om met weinig code, tot het gewenste resultaat te komen. 
+
+\subsection{Opbouwen van het canvas}
+Aangezien het canvas nog niet de correcte afmetingen bezit in de frontend, moet dit geschaald worden om de afbeelding op gepaste grootte te genereren. Het simpelweg omzetten van het canvas naar een afbeelding en deze herschalen in de backend zou nefast zijn voor de kwaliteit van de afbeelding. Om de best mogelijke kwaliteit te bereiken, moet het volledige canvas herschaald worden alvorens het om te vormen naar een afbeelding. Concreet houdt dit in dat elk object van het canvas herschaald moet worden om de correcte dimensies van afbeelding te bekomen. 
+
+\subsection{Testen van de Node.js service}
 
 
 
-Deze \textit{Theme} component heeft inputvelden om het thema een naam en een service (Facebook of Twitter) in te geven. 
+%Opzetten express server -> bodyparser voor json
+%Aanmaken van 
 
-
-
-\section{Backend implementatie}

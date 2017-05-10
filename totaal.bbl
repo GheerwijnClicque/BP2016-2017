@@ -16,6 +16,9 @@ Clarabridge, ``Contact clarabridge.''
   \url{http://www.clarabridge.com/contact/}, 2015.
 \newblock Geraadpleegd op 09/03/17.
 
+\bibitem{CXSOcialLogo}
+
+
 \bibitem{EngagorTeam}
 nn, ``Cx social - developer documentation.''
   \url{https://developers.engagor.com/team}, 2017.
@@ -117,5 +120,14 @@ lannymcnie, ``Svgexporter.''
   \url{https://github.com/CreateJS/EaselJS/tree/master/extras/SVGExporter},
   2015.
 \newblock Geraadpleegd op 20/03/17.
+
+\bibitem{RFC7230}
+R.~T. Fielding and J.~F. Reschke, ``Hypertext transfer protocol (http/1.1):
+  Message syntax and routing.''
+  \url{https://tools.ietf.org/html/rfc7230#section-3.1.1}, 2014.
+\newblock Geraadpleegd op 06/05/17.
+
+\bibitem{NodeJS}
+
 
 \end{thebibliography}

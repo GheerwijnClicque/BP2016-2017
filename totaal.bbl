@@ -67,6 +67,11 @@ RegalVapor, nmve, teoli, fscholz, Jeremie, ethertank, Sheppy, jviereck, markg,
   2017.
 \newblock Geraadpleegd op 15/03/17.
 
+\bibitem{FabricJSCaching}
+J.~Zaytsev, ``Fabric.js object caching.''
+  \url{http://fabricjs.com/fabric-object-caching/}, 2015.
+\newblock Geraadpleegd op 13/03/17.
+
 \bibitem{Fabricsupportedbrowsers}
 J.~Zaytsev, ``Fabricjs - javascript canvas library.''
   \url{https://github.com/kangax/fabric.js/}, 2017.

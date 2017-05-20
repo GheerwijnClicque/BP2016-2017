@@ -15,36 +15,36 @@ Repeated entry---line 373 of file Bibliografie.bib
  : @misc{EaselMouseInteraction
  :                            ,
 I'm skipping whatever remains of this entry
-You've used 35 entries,
+You've used 36 entries,
             1876 wiz_defined-function locations,
-            665 strings with 8413 characters,
-and the built_in function-call counts, 5142 in all, are:
-= -- 494
-> -- 222
+            669 strings with 8515 characters,
+and the built_in function-call counts, 5278 in all, are:
+= -- 508
+> -- 226
 < -- 0
-+ -- 96
-- -- 61
-* -- 232
-:= -- 791
-add.period$ -- 70
-call.type$ -- 35
-change.case$ -- 35
++ -- 98
+- -- 62
+* -- 237
+:= -- 811
+add.period$ -- 72
+call.type$ -- 36
+change.case$ -- 36
 chr.to.int$ -- 0
-cite$ -- 35
-duplicate$ -- 140
-empty$ -- 631
-format.name$ -- 61
-if$ -- 1286
+cite$ -- 36
+duplicate$ -- 144
+empty$ -- 649
+format.name$ -- 62
+if$ -- 1321
 int.to.chr$ -- 0
-int.to.str$ -- 35
+int.to.str$ -- 36
 missing$ -- 0
-newline$ -- 143
-num.names$ -- 35
-pop$ -- 210
+newline$ -- 147
+num.names$ -- 36
+pop$ -- 216
 preamble$ -- 1
 purify$ -- 0
 quote$ -- 0
-skip$ -- 105
+skip$ -- 108
 stack$ -- 0
 substring$ -- 0
 swap$ -- 0
@@ -53,7 +53,7 @@ text.prefix$ -- 0
 top$ -- 0
 type$ -- 0
 warning$ -- 0
-while$ -- 35
-width$ -- 37
-write$ -- 352
+while$ -- 36
+width$ -- 38
+write$ -- 362
 (There was 1 error message)

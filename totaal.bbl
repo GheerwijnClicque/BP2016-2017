@@ -17,7 +17,10 @@ Clarabridge, ``Contact clarabridge.''
 \newblock Geraadpleegd op 09/03/17.
 
 \bibitem{CXSOcialLogo}
-
+Clarabridge, ``Cxsocial - a clarabridge product.''
+  \url{http://3l3uol24eg0i3qephf1i107x.wpengine.netdna-cdn.com/wp-content/uploads/2017/03/cx-social_clarabridge-2017_logo-small.png},
+  2017.
+\newblock Geraadpleegd op 06/05/17.
 
 \bibitem{EngagorTeam}
 nn, ``Cx social - developer documentation.''
@@ -121,6 +124,30 @@ lannymcnie, ``Svgexporter.''
   2015.
 \newblock Geraadpleegd op 20/03/17.
 
+\bibitem{GDlibrary}
+T.~P. Group, ``Image processing and gd.''
+  \url{http://php.net/manual/en/book.image.php}, 2017.
+\newblock Geraadpleegd op 09/05/17.
+
+\bibitem{DockerWhatDocker}
+D.~Inc., ``What is docker.'' \url{https://www.docker.com/what-docker}, 2017.
+\newblock Geraadpleegd op 16/05/17.
+
+\bibitem{OpenSourceWhatDocker}
+J.~Baker, ``What is docker?.''
+  \url{https://opensource.com/resources/what-docker}, 2014.
+\newblock Geraadpleegd op 16/05/17.
+
+\bibitem{DockerDiagram}
+D.~Inc., ``What is a container.'' \url{https://www.docker.com/what-container},
+  2017.
+\newblock Geraadpleegd op 16/05/17.
+
+\bibitem{Base64Image}
+rajesh, ``Base64 basics - what? why? how?.''
+  \url{http://myitlearnings.com/wp-content/uploads/2015/11/base64.jpg}, 2015.
+\newblock Geraadpleegd op 12/05/17.
+
 \bibitem{RFC7230}
 R.~T. Fielding and J.~F. Reschke, ``Hypertext transfer protocol (http/1.1):
   Message syntax and routing.''
@@ -128,6 +155,35 @@ R.~T. Fielding and J.~F. Reschke, ``Hypertext transfer protocol (http/1.1):
 \newblock Geraadpleegd op 06/05/17.
 
 \bibitem{NodeJS}
+N.~Foundation, ``Node.js.'' \url{https://nodejs.org/en/}, 2017.
+\newblock Geraadpleegd op 06/05/17.
 
+\bibitem{CanvasPrebuilt}
+C.~Hearon, ``node-canvas-prebuilt.''
+  \url{https://github.com/chearon/node-canvas-prebuilt}, 2017.
+\newblock Geraadpleegd op 12/05/17.
+
+\bibitem{TwitterAPIDoc}
+Twitter, ``Twitter developer documentation.''
+  \url{https://dev.twitter.com/rest/reference}, 2017.
+\newblock Geraadpleegd op 18/05/17.
+
+\bibitem{FacebookPagePhotos}
+F.~Inc., ``Open graph page photos.''
+  \url{https://developers.facebook.com/docs/graph-api/reference/page/photos/},
+  2017.
+\newblock Geraadpleegd op 18/05/17.
+
+\bibitem{FacebookPagePicture}
+F.~Inc., ``Page picture.''
+  \url{https://developers.facebook.com/docs/graph-api/reference/page/picture/},
+  2017.
+\newblock Geraadpleegd op 18/05/17.
+
+\bibitem{FacebookDimensions}
+J.~Spencer, ``2017 social media image sizes cheat sheet.''
+  \url{https://makeawebsitehub.com/social-media-image-sizes-cheat-sheet/},
+  2017.
+\newblock Geraadpleegd op 18/05/17.
 
 \end{thebibliography}

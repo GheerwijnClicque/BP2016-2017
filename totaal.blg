@@ -15,48 +15,36 @@ Repeated entry---line 373 of file Bibliografie.bib
  : @misc{EaselMouseInteraction
  :                            ,
 I'm skipping whatever remains of this entry
-I was expecting a `,' or a `}'---line 457 of file Bibliografie.bib
- :  
- :  author={Clarabridge},
-(Error may have been on previous line)
-I'm skipping whatever remains of this entry
-I was expecting a `,' or a `}'---line 473 of file Bibliografie.bib
- :  
- :  author={Node.js Foundation},
-(Error may have been on previous line)
-I'm skipping whatever remains of this entry
-Warning--all relevant fields are empty in CXSOcialLogo
-Warning--all relevant fields are empty in NodeJS
-You've used 25 entries,
+You've used 35 entries,
             1876 wiz_defined-function locations,
-            608 strings with 6921 characters,
-and the built_in function-call counts, 3652 in all, are:
-= -- 330
-> -- 176
+            665 strings with 8413 characters,
+and the built_in function-call counts, 5142 in all, are:
+= -- 494
+> -- 222
 < -- 0
-+ -- 74
-- -- 49
-* -- 174
-:= -- 557
-add.period$ -- 48
-call.type$ -- 25
-change.case$ -- 23
++ -- 96
+- -- 61
+* -- 232
+:= -- 791
+add.period$ -- 70
+call.type$ -- 35
+change.case$ -- 35
 chr.to.int$ -- 0
-cite$ -- 27
-duplicate$ -- 100
-empty$ -- 445
-format.name$ -- 49
-if$ -- 902
+cite$ -- 35
+duplicate$ -- 140
+empty$ -- 631
+format.name$ -- 61
+if$ -- 1286
 int.to.chr$ -- 0
-int.to.str$ -- 25
+int.to.str$ -- 35
 missing$ -- 0
-newline$ -- 101
-num.names$ -- 23
-pop$ -- 146
+newline$ -- 143
+num.names$ -- 35
+pop$ -- 210
 preamble$ -- 1
 purify$ -- 0
 quote$ -- 0
-skip$ -- 85
+skip$ -- 105
 stack$ -- 0
 substring$ -- 0
 swap$ -- 0
@@ -64,8 +52,8 @@ text.length$ -- 0
 text.prefix$ -- 0
 top$ -- 0
 type$ -- 0
-warning$ -- 2
-while$ -- 23
-width$ -- 27
-write$ -- 240
-(There were 3 error messages)
+warning$ -- 0
+while$ -- 35
+width$ -- 37
+write$ -- 352
+(There was 1 error message)

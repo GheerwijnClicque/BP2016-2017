@@ -1,3 +1,4 @@
+% !TeX spellcheck = <none>
 \chapter{Voorstelling van het stagebedrijf}
 \vspace{-3cm}
 \section{Ontstaan en geschiedenis}
@@ -69,26 +70,33 @@ Niet enkel berichten kunnen beheerd worden via de webapplicatie maar er kan ook 
  
 \chapter{Probleemstelling}
 \vspace{-3cm}
-\section{Probleemstelling vanuit de stage}
+\section{Probleemstelling vanuit de stage} \label{BeschrijvingStageOpdracht}
 
-Als stageopdracht dient een nieuwe feature toegevoegd te worden aan de CSXSocial webapplicatie: een \textit{profile manager}. Deze \textit{profile manager} moet gebruikers in staat stellen de profielfoto en/of omslagfoto van een profiel in te stellen. Dit gebeurt aan de hand van thema's. Een thema kan aangemaakt worden voor een specifieke service, bijvoorbeeld Facebook of Twitter. Voor Facebook kan een thema een omslagfoto en een profielfoto bevatten terwijl een thema voor Twitter naast de foto's ook de link kleur, naam en bio kan bevatten (zie Figuur~\ref{fig:EditTheme}). Het moet ook mogelijk zijn voor de klanten om deze afbeeldingen te passen. Zo kunnen ze tekst toevoegen aan de afbeelding of hun eigen \textit{Key Performance Indicators} (KPI) er op plaatsen. Aangezien de omslagfoto's van Facebook en Twitter niet dezelfde dimensies bezitten en de foto ook niet op volledige grootte aan de gebruikers kan getoond worden, zullen de afbeeldingen ook herschaald moeten worden naar de correcte dimensies.
-
-Verschillende thema's moeten ook aan een planning toegevoegd kunnen worden. Een klant kan instellen dat een bepaald thema ofwel binnen de \textit{business hours} gebruikt wordt ofwel tijdens een bepaalde periode ofwel tijdens beide. Een speciaal thema voor bijvoorbeeld Kerstmis kan dan ingesteld worden om tijdens de kerstperiode ingesteld te zijn op het profiel. Wanneer meerdere thema's op een profiel zijn ingesteld, moet dus berekend worden welk van deze thema's op een gegeven moment toegepast moet worden. 
-
-De webapplicatie bezit ook \textit{Crisis Plans}. Dit zijn instellingen die bij een probleem binnen het bedrijf actief gesteld kunnen worden. Eens actief wordt een waarschuwing getoond, rechten van gebruikers verandert of een to-do lijstje opgesteld met stappen die ondernomen moeten worden om het probleem op te lossen. Via een \textit{Crisis Plan} moet ook een thema ingesteld kunnen worden. Een gebruiksscenario hiervoor zou bijvoorbeeld kunnen zijn: het instellen van een specifieke omslagfoto en avatar wanneer een bedrijf kampt met een technische storing. 
+Als stageopdracht dient een nieuwe feature toegevoegd te worden aan de CSXSocial webapplicatie: een \textit{profile manager}. Deze \textit{profile manager} moet gebruikers in staat stellen de profielfoto en/of omslagfoto van een profiel in te stellen. Dit gebeurt aan de hand van thema's. Een thema kan aangemaakt worden voor een specifieke service, bijvoorbeeld Facebook of Twitter. Voor Facebook kan een thema een omslagfoto en een profielfoto bevatten terwijl een thema voor Twitter naast de foto's ook de link kleur, naam en bio kan bevatten (zie Figuur~\ref{fig:EditTheme}). Het moet ook mogelijk zijn voor de klanten om deze afbeeldingen te passen. Zo kunnen ze tekst toevoegen aan de afbeelding of hun eigen \textit{Key Performance Indicator} (KPI)\footnote{Een \textit{Key Performance Indicator} is een meetbare waarde waarmee de prestaties van bedrijven of ondernemingen uitgedrukt worden. Binnen CXSocial zijn dit bijvoorbeeld de geholpen klanten per dag of hoe lang het gemiddeld duurt voor klanten geholpen worden} er op plaatsen. Aangezien de omslagfoto's van Facebook en Twitter niet dezelfde dimensies bezitten en de foto ook niet op volledige grootte aan de gebruikers kan getoond worden, zullen de afbeeldingen ook herschaald moeten worden naar de correcte dimensies.
 
 \begin{figure}[H]
 	\centering
-	\includegraphics[width=0.6\textwidth]{Figuren/EditThemeMockup.png}
+	\includegraphics[width=0.7\textwidth]{Figuren/EditThemeMockup.png}
 	\caption{Mockup van de editeerpagina \cite{EditThemeMockup}} %\cite{Pouladzadeh}
 	\label{fig:EditTheme}
 \end{figure} 
 
+Verschillende thema's moeten aan een planning toegevoegd kunnen worden. Een klant kan dan instellen dat een bepaald thema ofwel binnen de \textit{business hours} gebruikt wordt ofwel tijdens een bepaalde periode ofwel tijdens beide. Een speciaal thema voor bijvoorbeeld Kerstmis kan dan ingesteld worden om tijdens de kerstperiode ingesteld te zijn op het profiel. Wanneer meerdere thema's op een profiel zijn ingesteld, moet dus berekend worden welk van deze thema's op een gegeven moment toegepast moet worden. 
+
+\newpage
+De webapplicatie bezit ook \textit{Crisis Plans}. Dit zijn instellingen die bij een probleem binnen het bedrijf actief gesteld kunnen worden. Eens actief wordt een waarschuwing getoond, rechten van gebruikers verandert of een to-do lijstje opgesteld met stappen die ondernomen moeten worden om het probleem op te lossen. Via een \textit{Crisis Plan} moet ook een thema ingesteld kunnen worden. Een gebruiksscenario hiervoor zou bijvoorbeeld kunnen zijn: het instellen van een specifieke omslagfoto en avatar wanneer een bedrijf kampt met een technische storing. 
+
 \section{Probleemstelling bachelorproef}
 
-Deel van de stageopdracht is het verwerken van afbeeldingen om als omslagfoto of avatar te gebruiken. Hierbij is het de bedoeling dat klanten afbeeldingen kunnen uploaden die dan als omslagfoto en/of avatar zullen dienen. Een thema, bestaande uit deze afbeeldingen en in sommige gevallen nog enkele andere variabelen zoals link kleur, info of naam van het profiel, kunnen ingesteld worden om op bepaalde tijdstippen actief te zijn. Klanten moeten in staat zijn tekst en KPI's op deze afbeeldingen te plaatsen vanuit de webapplicatie. De afbeeldingen moeten samengesteld kunnen worden door de gebruiker maar moeten nadien ook opnieuw gegenereerd kunnen worden op de server met aangepaste KPI's. 
+Deel van de stageopdracht is het verwerken van afbeeldingen om als omslagfoto of avatar te gebruiken. Hierbij is het de bedoeling dat klanten afbeeldingen kunnen uploaden die dan als omslagfoto en/of avatar zullen dienen. Een thema, bestaande uit deze afbeeldingen en in sommige gevallen nog enkele andere variabelen zoals link kleur voor een Twitter profiel, kunnen ingesteld worden om op bepaalde tijdstippen actief te zijn. Klanten moeten in staat zijn tekst en KPI's op deze afbeeldingen te plaatsen vanuit de webapplicatie. De afbeeldingen moeten samengesteld kunnen worden door de gebruiker maar moeten nadien ook opnieuw gegenereerd kunnen worden op de server met aangepaste KPI's. 
 
-Om afbeeldingen te annoteren is redelijk wat functionaliteit nodig. Ingegeven tekst moet eender waar op een afbeelding geplaatst kunnen worden maar moet ook gestyled kunnen worden. Lettertype, kleur, lettergrootte, gewicht en uitlijning moeten allemaal ingesteld kunnen worden door gebruikers. Dit moet zowel clientside als serverside mogelijk zijn aangezien de KPI's telkens zullen veranderen waardoor nieuwe afbeeldingen gegeneerd moeten worden. Bibliotheken en technologie\"{e}n zullen onderzocht worden om dit te kunnen verwezenlijken.
+Om afbeeldingen te annoteren is redelijk wat functionaliteit nodig. Ingegeven tekst moet eender waar op een afbeelding geplaatst kunnen worden maar moet ook gestyled kunnen worden. Lettertype, kleur, lettergrootte, gewicht en uitlijning moeten allemaal ingesteld kunnen worden door gebruikers. Dit moet zowel clientside als serverside mogelijk zijn aangezien de KPI's telkens zullen veranderen waardoor nieuwe afbeeldingen gegeneerd moeten worden. 
+
+Naast het genereren van de afbeeldingen moeten deze ook ge\"{u}pload worden naar Facebook of Twitter op de ingestelde tijdstippen. Er moet dus geregeld berekend worden welke afbeelding met welke KPI's op een bepaald tijdstip ingesteld moet worden als omslagfoto. De gebruiker verwacht natuurlijk dat telkens de correcte foto op het profiel ingesteld is waardoor de betrouwbaarheid ook een zeer belangrijk punt is.
+%MSS OPNIEUW SCHRIJVEN? VORIGE ZINNEN?
+%In functie van de bachelorproef zullen blablabala
+Bibliotheken en technologie\"{e}n zullen onderzocht worden om dit alles te kunnen verwezenlijken.
+
 
 %NOG E BTJ BIJSCHRIJVEN!!
 

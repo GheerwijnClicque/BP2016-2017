@@ -6,8 +6,10 @@ A level-1 auxiliary file: Samenvatting.aux
 A level-1 auxiliary file: Voorwoord.aux
 A level-1 auxiliary file: LijstMetAfkortingen.aux
 A level-1 auxiliary file: Deel1.aux
+A level-1 auxiliary file: Actieplan.aux
 A level-1 auxiliary file: Deel2.aux
 A level-1 auxiliary file: Deel3.aux
+A level-1 auxiliary file: AlgemeenBesluit.aux
 The style file: ieeetr.bst
 A level-1 auxiliary file: Bijlage.aux
 Database file #1: Bibliografie.bib
@@ -17,7 +19,7 @@ Repeated entry---line 373 of file Bibliografie.bib
 I'm skipping whatever remains of this entry
 You've used 36 entries,
             1876 wiz_defined-function locations,
-            669 strings with 8515 characters,
+            671 strings with 8547 characters,
 and the built_in function-call counts, 5278 in all, are:
 = -- 508
 > -- 226

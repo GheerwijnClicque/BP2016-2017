@@ -1,11 +1,11 @@
 % !TeX spellcheck = <Dutch>
 
-\chapter{\textbf{Praktische uitwerking}}
+\chapter{Praktische uitwerking}
 \vspace{-3cm}
 Het annoteren van afbeeldingen is \'{e}\'{e}n van de onderdelen binnen de \textit{Profile Manager} van CX Social. De \textit{Profile Manager} is een nieuwe feature die gebruikers moet helpen bij het beheren van hun sociale media profielen. Een thema kan aangemaakt worden voor Facebook of Twitter dat een omslag-en/of profielfoto bevat. Eens een omslagfoto ge\"{u}pload is, is het mogelijk om annotaties toe te voegen. Dit kan simpelweg tekst zijn maar ook KPI's kunnen op de afbeelding geplaatst worden. Gebruikers kunnen voor geconnecteerde profielen instellen welk thema op welk tijdstip actief moet zijn. De aangemaakte afbeeldingen worden dan op de ingestelde tijdstippen ge\"{u}pload naar het juiste profiel. 
 
 
-\section{Frontend implementatie}
+\section{\textbf{Frontend implementatie}}
 Een groot deel van de frontend code van CX Social is geschreven met React. Met React kunnen makkelijk componenten aangemaakt worden om zo complexe interfaces aan te maken. Om de \textit{Profile Manager} zo modulair mogelijk te maken worden de verschillende \textit{features} opgesplitst in React componenten. 
 
 \subsection{Aanmaken van een thema} \label{AanmakenVanEenThema}
@@ -167,7 +167,7 @@ this.canvas.bringToFront(KPI);
 Gebruikers kunnen ook gebruik maken van een \textit{template}. Dit zal enkele tekst objecten op het canvas plaatsen alsook de gekozen KPI. Zo kunnen gebruikers zeer eenvoudig hun afbeeldingen annoteren met bijvoorbeeld: 'We took care of 500 customers last week'. Alle elementen worden gecentreerd op het canvas en kunnen door de gebruiker zelf nog aangepast worden. 
 
 \subsection{Editeren van tekst}
-\'{E}\'{e}n van de \textit{features} tijdens het annoteren van een afbeelding is het stylen van de tekst. Dit maakt het mogelijk eigenschappen zoals tekstgrootte, lettertype, kleur en gewicht (vet of schuin) aan te passen. Om dit op een modulaire manier te verwezenlijken, wordt gebruik gemaakt van een React component. Aan de \texttt{TextEditor} component worden enkele eigenschappen meegegeven om een bestaand tekst object aan te kunnen passen. Onder deze eigenschappen valt een \texttt{onChange()} functie, een \texttt{currentSettings} object en een \texttt{selectedColor} string. Wanneer een object in het canvas wordt geselecteerd, wordt het  \texttt{object:selected} event getriggered. In de \textit{handler} van dit event wordt, na confirmatie dat het om een tekst object gaat, de state van de \texttt{Theme} component aangepast naar de huidige instellingen van het object: 
+E\'{e}n van de \textit{features} tijdens het annoteren van een afbeelding is het stylen van de tekst. Dit maakt het mogelijk eigenschappen zoals tekstgrootte, lettertype, kleur en gewicht (vet of schuin) aan te passen. Om dit op een modulaire manier te verwezenlijken, wordt gebruik gemaakt van een React component. Aan de \texttt{TextEditor} component worden enkele eigenschappen meegegeven om een bestaand tekst object aan te kunnen passen. Onder deze eigenschappen valt een \texttt{onChange()} functie, een \texttt{currentSettings} object en een \texttt{selectedColor} string. Wanneer een object in het canvas wordt geselecteerd, wordt het  \texttt{object:selected} event getriggered. In de \textit{handler} van dit event wordt, na confirmatie dat het om een tekst object gaat, de state van de \texttt{Theme} component aangepast naar de huidige instellingen van het object: 
 
 \begin{lstlisting}[language=javascript]
 this.canvas.on({'object:selected': function () {
@@ -328,7 +328,7 @@ Natuurlijk mogen deze afbeeldingen niet behouden blijven wanneer de afbeelding a
 %Wanneer een gebruiker een afbeelding geannoteerd heeft, kan het canvas logischerwijze opgeslagen worden. Niet enkel bij het opslaan maar ook bij het al dan niet per ongeluk sluiten van het annotatievenster moet actie ondernomen worden. 
 
 
-\section{Backend implementatie}\label{BackendImplementatie}
+\section{\textbf{Backend implementatie}}\label{BackendImplementatie}
 
 Eenmaal de gebruiker een thema met omslagfoto heeft aangemaakt, kan deze toegekend worden aan een profiel. Op het moment dat het thema actief moet worden, moet vanuit de annotaties de afbeelding aangemaakt worden. Deze kan dan via de Facebook of Twitter API
 
@@ -369,7 +369,7 @@ Een andere manier om CORS mogelijk te maken is het gebruiken van specifieke \tex
 
 \subsection{Opbouwen van het canvas} \label{OpbouwenCanvas}
 %Aangezien het canvas nog niet de correcte afmetingen bezit in de frontend, moet dit geschaald worden om de afbeelding op gepaste grootte te genereren. Het simpelweg omzetten van het canvas naar een afbeelding en deze herschalen in de backend zou nefast zijn voor de kwaliteit van de afbeelding. Om de best mogelijke kwaliteit te bereiken, moet het volledige canvas herschaald worden alvorens het om te vormen naar een afbeelding. Concreet houdt dit in dat elk object van het canvas herschaald moet worden om de correcte dimensies van afbeelding te bekomen. %CORS PROBLEMS!
-\'{E}\'{e}nmaal de routes opgesteld zijn, kan de logica ge\"{i}mplementeerd worden. Eerst worden de \texttt{fabric} en \texttt{canvas-prebuilt} modules ge\"{i}mporteerd \cite{CanvasPrebuilt}. \texttt{canvas-prebuilt} zorgt er voor dat het canvas gebruikt kan worden buiten de \textit{browser}. Eens het Fabric canvas ge\"{i}nstantieerd is, kunnen de annotaties en KPI's omgezet worden in een afbeelding. Eerder werd het probleem met verschillen in dimensies en ratios besproken (zie sectie \ref{AnnoterenVanAfbeelding}). Om het canvas met al zijn objecten de correcte dimensies te geven, moeten eerst enkele berekeningen uitgevoerd worden. In de \textit{request body} zijn naast de annotaties ook de \textit{service}, originele dimensies van het canvas (zoals deze in het dialoog getoond werd) en de vereiste dimensies van de \textit{service} terug te vinden. Eerst en vooral worden de correcte dimensies aan het canvas gegeven. Wordt bijvoorbeeld een omslagfoto voor Twitter gegenereerd, krijgt het canvas een breedte van 1500 pixels en een hoogte van 500 pixels. Wanneer de dimensies van het canvas wijzigen, moet tekst die op het canvas staat ook aangepast worden. Door de hoogte van het nieuwe canvas te delen door de hoogte van het canvas waarop de gebruiker annoteerde, wordt de schalingsfactor bekomen (zie codefragment \ref{lst:NodeServicePromise}):  
+E\'{e}nmaal de routes opgesteld zijn, kan de logica ge\"{i}mplementeerd worden. Eerst worden de \texttt{fabric} en \texttt{canvas-prebuilt} modules ge\"{i}mporteerd \cite{CanvasPrebuilt}. \texttt{canvas-prebuilt} zorgt er voor dat het canvas gebruikt kan worden buiten de \textit{browser}. Eens het Fabric canvas ge\"{i}nstantieerd is, kunnen de annotaties en KPI's omgezet worden in een afbeelding. Eerder werd het probleem met verschillen in dimensies en ratios besproken (zie sectie \ref{AnnoterenVanAfbeelding}). Om het canvas met al zijn objecten de correcte dimensies te geven, moeten eerst enkele berekeningen uitgevoerd worden. In de \textit{request body} zijn naast de annotaties ook de \textit{service}, originele dimensies van het canvas (zoals deze in het dialoog getoond werd) en de vereiste dimensies van de \textit{service} terug te vinden. Eerst en vooral worden de correcte dimensies aan het canvas gegeven. Wordt bijvoorbeeld een omslagfoto voor Twitter gegenereerd, krijgt het canvas een breedte van 1500 pixels en een hoogte van 500 pixels. Wanneer de dimensies van het canvas wijzigen, moet tekst die op het canvas staat ook aangepast worden. Door de hoogte van het nieuwe canvas te delen door de hoogte van het canvas waarop de gebruiker annoteerde, wordt de schalingsfactor bekomen (zie codefragment \ref{lst:NodeServicePromise}):  
 
 \[ schalingsfactor = \frac{\text{hoogte serverside canvas}}{\text{hoogte clientside canvas}} \]
 
@@ -409,7 +409,7 @@ Tijdens het verwerken van de annotaties zullen enkele functies asynchroon uitgev
 
 Zoals vermeld in sectie \ref{BackendImplementationNodeJS} stelt Fabric.js enkele functies beschikbaar voor gebruik in een Node.js omgeving. Zo kan met behulp van de \texttt{loadFromJSON()} methode een canvas opgesteld worden vanuit JSON data. Wanneer het canvas opnieuw bestaat, worden alle objecten aangepast aan de nieuwe dimensies. De eerder berekende schalingsfactor (zie codefragment \ref{lst:NodeServicePromise}) wordt gebruikt om de positie, hoogte en breedte van ieder object op gepaste wijze te vergroten. Bij tekst objecten wordt de tekstgrootte hier ook mee vermenigvuldigd. Zo wordt exact dezelfde afbeelding bekomen zoals deze door de gebruiker aangemaakt werd maar met de correcte dimensies om te gebruiken op Facebook of Twitter. 
 
-\'{E}\'{e}n van de belangrijkste \textit{features} van het annoteren is de mogelijkheid om KPI's te plaatsen op een afbeelding. Aangezien dit variabele waarden zijn, moeten ze ook om de zoveel tijd aangepast worden. Bij het aanspreken van de Node.js service worden naast de annotaties ook de pas berekende KPI's doorgegeven. Tijdens het schalen van de objecten wordt gekeken of het een object van het \texttt{textType} 'kpi' is. %maybe reference to that part?? \ref{AnnoterenVanAfbeelding}
+E\'{e}n van de belangrijkste \textit{features} van het annoteren is de mogelijkheid om KPI's te plaatsen op een afbeelding. Aangezien dit variabele waarden zijn, moeten ze ook om de zoveel tijd aangepast worden. Bij het aanspreken van de Node.js service worden naast de annotaties ook de pas berekende KPI's doorgegeven. Tijdens het schalen van de objecten wordt gekeken of het een object van het \texttt{textType} 'kpi' is. %maybe reference to that part?? \ref{AnnoterenVanAfbeelding}
 Is dit het geval en is de corresponderende KPI aanwezig in de ontvangen data, kan de huidige tekst vervangen worden door de waarde van de KPI. 
  
 \subsection{Exporteren van het canvas} \label{ExporterenVanHetCanvas}

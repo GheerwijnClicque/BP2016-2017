@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016) (preloaded format=pdflatex 2017.3.25)  21 MAY 2017 20:24
+This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016) (preloaded format=pdflatex 2017.3.25)  21 MAY 2017 22:40
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1037,7 +1037,10 @@ LaTeX Info: Redefining \@qsk on input line 576.
 Option `thinqspace' provided!
 Option `squaren' provided!
 Option `Gray' provided!
-) (./page_layout_definition.tex) (./hyphenation.tex)
+) (/usr/local/texlive/2016/texmf-dist/tex/latex/setspace/setspace.sty
+Package: setspace 2011/12/19 v6.7a set line spacing
+)
+(./page_layout_definition.tex) (./hyphenation.tex)
 
 LaTeX Warning: Unused global option(s):
     [a4].
@@ -1055,26 +1058,26 @@ ed.
 ) (./AlgemeenBesluit.aux) (./Bijlage.aux))
 \openout1 = `totaal.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 86.
-LaTeX Font Info:    ... okay on input line 86.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 86.
-LaTeX Font Info:    ... okay on input line 86.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 86.
-LaTeX Font Info:    ... okay on input line 86.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 86.
-LaTeX Font Info:    ... okay on input line 86.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 86.
-LaTeX Font Info:    ... okay on input line 86.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 86.
-LaTeX Font Info:    ... okay on input line 86.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 86.
-LaTeX Font Info:    Try loading font information for TS1+cmr on input line 86.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 87.
+LaTeX Font Info:    ... okay on input line 87.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 87.
+LaTeX Font Info:    ... okay on input line 87.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 87.
+LaTeX Font Info:    ... okay on input line 87.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 87.
+LaTeX Font Info:    ... okay on input line 87.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 87.
+LaTeX Font Info:    ... okay on input line 87.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 87.
+LaTeX Font Info:    ... okay on input line 87.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 87.
+LaTeX Font Info:    Try loading font information for TS1+cmr on input line 87.
 
 (/usr/local/texlive/2016/texmf-dist/tex/latex/base/ts1cmr.fd
 File: ts1cmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
 )
-LaTeX Font Info:    ... okay on input line 86.
-LaTeX Font Info:    Try loading font information for OT1+phv on input line 86.
+LaTeX Font Info:    ... okay on input line 87.
+LaTeX Font Info:    Try loading font information for OT1+phv on input line 87.
 
 (/usr/local/texlive/2016/texmf-dist/tex/latex/psnfss/ot1phv.fd
 File: ot1phv.fd 2001/06/04 scalable font definitions for OT1/phv.
@@ -1180,7 +1183,7 @@ Package caption Info: End \AtBeginDocument code.
 .................................................
 . chemgreek info: "mapping-activated"
 . 
-. Activating mapping `upgreek' on line 86.
+. Activating mapping `upgreek' on line 87.
 .................................................
 Option `squaren' provided! 
  Command \squaren defined by SIunits package!
@@ -1307,6 +1310,10 @@ File: Figuren/Organigram.png Graphic file (type png)
 <use Figuren/Organigram.png>
 Package pdftex.def Info: Figuren/Organigram.png used on input line 29.
 (pdftex.def)             Requested size: 469.47046pt x 264.61519pt.
+LaTeX Font Info:    Font shape `OT1/pag/bx/n' in size <14> not available
+(Font)              Font shape `OT1/pag/b/n' tried instead on input line 34.
+LaTeX Font Info:    Font shape `OT1/pag/b/n' in size <14> not available
+(Font)              Font shape `OT1/pag/db/n' tried instead on input line 34.
  [2 <./Figuren/Organigram.png>]
 <Figuren/Inbox.png, id=39, 1844.8925pt x 971.63pt>
 File: Figuren/Inbox.png Graphic file (type png)
@@ -1345,10 +1352,6 @@ Package pdftex.def Info: Figuren/EditThemeMockup.png used on input line 79.
 
 (./Actieplan.tex
 Hoofdstuk 3.
-LaTeX Font Info:    Font shape `OT1/pag/bx/n' in size <22> not available
-(Font)              Font shape `OT1/pag/b/n' tried instead on input line 3.
-LaTeX Font Info:    Font shape `OT1/pag/b/n' in size <22> not available
-(Font)              Font shape `OT1/pag/db/n' tried instead on input line 3.
 <Figuren/GanttChartDark.png, id=63, 858.20625pt x 526.96875pt>
 File: Figuren/GanttChartDark.png Graphic file (type png)
 
@@ -1475,72 +1478,72 @@ Underfull \hbox (badness 10000) in paragraph at lines 307--308
 []|\OT1/phv/m/n/10.95 (geen on-der-steu-ning voor
  []
 
-[21] [22] (/usr/local/texlive/2016/texmf-dist/tex/latex/listings/lstlang1.sty
+[21] (/usr/local/texlive/2016/texmf-dist/tex/latex/listings/lstlang1.sty
 File: lstlang1.sty 2015/06/04 1.6 listings language file
 )
 (/usr/local/texlive/2016/texmf-dist/tex/latex/listings/lstlang2.sty
 File: lstlang2.sty 2015/06/04 1.6 listings language file
-) [23]
-<Figuren/PHP_rendering.jpeg, id=123, 1505.625pt x 501.875pt>
+) [22]
+<Figuren/PHP_rendering.jpeg, id=120, 1505.625pt x 501.875pt>
 File: Figuren/PHP_rendering.jpeg Graphic file (type jpg)
 
 <use Figuren/PHP_rendering.jpeg>
 Package pdftex.def Info: Figuren/PHP_rendering.jpeg used on input line 378.
 (pdftex.def)             Requested size: 469.47046pt x 156.49094pt.
- [24 <./Figuren/PHP_rendering.jpeg>] [25]
-<Figuren/DockerDiagram.png, id=131, 1044.90375pt x 420.57124pt>
+ [23 <./Figuren/PHP_rendering.jpeg>] [24]
+<Figuren/DockerDiagram.png, id=127, 1044.90375pt x 420.57124pt>
 File: Figuren/DockerDiagram.png Graphic file (type png)
 
 <use Figuren/DockerDiagram.png>
 Package pdftex.def Info: Figuren/DockerDiagram.png used on input line 451.
 (pdftex.def)             Requested size: 469.47046pt x 188.96011pt.
- [26 <./Figuren/DockerDiagram.png>]
+ [25 <./Figuren/DockerDiagram.png>]
 
-LaTeX Warning: Reference `Base64' on page 27 undefined on input line 464.
+LaTeX Warning: Reference `Base64' on page 26 undefined on input line 464.
 
-<Figuren/Base64Process.png, id=136, 826.5279pt x 324.2514pt>
+<Figuren/Base64Process.png, id=133, 826.5279pt x 324.2514pt>
 File: Figuren/Base64Process.png Graphic file (type png)
 
 <use Figuren/Base64Process.png>
 Package pdftex.def Info: Figuren/Base64Process.png used on input line 469.
 (pdftex.def)             Requested size: 469.47046pt x 184.17706pt.
 
-<Figuren/Base64EncodingTable.jpg, id=137, 790.45313pt x 219.06844pt>
+<Figuren/Base64EncodingTable.jpg, id=134, 790.45313pt x 219.06844pt>
 File: Figuren/Base64EncodingTable.jpg Graphic file (type jpg)
 
 <use Figuren/Base64EncodingTable.jpg>
 Package pdftex.def Info: Figuren/Base64EncodingTable.jpg used on input line 476
 .
 (pdftex.def)             Requested size: 328.62788pt x 91.07549pt.
-) [27 <./Figuren/Base64Process.png> <./Figuren/Base64EncodingTable.jpg>]
+) [26 <./Figuren/Base64Process.png> <./Figuren/Base64EncodingTable.jpg>]
 \openout2 = `Deel3.aux'.
 
  (./Deel3.tex
 Hoofdstuk 5.
-<Figuren/ThemeComponent.png, id=141, 1098.1025pt x 983.675pt>
+<Figuren/ThemeComponent.png, id=138, 1098.1025pt x 983.675pt>
 File: Figuren/ThemeComponent.png Graphic file (type png)
 
 <use Figuren/ThemeComponent.png>
 Package pdftex.def Info: Figuren/ThemeComponent.png used on input line 22.
 (pdftex.def)             Requested size: 281.68513pt x 252.32727pt.
- [28
+ [27
 
 
 
-] [29 <./Figuren/ThemeComponent.png>]
-[30]
+] [28 <./Figuren/ThemeComponent.png>]
+[29]
 Underfull \hbox (badness 2293) in paragraph at lines 101--102
 []\OT1/phv/m/n/10.95 Eens het can-vas be-staat, kun-nen ob-jec-ten toe-ge-voegd
  wor-den. Met be-hulp van de
  []
 
-[31] [32] [33] [34] [35] [36]
+[30] [31] [32] [33] [34] [35]
 Underfull \hbox (badness 10000) in paragraph at lines 289--290
 []\OT1/phv/m/n/10.95 Voor het op-ha-len van an-no-ta-ties zor-gen de \OT1/pcr/m
 /n/10.95 request-annotations \OT1/phv/m/n/10.95 en
  []
 
-[37] [38] [39] <Figuren/FrontToBack.png, id=181, 1927.2pt x 492.84125pt>
+[36] [37] [38] <Figuren/FrontToBack.png, id=178, 1927.2pt x 492.84125pt>
 File: Figuren/FrontToBack.png Graphic file (type png)
 
 <use Figuren/FrontToBack.png>
@@ -1548,28 +1551,28 @@ Package pdftex.def Info: Figuren/FrontToBack.png used on input line 403.
 (pdftex.def)             Requested size: 469.47046pt x 120.05154pt.
 
 
-LaTeX Warning: Reference `lst:ResolvingStream' on page 40 undefined on input li
+LaTeX Warning: Reference `lst:ResolvingStream' on page 39 undefined on input li
 ne 408.
 
-[40 <./Figuren/FrontToBack.png>] [41]
+[39 <./Figuren/FrontToBack.png>] [40]
 
-LaTeX Warning: Reference `JestGettingStarted' on page 42 undefined on input lin
+LaTeX Warning: Reference `JestGettingStarted' on page 41 undefined on input lin
 e 440.
 
-<Figuren/ThemeSet.png, id=189, 1667.22874pt x 419.5675pt>
+<Figuren/ThemeSet.png, id=186, 1667.22874pt x 419.5675pt>
 File: Figuren/ThemeSet.png Graphic file (type png)
 
 <use Figuren/ThemeSet.png>
 Package pdftex.def Info: Figuren/ThemeSet.png used on input line 469.
 (pdftex.def)             Requested size: 469.47046pt x 118.1439pt.
- [42 <./Figuren/ThemeSet.png>]
-<Figuren/UniCrawler.png, id=194, 1139.25626pt x 610.28pt>
+ [41 <./Figuren/ThemeSet.png>]
+<Figuren/UniCrawler.png, id=191, 1139.25626pt x 610.28pt>
 File: Figuren/UniCrawler.png Graphic file (type png)
 
 <use Figuren/UniCrawler.png>
 Package pdftex.def Info: Figuren/UniCrawler.png used on input line 480.
 (pdftex.def)             Requested size: 469.47046pt x 251.48286pt.
- [43 <./Figuren/UniCrawler.png>]
+ [42 <./Figuren/UniCrawler.png>]
 Underfull \hbox (badness 10000) in paragraph at lines 499--501
 []\OT1/phv/b/n/10.95 Twitter 
  []
@@ -1580,7 +1583,7 @@ Underfull \hbox (badness 1838) in paragraph at lines 499--501
 oint \OT1/phv/m/n/10.95 [[]]. De af-beel-ding zelf kan base64
  []
 
-[44]
+[43]
 Underfull \hbox (badness 10000) in paragraph at lines 521--522
 []\OT1/phv/m/n/10.95 Het uplo-a-den van de pro-fielfoto ver-loopt op ge-lijk-aa
 r-dige ma-nier. Via de
@@ -1597,12 +1600,12 @@ Underfull \hbox (badness 10000) in paragraph at lines 523--526
 []\OT1/phv/b/n/10.95 Facebook 
  []
 
-[45]) [46] [47]
+[44]) [45] [46]
 \openout2 = `AlgemeenBesluit.aux'.
 
  (./AlgemeenBesluit.tex
 Hoofdstuk 6.
-) [48
+) [47
 
 
 
@@ -1693,13 +1696,13 @@ LaTeX Warning: There were multiply-defined labels.
 ### simple group (level 1) entered at line 1061 ({)
 ### bottom level 
 Here is how much of TeX's memory you used:
- 29125 strings out of 493014
- 510622 string characters out of 6133351
- 960957 words of memory out of 5000000
- 32056 multiletter control sequences out of 15000+600000
- 53762 words of font info for 106 fonts, out of 8000000 for 9000
+ 29148 strings out of 493014
+ 511107 string characters out of 6133351
+ 961337 words of memory out of 5000000
+ 32076 multiletter control sequences out of 15000+600000
+ 51977 words of font info for 104 fonts, out of 8000000 for 9000
  1219 hyphenation exceptions out of 8191
- 53i,12n,92p,10405b,12105s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 53i,12n,92p,10405b,12139s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/local/texlive/2016/texmf-dist/fonts/enc/dvips/base/8r.enc
 }</usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb>
 </usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></
@@ -1711,10 +1714,10 @@ ist/fonts/type1/urw/helvetic/uhvb8a.pfb></usr/local/texlive/2016/texmf-dist/fon
 ts/type1/urw/helvetic/uhvbo8a.pfb></usr/local/texlive/2016/texmf-dist/fonts/typ
 e1/urw/helvetic/uhvr8a.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/urw/
 helvetic/uhvro8a.pfb>
-Output written on totaal.pdf (58 pages, 5847670 bytes).
+Output written on totaal.pdf (57 pages, 5846946 bytes).
 PDF statistics:
- 264 PDF objects out of 1000 (max. 8388607)
- 162 compressed objects within 2 object streams
+ 261 PDF objects out of 1000 (max. 8388607)
+ 160 compressed objects within 2 object streams
  0 named destinations out of 1000 (max. 500000)
  91 words of extra memory for PDF output out of 10000 (max. 10000000)
 

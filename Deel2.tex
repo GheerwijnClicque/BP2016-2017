@@ -1,12 +1,12 @@
 
 \chapter{Voorstudie}
 \vspace{-3cm}
-\section{\textbf{Vereisten}} \label{vereisten}
+\section{Vereisten} \label{vereisten}
 Alle bibliotheken en technologie\"{e}n die besproken zullen worden, moeten aan enkele voorwaarden voldoen. Zo moeten afbeeldingen en tekst: verplaatst, geschaald, geroteerd en over elkaar geplaatst kunnen worden (wat dus inhoudt dat de gebruikte bibliotheek/technologie 'lagen' moet ondersteunen). Idealiter kan tekst, eens op het canvas geplaatst, nog aangepast worden. Dit vooral om interactie met tekst voor de gebruikers eenvoudiger te maken. Nadien moeten de afbeeldingen ge\"{e}xporteerd en hun eigenschappen (tekst, KPI's, kleur, lettertype etc.) bewaard kunnen worden. Aangezien KPI's aanwezig zijn op de afbeelding, moeten deze later ook aangepast kunnen worden. De afbeeldingen zullen dus om de zoveel tijd opnieuw gegenereerd worden met nieuwe, aangepaste KPI`s. 
 
 Veel sociale media verwachten dat omslag-en profielfoto's bepaalde dimensies bezitten. De vereiste dimensies van omslagfoto's kunnen redelijk groot uitvallen om problemen met schaling te voorkomen. Twitter verwacht bijvoorbeeld een afbeelding van 1500 op 500 pixels. Dit is natuurlijk niet gebruiksvriendelijk weer te geven in een browservenster. Daarom moet herschalen van het volledige canvas met elk van zijn objecten mogelijk zijn. Hierbij is het belangrijk dat alle verhoudingen behouden blijven om uiteindelijk dezelfde afbeelding te bekomen zoals die door de gebruiker gemaakt werd. Naast de frontend manipulatie van afbeeldingen zal dus ook manipulatie in de backend onderzocht moeten worden.  
 
-\section{\textbf{Frontend afbeelding manipulatie}}
+\section{Frontend afbeelding manipulatie}
 Redelijk wat bibliotheken om afbeeldingen te manipuleren zijn reeds te vinden. De meeste hiervan zijn gericht op het gebruiken van filters op afbeeldingen of het maken van animaties in een canvas. Hoewel deze bibliotheken veel te bieden hebben, zijn ze minder geschikt voor deze toepassing. Het is hier namelijk de bedoeling om elementen op een canvas te positioneren, zowel tekst als de afbeeldingen zelf. Het volledige canvas en alle inhoud moet op gepaste wijze opgeslagen kunnen worden zodat het canvas op een later tijdstip opnieuw opgebouwd kan worden. 
 
 \subsection{Fabric.js}
@@ -295,7 +295,7 @@ Een voordeel van het gebruiken van \textit{VanillaJS} is dat de code niet afhank
 \textbf{Serialisatie} \break
 Exporteren van een canvas is niet zo vanzelfsprekend. Uiteraard bezit het canvas enkele methodes, waaronder de \texttt{toDataUrl()} methode, die instaan voor serialisatie. Deze methodes kunnen echter het canvas enkel als afbeelding exporteren. Dit is natuurlijk niet erg handig aangezien de KPI's op de afbeelding variabel zijn. Om een canvas in de huidige staat te exporteren moet over elk object in het canvas gegaan worden en alle eigenschappen weggeschreven worden. Op deze manier kunnen dan de objecten er uit gehaald worden die een andere waarde moeten krijgen en kan uiteindelijk de afbeelding gegenereerd worden. 
 
-\newpage
+%\newpage
 \subsection{Vergelijking van beschreven bibliotheken} \label{vergelijkingBibliotheken}
 
 \begin{table}[htbp]
@@ -345,7 +345,7 @@ Bij het vergelijken van de bibliotheken is het duidelijk dat elke bibliotheek on
 Aangezien het project enkel basis manipulatie van objecten in het canvas vereist, speelt performantie niet zo'n grote rol. Op het canvas zullen op een gegeven tijdstip enkel een afbeelding en wat tekst objecten aanwezig zijn. Dit zal in geen enkel geval invloed hebben op de performantie. 
 
 %\newpage
-\section{\textbf{Backend afbeelding manipulatie}}
+\section{Backend afbeelding manipulatie}
 Eens de gebruiker zijn/haar afbeelding heeft samengesteld, moet deze opgeslagen worden in de database. Voor de foto ge\"{u}pload wordt naar Facebook of Twitter, moeten de KPI's namelijk aangepast worden naar de huidige waarden. Dit gebeurt in een microservice die bijvoorbeeld om de 5 minuten de nodige KPI's berekend en met deze waarden een foto genereerd. Zoals eerder besproken zal het aangemaakte canvas geserialiseerd worden zodat het later opnieuw aangemaakt kan worden met de correcte waarden. Wat hier vooral een probleem vormt, is de nauwkeurigheid van de omzetting. De afbeelding die gegenereerd wordt moet namelijk identiek zijn aan de afbeelding die de gebruiker samenstelt. 
 
 Het is vanzelfsprekend dat de backend in staat is om het object, dat gegenereerd werd in de frontend, te interpreteren en de nodige bewerkingen (zoals het veranderen van KPI's) kan uitvoeren. Er kan gebruik gemaakt worden van verschillende programmeertalen en omgevingen om de afbeeldingen te genereren. 
@@ -438,7 +438,7 @@ Hoewel voor Easel een node-wrapper beschikbaar is %https://github.com/CreateJS/E
 
 %https://www.taaltelefoon.be
 %http://woordenlijst.org/#/?q=hoek
-\subsection{Draaien van de service}
+\subsection{Online plaatsen van de service}
 % Docker (mss Jenkins ook fzo?)
 Zoals eerder vermeld zal een microservice gebruikt worden om de afbeeldingen te genereren. Logischerwijze moet deze service op een server draaien zodat deze vanuit de backend, die hoofdzakelijk in PHP geschreven is, aanspreekbaar is. Om het deployen van de service gemakkelijker te maken, wordt gebruik gemaakt van Docker. 
 

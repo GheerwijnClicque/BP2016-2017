@@ -5,7 +5,7 @@
 Het annoteren van afbeeldingen is \'{e}\'{e}n van de onderdelen binnen de \textit{Profile Manager} van CX Social. De \textit{Profile Manager} is een nieuwe feature die gebruikers moet helpen bij het beheren van hun sociale media profielen. Een thema kan aangemaakt worden voor Facebook of Twitter dat een omslag-en/of profielfoto bevat. Eens een omslagfoto ge\"{u}pload is, is het mogelijk om annotaties toe te voegen. Dit kan simpelweg tekst zijn maar ook KPI's kunnen op de afbeelding geplaatst worden. Gebruikers kunnen voor geconnecteerde profielen instellen welk thema op welk tijdstip actief moet zijn. De aangemaakte afbeeldingen worden dan op de ingestelde tijdstippen ge\"{u}pload naar het juiste profiel. 
 
 
-\section{\textbf{Frontend implementatie}}
+\section{Frontend implementatie}
 Een groot deel van de frontend code van CX Social is geschreven met React. Met React kunnen makkelijk componenten aangemaakt worden om zo complexe interfaces aan te maken. Om de \textit{Profile Manager} zo modulair mogelijk te maken worden de verschillende \textit{features} opgesplitst in React componenten. 
 
 \subsection{Aanmaken van een thema} \label{AanmakenVanEenThema}
@@ -328,7 +328,7 @@ Natuurlijk mogen deze afbeeldingen niet behouden blijven wanneer de afbeelding a
 %Wanneer een gebruiker een afbeelding geannoteerd heeft, kan het canvas logischerwijze opgeslagen worden. Niet enkel bij het opslaan maar ook bij het al dan niet per ongeluk sluiten van het annotatievenster moet actie ondernomen worden. 
 
 
-\section{\textbf{Backend implementatie}}\label{BackendImplementatie}
+\section{Backend implementatie}\label{BackendImplementatie}
 
 Eenmaal de gebruiker een thema met omslagfoto heeft aangemaakt, kan deze toegekend worden aan een profiel. Op het moment dat het thema actief moet worden, moet vanuit de annotaties de afbeelding aangemaakt worden. Deze kan dan via de Facebook of Twitter API
 
@@ -358,10 +358,6 @@ app.post('/render', function (request, response) {
 De \texttt{cors} module is nodig om \textit{Cross-origin resource sharing} (CORS) mogelijk te maken in de server. Dit maakt het mogelijk om \textit{resources} te laden vanuit een ander domein dan hetgene waarvan het originele bestand komt. In de service komt dit voor wanneer de afbeeldingen ingeladen worden tijdens het opstellen van het canvas. De \textit{source} van de afbeeldingen zal namelijk hetzelfde domein bevatten als waar de afbeelding ge\"{u}pload wordt. Wordt bijvoorbeeld gewerkt op het \textit{beta.engagor.com} domein, dan zal de afbeelding ingeladen worden vanuit \textit{http://beta.engagor.com/images/}. Als geweten is dat de service op het \textit{server603:3000} loopt, dan is duidelijk dat hier een \textit{resource} vanop een ander domein ingeladen wordt. Dit kan dus een probleem vormen wanneer de \texttt{cors} module niet ge\"{i}nstalleerd is. %MAY NOT BE RIGHT!
 Een andere manier om CORS mogelijk te maken is het gebruiken van specifieke \textit{response headers}. Door de \texttt{Access-Control-Allow-Origin} zo te configureren dat elke oorsprong wordt toegelaten (door het gebruik van een wildcard: *), wordt CORS mogelijk. Naast deze \textit{header} moet ook vastgelegd worden welke \textit{headers} toegestaan worden: \texttt{Access-Control-Allow-Headers: Origin}. %https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Access-Control-Allow-Headers
 
-
-
-
- 
 %canvas-prebuilt is een set scripts die de correcte node-canvas versie download en zal builden/compilen. Als je node-canvas gewoon isntalleert moet er namelijk nog met node-gyp compilen. (dit moet zodat het makkelijker wordt om om te gaan met verschillende build platforms!)
 
 %Er wordt voor het Express \textit{framework} gekozen om dat dit een van de meest gebruikte Node.js \textit{frameworks} is en perfect in staat is om met weinig code, tot het gewenste resultaat te komen. 
@@ -492,7 +488,7 @@ Wordt dit algoritme op iedere set (zie Figuur \ref{fig:ThemeSet}) toegepast, wor
 %MAYBE DELETE?
 Verschillende sets kunnen dus zo geconfigureerd worden dat een complexe planning van thema's ontstaat. Zo kunnen gebruikers bijvoorbeeld een standaard thema ingesteld hebben voor hun profiel maar wordt tijdens de openingsuren op de omslagfoto aangegeven dat het bedrijf open is. Op bepaalde feestdagen zoals Kerstmis of Pasen kan dan weer een aangepaste profielfoto getoond worden. 
 
-\subsection{Doorsturen naar Facebook/Twitter - Uploaden naar sociale media}
+\subsection{Uploaden naar sociale media}
 Elke vijf minuten bestaat de kans dat een thema toegepast wordt en dus ook foto's ge\"{u}pload moeten worden naar Facebook of Twitter. Binnen CX Social wordt reeds gebruik gemaakt van de Application Programming Interface (API) van deze platformen waardoor er reeds code aanwezig is voor het maken van een \textit{request} naar elk van deze services. Deze code zal ook een correct authenticatie token, voor de ingelogde gebruiker, met de \textit{request} meegeven. %MSS WEGLATEN <-- ? MEER UITLEG EROVER!! OAUTH 2 ENZO!!
 Er moet dus enkel een \textit{request} gestuurd worden naar de specifieke \textit{endpoints} waarmee profielfoto, omslagfoto en profielinformatie aangepast worden. 
 

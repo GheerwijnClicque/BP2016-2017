@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016) (preloaded format=pdflatex 2017.3.25)  23 MAY 2017 21:14
+This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016) (preloaded format=pdflatex 2017.3.25)  24 MAY 2017 00:21
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1049,10 +1049,6 @@ LaTeX Warning: Unused global option(s):
 (./LijstMetAfkortingen.aux) (./Deel1.aux) (./Actieplan.aux) (./Deel2.aux)
 (./Deel3.aux
 
-LaTeX Warning: Label `lst:ThemeDispatcherEventsThemeAnnotations' multiply defin
-ed.
-
-
 LaTeX Warning: Label `lst:NodeServicePromise' multiply defined.
 
 ) (./AlgemeenBesluit.aux) (./Bijlage.aux))
@@ -1507,7 +1503,7 @@ Hoofdstuk 5.
 File: Figuren/ThemeComponent.png Graphic file (type png)
 
 <use Figuren/ThemeComponent.png>
-Package pdftex.def Info: Figuren/ThemeComponent.png used on input line 25.
+Package pdftex.def Info: Figuren/ThemeComponent.png used on input line 26.
 (pdftex.def)             Requested size: 281.68513pt x 252.32727pt.
  [26
 
@@ -1515,78 +1511,69 @@ Package pdftex.def Info: Figuren/ThemeComponent.png used on input line 25.
 
 ] [27 <./Figuren/ThemeComponent.png>]
 [28]
-Underfull \hbox (badness 2293) in paragraph at lines 105--106
+Underfull \hbox (badness 2293) in paragraph at lines 106--107
 []\OT1/phv/m/n/10.95 Eens het can-vas be-staat, kun-nen ob-jec-ten toe-ge-voegd
  wor-den. Met be-hulp van de
  []
 
-[29] [30] [31] [32] [33]
-Underfull \hbox (badness 10000) in paragraph at lines 293--294
+[29] [30] [31] [32] [33] [34]
+Underfull \hbox (badness 10000) in paragraph at lines 295--296
 []\OT1/phv/m/n/10.95 Voor het op-ha-len van an-no-ta-ties zor-gen de \OT1/pcr/m
 /n/10.95 request-annotations \OT1/phv/m/n/10.95 en
  []
 
-[34] [35] [36] [37] <Figuren/FrontToBack.png, id=170, 1927.2pt x 492.84125pt>
+[35] [36] [37] <Figuren/FrontToBack.png, id=169, 1927.2pt x 492.84125pt>
 File: Figuren/FrontToBack.png Graphic file (type png)
 
 <use Figuren/FrontToBack.png>
-Package pdftex.def Info: Figuren/FrontToBack.png used on input line 403.
+Package pdftex.def Info: Figuren/FrontToBack.png used on input line 404.
 (pdftex.def)             Requested size: 469.47046pt x 120.05154pt.
-
-
-LaTeX Warning: Reference `lst:ResolvingStream' on page 38 undefined on input li
-ne 408.
-
-[38 <./Figuren/FrontToBack.png>]
-
-LaTeX Warning: Reference `JestGettingStarted' on page 39 undefined on input lin
-e 440.
-
-[39] <Figuren/ThemeSet.png, id=177, 1667.22874pt x 419.5675pt>
+ [38 <./Figuren/FrontToBack.png>] [39]
+<Figuren/ThemeSet.png, id=177, 1667.22874pt x 419.5675pt>
 File: Figuren/ThemeSet.png Graphic file (type png)
 
 <use Figuren/ThemeSet.png>
-Package pdftex.def Info: Figuren/ThemeSet.png used on input line 469.
+Package pdftex.def Info: Figuren/ThemeSet.png used on input line 470.
 (pdftex.def)             Requested size: 469.47046pt x 118.1439pt.
-
-<Figuren/UniCrawler.png, id=178, 1139.25626pt x 610.28pt>
+ [40 <./Figuren/ThemeSet.png>]
+<Figuren/UniCrawler.png, id=182, 1139.25626pt x 610.28pt>
 File: Figuren/UniCrawler.png Graphic file (type png)
 
 <use Figuren/UniCrawler.png>
-Package pdftex.def Info: Figuren/UniCrawler.png used on input line 480.
+Package pdftex.def Info: Figuren/UniCrawler.png used on input line 481.
 (pdftex.def)             Requested size: 469.47046pt x 251.48286pt.
- [40 <./Figuren/ThemeSet.png>] [41 <./Figuren/UniCrawler.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 499--501
+ [41 <./Figuren/UniCrawler.png>]
+Underfull \hbox (badness 10000) in paragraph at lines 501--503
 []\OT1/phv/b/n/10.95 Twitter 
  []
 
 
-Underfull \hbox (badness 2573) in paragraph at lines 499--501
+Underfull \hbox (badness 2573) in paragraph at lines 501--503
 \OT1/phv/m/n/10.95 Om de om-slag-foto van een Twitter-profiel aan te pas-sen wo
 rdt ge-bruik ge-maakt van
  []
 
 
-Underfull \hbox (badness 1152) in paragraph at lines 499--501
+Underfull \hbox (badness 1152) in paragraph at lines 501--503
 \OT1/phv/m/n/10.95 de \OT1/pcr/m/n/10.95 /account/update[]profile[]banner \OT1/
 phv/m/sl/10.95 end-point \OT1/phv/m/n/10.95 [[]]. De af-beel-ding zelf kan base
 64
  []
 
-
-Underfull \hbox (badness 10000) in paragraph at lines 521--522
+[42]
+Underfull \hbox (badness 10000) in paragraph at lines 523--524
 []\OT1/phv/m/n/10.95 Het uplo-a-den van de pro-fielfoto ver-loopt op ge-lijk-aa
 r-dige ma-nier. Via de
  []
 
 
-Underfull \hbox (badness 2418) in paragraph at lines 521--522
-\OT1/pcr/m/n/10.95 /account/updateo[]profileo[]image \OT1/phv/m/sl/10.95 end-po
-int \OT1/phv/m/n/10.95 wordt de base64 ge[]encodeerde af-beel-
+Underfull \hbox (badness 1629) in paragraph at lines 523--524
+\OT1/pcr/m/n/10.95 /account/update[]profile[]image \OT1/phv/m/sl/10.95 end-poin
+t \OT1/phv/m/n/10.95 wordt de base64 ge[]encodeerde af-beel-ding
  []
 
-[42]
-Underfull \hbox (badness 10000) in paragraph at lines 523--526
+
+Underfull \hbox (badness 10000) in paragraph at lines 525--528
 []\OT1/phv/b/n/10.95 Facebook 
  []
 
@@ -1653,18 +1640,24 @@ https : / / github . com / chearon /
 
 
 Underfull \hbox (badness 10000) in paragraph at lines 187--190
+[]\OT1/phv/m/n/10.95 F. Inc., ``Get-ting star-ted.'' $\OT1/pcr/m/n/10.95 https 
+: / / facebook . github . io / jest / docs / en /
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 192--195
 []\OT1/phv/m/n/10.95 Twitter, ``Twit-ter de-vel-o-per do-cu-men-ta-tion.'' $\OT
 1/pcr/m/n/10.95 https : / / dev . twitter . com / rest /
  []
 
 
-Underfull \hbox (badness 2846) in paragraph at lines 192--196
+Underfull \hbox (badness 2846) in paragraph at lines 197--201
 []\OT1/phv/m/n/10.95 F. Inc., ``Open graph page pho-tos.'' $\OT1/pcr/m/n/10.95 
 https : / / developers . facebook . com / docs /
  []
 
 
-Underfull \hbox (badness 4967) in paragraph at lines 198--202
+Underfull \hbox (badness 4967) in paragraph at lines 203--207
 []\OT1/phv/m/n/10.95 F. Inc., ``Page pic-ture.'' $\OT1/pcr/m/n/10.95 https : / 
 / developers . facebook . com / docs / graph-[]api /
  []
@@ -1702,9 +1695,6 @@ Package pdftex.def Info: Figuren/Insights.png used on input line 26.
 ) (./Actieplan.aux) (./Deel2.aux) (./Deel3.aux) (./AlgemeenBesluit.aux)
 (./Bijlage.aux))
 
-LaTeX Warning: There were undefined references.
-
-
 LaTeX Warning: There were multiply-defined labels.
 
  )
@@ -1714,10 +1704,10 @@ LaTeX Warning: There were multiply-defined labels.
 ### simple group (level 1) entered at line 1061 ({)
 ### bottom level 
 Here is how much of TeX's memory you used:
- 28657 strings out of 493014
- 505525 string characters out of 6133351
- 987189 words of memory out of 5000000
- 31585 multiletter control sequences out of 15000+600000
+ 28661 strings out of 493014
+ 505684 string characters out of 6133351
+ 976585 words of memory out of 5000000
+ 31589 multiletter control sequences out of 15000+600000
  51977 words of font info for 104 fonts, out of 8000000 for 9000
  1219 hyphenation exceptions out of 8191
  53i,12n,92p,10405b,12945s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -1732,7 +1722,7 @@ ist/fonts/type1/urw/helvetic/uhvb8a.pfb></usr/local/texlive/2016/texmf-dist/fon
 ts/type1/urw/helvetic/uhvbo8a.pfb></usr/local/texlive/2016/texmf-dist/fonts/typ
 e1/urw/helvetic/uhvr8a.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/urw/
 helvetic/uhvro8a.pfb>
-Output written on totaal.pdf (56 pages, 5858723 bytes).
+Output written on totaal.pdf (56 pages, 5858958 bytes).
 PDF statistics:
  258 PDF objects out of 1000 (max. 8388607)
  158 compressed objects within 2 object streams

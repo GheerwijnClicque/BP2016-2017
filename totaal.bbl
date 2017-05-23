@@ -40,10 +40,6 @@ Facebook, ``A javascript library for building user interfaces - react.''
   \url{https://facebook.github.io/react/}, 2017.
 \newblock Geraadpleegd op 09/03/17.
 
-\bibitem{EngagorScreenshots}
-Engagor, ``Engagor webapplicatie.'' \url{https://app.engagor.com/}, 2017.
-\newblock Geraadpleegd op 09/03/17.
-
 \bibitem{EngagorApp}
 Engagor, ``Clarabrige cx social dev stage.'' \url{https://app.engagor.com/},
   2017.
@@ -91,6 +87,16 @@ abbycar, Sebastianz, Sheppy, tifosi, jpmedley, fscholz, kscarfone, and Jeremie,
   ``Svg element - web apis.''
   \url{https://developer.mozilla.org/en-US/docs/Web/API/SVGElement}, 2016.
 \newblock Geraadpleegd op 18/03/17.
+
+\bibitem{KonvaGithub}
+A.~Lavrenov, ``Konva - javascript 2d canvas library.''
+  \url{https://konvajs.github.io/}, 2017.
+\newblock Geraadpleegd op 19/03/17.
+
+\bibitem{KonvaDocs}
+A.~Lavrenov, ``Jsdoc: Namespace: konva.''
+  \url{https://konvajs.github.io/api/Konva.html}, 2017.
+\newblock Geraadpleegd op 19/03/17.
 
 \bibitem{KonvaSerialize}
 A.~Lavrenov, ``Html5 canvas stage data url tutorial.''
@@ -152,6 +158,11 @@ D.~Inc., ``What is a container.'' \url{https://www.docker.com/what-container},
   2017.
 \newblock Geraadpleegd op 16/05/17.
 
+\bibitem{Base64}
+H.~Tschabitscher, ``How base64 encoding works.''
+  \url{https://www.lifewire.com/base64-encoding-overview-1166412}, 2016.
+\newblock Geraadpleegd op 13/05/17.
+
 \bibitem{Base64Image}
 rajesh, ``Base64 basics - what? why? how?.''
   \url{http://myitlearnings.com/wp-content/uploads/2015/11/base64.jpg}, 2015.
@@ -194,5 +205,9 @@ J.~Spencer, ``2017 social media image sizes cheat sheet.''
   \url{https://makeawebsitehub.com/social-media-image-sizes-cheat-sheet/},
   2017.
 \newblock Geraadpleegd op 18/05/17.
+
+\bibitem{EngagorScreenshots}
+Engagor, ``Engagor webapplicatie.'' \url{https://app.engagor.com/}, 2017.
+\newblock Geraadpleegd op 09/03/17.
 
 \end{thebibliography}

@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016) (preloaded format=pdflatex 2017.3.25)  23 MAY 2017 12:01
+This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016) (preloaded format=pdflatex 2017.3.25)  23 MAY 2017 21:14
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1052,29 +1052,32 @@ LaTeX Warning: Unused global option(s):
 LaTeX Warning: Label `lst:ThemeDispatcherEventsThemeAnnotations' multiply defin
 ed.
 
+
+LaTeX Warning: Label `lst:NodeServicePromise' multiply defined.
+
 ) (./AlgemeenBesluit.aux) (./Bijlage.aux))
 \openout1 = `totaal.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 87.
-LaTeX Font Info:    ... okay on input line 87.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 87.
-LaTeX Font Info:    ... okay on input line 87.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 87.
-LaTeX Font Info:    ... okay on input line 87.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 87.
-LaTeX Font Info:    ... okay on input line 87.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 87.
-LaTeX Font Info:    ... okay on input line 87.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 87.
-LaTeX Font Info:    ... okay on input line 87.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 87.
-LaTeX Font Info:    Try loading font information for TS1+cmr on input line 87.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 93.
+LaTeX Font Info:    ... okay on input line 93.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 93.
+LaTeX Font Info:    ... okay on input line 93.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 93.
+LaTeX Font Info:    ... okay on input line 93.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 93.
+LaTeX Font Info:    ... okay on input line 93.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 93.
+LaTeX Font Info:    ... okay on input line 93.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 93.
+LaTeX Font Info:    ... okay on input line 93.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 93.
+LaTeX Font Info:    Try loading font information for TS1+cmr on input line 93.
 
 (/usr/local/texlive/2016/texmf-dist/tex/latex/base/ts1cmr.fd
 File: ts1cmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
 )
-LaTeX Font Info:    ... okay on input line 87.
-LaTeX Font Info:    Try loading font information for OT1+phv on input line 87.
+LaTeX Font Info:    ... okay on input line 93.
+LaTeX Font Info:    Try loading font information for OT1+phv on input line 93.
 
 (/usr/local/texlive/2016/texmf-dist/tex/latex/psnfss/ot1phv.fd
 File: ot1phv.fd 2001/06/04 scalable font definitions for OT1/phv.
@@ -1180,7 +1183,7 @@ Package caption Info: End \AtBeginDocument code.
 .................................................
 . chemgreek info: "mapping-activated"
 . 
-. Activating mapping `upgreek' on line 87.
+. Activating mapping `upgreek' on line 93.
 .................................................
 Option `squaren' provided! 
  Command \squaren defined by SIunits package!
@@ -1225,21 +1228,6 @@ LaTeX Font Info:    Try loading font information for OT1+pag on input line 1.
 
 (/usr/local/texlive/2016/texmf-dist/tex/latex/psnfss/ot1pag.fd
 File: ot1pag.fd 2001/06/04 font definitions for OT1/pag.
-)
-LaTeX Font Info:    Try loading font information for U+msa on input line 3.
-
-(/usr/local/texlive/2016/texmf-dist/tex/latex/amsfonts/umsa.fd
-File: umsa.fd 2013/01/14 v3.01 AMS symbols A
-)
-LaTeX Font Info:    Try loading font information for U+msb on input line 3.
-
-(/usr/local/texlive/2016/texmf-dist/tex/latex/amsfonts/umsb.fd
-File: umsb.fd 2013/01/14 v3.01 AMS symbols B
-)
-LaTeX Font Info:    Try loading font information for U+lasy on input line 3.
-
-(/usr/local/texlive/2016/texmf-dist/tex/latex/base/ulasy.fd
-File: ulasy.fd 1998/08/17 v2.2e LaTeX symbol font definitions
 )) [1
 
 
@@ -1255,7 +1243,21 @@ File: ulasy.fd 1998/08/17 v2.2e LaTeX symbol font definitions
 ] (./totaal.toc
 LaTeX Font Info:    Font shape `OT1/phv/bx/n' in size <10.95> not available
 (Font)              Font shape `OT1/phv/b/n' tried instead on input line 3.
- [3
+LaTeX Font Info:    Try loading font information for U+msa on input line 7.
+
+(/usr/local/texlive/2016/texmf-dist/tex/latex/amsfonts/umsa.fd
+File: umsa.fd 2013/01/14 v3.01 AMS symbols A
+)
+LaTeX Font Info:    Try loading font information for U+msb on input line 7.
+
+(/usr/local/texlive/2016/texmf-dist/tex/latex/amsfonts/umsb.fd
+File: umsb.fd 2013/01/14 v3.01 AMS symbols B
+)
+LaTeX Font Info:    Try loading font information for U+lasy on input line 7.
+
+(/usr/local/texlive/2016/texmf-dist/tex/latex/base/ulasy.fd
+File: ulasy.fd 1998/08/17 v2.2e LaTeX symbol font definitions
+) [3
 
 
 ])
@@ -1265,7 +1267,8 @@ LaTeX Font Info:    Font shape `OT1/phv/bx/n' in size <10.95> not available
  [4]
 \openout2 = `LijstMetAfkortingen.aux'.
 
- (./LijstMetAfkortingen.tex
+
+(./LijstMetAfkortingen.tex
 LaTeX Font Info:    Try loading font information for TS1+phv on input line 5.
 
 (/usr/local/texlive/2016/texmf-dist/tex/latex/psnfss/ts1phv.fd
@@ -1287,7 +1290,7 @@ LaTeX Font Info:    Font shape `OT1/pag/b/n' in size <14> not available
 (Font)              Font shape `OT1/pag/db/n' tried instead on input line 4.
 LaTeX Font Info:    Font shape `OT1/phv/m/it' in size <10.95> not available
 (Font)              Font shape `OT1/phv/m/sl' tried instead on input line 7.
-<Figuren/CXSocialLogo.png, id=26, 481.8pt x 105.39375pt>
+<Figuren/CXSocialLogo.png, id=25, 481.8pt x 105.39375pt>
 File: Figuren/CXSocialLogo.png Graphic file (type png)
 
 <use Figuren/CXSocialLogo.png>
@@ -1301,7 +1304,7 @@ LaTeX Font Info:    Font shape `OT1/phv/bx/n' in size <10> not available
 
 
  <./Figuren/CXSocialLogo.png>]
-<Figuren/Organigram.png, id=34, 1380.15625pt x 777.90625pt>
+<Figuren/Organigram.png, id=33, 1380.15625pt x 777.90625pt>
 File: Figuren/Organigram.png Graphic file (type png)
 
 <use Figuren/Organigram.png>
@@ -1311,7 +1314,7 @@ Package pdftex.def Info: Figuren/Organigram.png used on input line 28.
 Hoofdstuk 2.
 LaTeX Font Info:    Font shape `OT1/phv/m/it' in size <9> not available
 (Font)              Font shape `OT1/phv/m/sl' tried instead on input line 87.
-<Figuren/EditThemeMockup.png, id=43, 1044.90375pt x 837.1275pt>
+<Figuren/EditThemeMockup.png, id=42, 1044.90375pt x 837.1275pt>
 File: Figuren/EditThemeMockup.png Graphic file (type png)
 
 <use Figuren/EditThemeMockup.png>
@@ -1334,7 +1337,7 @@ LaTeX Font Info:    Font shape `OT1/phv/b/it' in size <10.95> not available
 
 
 
-] <Figuren/GanttChartDark.png, id=55, 858.20625pt x 526.96875pt>
+] <Figuren/GanttChartDark.png, id=54, 858.20625pt x 526.96875pt>
 File: Figuren/GanttChartDark.png Graphic file (type png)
 
 <use Figuren/GanttChartDark.png>
@@ -1361,218 +1364,233 @@ LaTeX Font Info:    Try loading font information for OT1+pcr on input line 20.
  (/usr/local/texlive/2016/texmf-dist/tex/latex/psnfss/ot1pcr.fd
 File: ot1pcr.fd 2001/06/04 font definitions for OT1/pcr.
 )
-LaTeX Font Info:    Try loading font information for TS1+pcr on input line 39.
+LaTeX Font Info:    Try loading font information for TS1+pcr on input line 41.
 
 (/usr/local/texlive/2016/texmf-dist/tex/latex/psnfss/ts1pcr.fd
 File: ts1pcr.fd 2001/06/04 font definitions for TS1/pcr.
 )
 LaTeX Font Info:    Font shape `OT1/pcr/bx/n' in size <10> not available
-(Font)              Font shape `OT1/pcr/b/n' tried instead on input line 39.
+(Font)              Font shape `OT1/pcr/b/n' tried instead on input line 41.
  [9]
-<Figuren/FabricLayers.png, id=69, 818.05624pt x 307.1475pt>
+<Figuren/FabricLayers.png, id=68, 818.05624pt x 307.1475pt>
 File: Figuren/FabricLayers.png Graphic file (type png)
 
 <use Figuren/FabricLayers.png>
-Package pdftex.def Info: Figuren/FabricLayers.png used on input line 57.
+Package pdftex.def Info: Figuren/FabricLayers.png used on input line 59.
 (pdftex.def)             Requested size: 469.47046pt x 176.271pt.
-
-Underfull \hbox (badness 10000) in paragraph at lines 68--70
+ [10 <./Figuren/FabricLayers.png>]
+Underfull \hbox (badness 10000) in paragraph at lines 71--73
 []\OT1/phv/b/n/10.95 Gebruiksgemak 
  []
 
-[10 <./Figuren/FabricLayers.png>] [11]
-Underfull \hbox (badness 10000) in paragraph at lines 129--131
-[]\OT1/phv/b/n/10.95 Functionaliteit 
- []
 
-[12]
-Underfull \hbox (badness 10000) in paragraph at lines 164--168
-[]\OT1/phv/b/n/10.95 Gebruiksgemak 
- []
-
-[13]
-Underfull \hbox (badness 10000) in paragraph at lines 169--171
+Underfull \hbox (badness 10000) in paragraph at lines 83--85
 []\OT1/phv/b/n/10.95 Serialisatie 
  []
 
-[14] <Figuren/KonvaJSLoadFromJSON.png, id=87, 504.88625pt x 118.4425pt>
+[11]
+Underfull \hbox (badness 10000) in paragraph at lines 132--134
+[]\OT1/phv/b/n/10.95 Functionaliteit 
+ []
+
+[12] [13]
+Underfull \hbox (badness 10000) in paragraph at lines 168--172
+[]\OT1/phv/b/n/10.95 Gebruiksgemak 
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 173--175
+[]\OT1/phv/b/n/10.95 Serialisatie 
+ []
+
+[14] <Figuren/KonvaJSLoadFromJSON.png, id=86, 504.88625pt x 118.4425pt>
 File: Figuren/KonvaJSLoadFromJSON.png Graphic file (type png)
 
 <use Figuren/KonvaJSLoadFromJSON.png>
-Package pdftex.def Info: Figuren/KonvaJSLoadFromJSON.png used on input line 219
+Package pdftex.def Info: Figuren/KonvaJSLoadFromJSON.png used on input line 223
 .
-(pdftex.def)             Requested size: 328.62788pt x 77.09332pt.
+(pdftex.def)             Requested size: 234.73523pt x 55.06795pt.
 
 (/usr/local/texlive/2016/texmf-dist/tex/latex/listings/lstlang1.sty
 File: lstlang1.sty 2015/06/04 1.6 listings language file
 )
 (/usr/local/texlive/2016/texmf-dist/tex/latex/listings/lstmisc.sty
 File: lstmisc.sty 2015/06/04 1.6 (Carsten Heinz)
-)
-Underfull \hbox (badness 10000) in paragraph at lines 248--250
+) [15 <./Figuren/KonvaJSLoadFromJSON.png>]
+Underfull \hbox (badness 10000) in paragraph at lines 252--254
 []\OT1/phv/b/n/10.95 Functionaliteit 
- []
-
-[15 <./Figuren/KonvaJSLoadFromJSON.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 257--260
-[]\OT1/phv/b/n/10.95 Gebruiksgemak 
  []
 
 [16]
-Underfull \hbox (badness 10000) in paragraph at lines 263--265
-[]\OT1/phv/b/n/10.95 Serialisatie 
- []
-
-LaTeX Font Info:    Try loading font information for OML+phv on input line 274.
-
-(/usr/local/texlive/2016/texmf-dist/tex/latex/psnfss/omlphv.fd
-File: omlphv.fd 
-)
-LaTeX Font Info:    Font shape `OML/phv/m/n' in size <10.95> not available
-(Font)              Font shape `OML/cmm/m/it' tried instead on input line 274.
-
-Underfull \hbox (badness 10000) in paragraph at lines 273--275
-[]\OT1/phv/b/n/10.95 Functionaliteit 
- []
-
-[17]
-Underfull \hbox (badness 10000) in paragraph at lines 286--288
+Underfull \hbox (badness 10000) in paragraph at lines 264--266
 []\OT1/phv/b/n/10.95 Gebruiksgemak 
  []
 
 
+Underfull \hbox (badness 10000) in paragraph at lines 267--269
+[]\OT1/phv/b/n/10.95 Serialisatie 
+ []
+
+[17]
+LaTeX Font Info:    Try loading font information for OML+phv on input line 278.
+
+ (/usr/local/texlive/2016/texmf-dist/tex/latex/psnfss/omlphv.fd
+File: omlphv.fd 
+)
+LaTeX Font Info:    Font shape `OML/phv/m/n' in size <10.95> not available
+(Font)              Font shape `OML/cmm/m/it' tried instead on input line 278.
+
+Underfull \hbox (badness 10000) in paragraph at lines 277--279
+[]\OT1/phv/b/n/10.95 Functionaliteit 
+ []
+
+[18]
 Underfull \hbox (badness 10000) in paragraph at lines 291--293
+[]\OT1/phv/b/n/10.95 Gebruiksgemak 
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 296--298
 []\OT1/phv/b/n/10.95 Serialisatie 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 303--304
+Underfull \hbox (badness 10000) in paragraph at lines 313--314
 []|\OT1/phv/m/n/10.95 (geen on-der-steu-ning voor
  []
 
-[18] (/usr/local/texlive/2016/texmf-dist/tex/latex/listings/lstlang1.sty
+[19] [20] (/usr/local/texlive/2016/texmf-dist/tex/latex/listings/lstlang1.sty
 File: lstlang1.sty 2015/06/04 1.6 listings language file
 )
 (/usr/local/texlive/2016/texmf-dist/tex/latex/listings/lstlang2.sty
 File: lstlang2.sty 2015/06/04 1.6 listings language file
-) [19]
-[20] <Figuren/PHP_rendering.jpeg, id=109, 1505.625pt x 501.875pt>
+) [21]
+<Figuren/PHP_rendering.jpeg, id=111, 1505.625pt x 501.875pt>
 File: Figuren/PHP_rendering.jpeg Graphic file (type jpg)
 
 <use Figuren/PHP_rendering.jpeg>
-Package pdftex.def Info: Figuren/PHP_rendering.jpeg used on input line 374.
+Package pdftex.def Info: Figuren/PHP_rendering.jpeg used on input line 381.
 (pdftex.def)             Requested size: 469.47046pt x 156.49094pt.
- [21 <./Figuren/PHP_rendering.jpeg>] [22]
-<Figuren/DockerDiagram.png, id=116, 1044.90375pt x 420.57124pt>
+ [22 <./Figuren/PHP_rendering.jpeg>]
+Underfull \hbox (badness 10000) in paragraph at lines 400--403
+[]\OT1/phv/m/n/10.95 Het om-zet-ten van JSON data naar een af-beel-ding ge-beur
+t als volgt: 
+ []
+
+[23] <Figuren/DockerDiagram.png, id=118, 1044.90375pt x 420.57124pt>
 File: Figuren/DockerDiagram.png Graphic file (type png)
 
 <use Figuren/DockerDiagram.png>
-Package pdftex.def Info: Figuren/DockerDiagram.png used on input line 447.
+Package pdftex.def Info: Figuren/DockerDiagram.png used on input line 455.
 (pdftex.def)             Requested size: 469.47046pt x 188.96011pt.
- [23 <./Figuren/DockerDiagram.png>]
-
-LaTeX Warning: Reference `Base64' on page 24 undefined on input line 460.
-
-<Figuren/Base64Process.png, id=121, 826.5279pt x 324.2514pt>
+ [24 <./Figuren/DockerDiagram.png>]
+<Figuren/Base64Process.png, id=123, 826.5279pt x 324.2514pt>
 File: Figuren/Base64Process.png Graphic file (type png)
 
 <use Figuren/Base64Process.png>
-Package pdftex.def Info: Figuren/Base64Process.png used on input line 465.
+Package pdftex.def Info: Figuren/Base64Process.png used on input line 473.
 (pdftex.def)             Requested size: 469.47046pt x 184.17706pt.
 
-<Figuren/Base64EncodingTable.jpg, id=122, 790.45313pt x 219.06844pt>
+<Figuren/Base64EncodingTable.jpg, id=124, 790.45313pt x 219.06844pt>
 File: Figuren/Base64EncodingTable.jpg Graphic file (type jpg)
 
 <use Figuren/Base64EncodingTable.jpg>
-Package pdftex.def Info: Figuren/Base64EncodingTable.jpg used on input line 472
+Package pdftex.def Info: Figuren/Base64EncodingTable.jpg used on input line 480
 .
 (pdftex.def)             Requested size: 328.62788pt x 91.07549pt.
-) [24 <./Figuren/Base64Process.png> <./Figuren/Base64EncodingTable.jpg>]
+) [25 <./Figuren/Base64Process.png> <./Figuren/Base64EncodingTable.jpg>]
 \openout2 = `Deel3.aux'.
 
  (./Deel3.tex
 Hoofdstuk 5.
-<Figuren/ThemeComponent.png, id=126, 1098.1025pt x 983.675pt>
+<Figuren/ThemeComponent.png, id=129, 1098.1025pt x 983.675pt>
 File: Figuren/ThemeComponent.png Graphic file (type png)
 
 <use Figuren/ThemeComponent.png>
-Package pdftex.def Info: Figuren/ThemeComponent.png used on input line 22.
+Package pdftex.def Info: Figuren/ThemeComponent.png used on input line 25.
 (pdftex.def)             Requested size: 281.68513pt x 252.32727pt.
- [25
+ [26
 
 
 
-] [26 <./Figuren/ThemeComponent.png>]
-[27]
-Underfull \hbox (badness 2293) in paragraph at lines 101--102
+] [27 <./Figuren/ThemeComponent.png>]
+[28]
+Underfull \hbox (badness 2293) in paragraph at lines 105--106
 []\OT1/phv/m/n/10.95 Eens het can-vas be-staat, kun-nen ob-jec-ten toe-ge-voegd
  wor-den. Met be-hulp van de
  []
 
-[28] [29] [30] [31] [32] [33]
-Underfull \hbox (badness 10000) in paragraph at lines 289--290
+[29] [30] [31] [32] [33]
+Underfull \hbox (badness 10000) in paragraph at lines 293--294
 []\OT1/phv/m/n/10.95 Voor het op-ha-len van an-no-ta-ties zor-gen de \OT1/pcr/m
 /n/10.95 request-annotations \OT1/phv/m/n/10.95 en
  []
 
-[34] [35] [36] <Figuren/FrontToBack.png, id=166, 1927.2pt x 492.84125pt>
+[34] [35] [36] [37] <Figuren/FrontToBack.png, id=170, 1927.2pt x 492.84125pt>
 File: Figuren/FrontToBack.png Graphic file (type png)
 
 <use Figuren/FrontToBack.png>
-Package pdftex.def Info: Figuren/FrontToBack.png used on input line 399.
+Package pdftex.def Info: Figuren/FrontToBack.png used on input line 403.
 (pdftex.def)             Requested size: 469.47046pt x 120.05154pt.
 
 
-LaTeX Warning: Reference `lst:ResolvingStream' on page 37 undefined on input li
-ne 404.
+LaTeX Warning: Reference `lst:ResolvingStream' on page 38 undefined on input li
+ne 408.
 
-[37 <./Figuren/FrontToBack.png>] [38]
+[38 <./Figuren/FrontToBack.png>]
 
 LaTeX Warning: Reference `JestGettingStarted' on page 39 undefined on input lin
-e 436.
+e 440.
 
-<Figuren/ThemeSet.png, id=175, 1667.22874pt x 419.5675pt>
+[39] <Figuren/ThemeSet.png, id=177, 1667.22874pt x 419.5675pt>
 File: Figuren/ThemeSet.png Graphic file (type png)
 
 <use Figuren/ThemeSet.png>
-Package pdftex.def Info: Figuren/ThemeSet.png used on input line 465.
+Package pdftex.def Info: Figuren/ThemeSet.png used on input line 469.
 (pdftex.def)             Requested size: 469.47046pt x 118.1439pt.
- [39 <./Figuren/ThemeSet.png>]
-<Figuren/UniCrawler.png, id=180, 1139.25626pt x 610.28pt>
+
+<Figuren/UniCrawler.png, id=178, 1139.25626pt x 610.28pt>
 File: Figuren/UniCrawler.png Graphic file (type png)
 
 <use Figuren/UniCrawler.png>
-Package pdftex.def Info: Figuren/UniCrawler.png used on input line 476.
+Package pdftex.def Info: Figuren/UniCrawler.png used on input line 480.
 (pdftex.def)             Requested size: 469.47046pt x 251.48286pt.
- [40 <./Figuren/UniCrawler.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 495--497
+ [40 <./Figuren/ThemeSet.png>] [41 <./Figuren/UniCrawler.png>]
+Underfull \hbox (badness 10000) in paragraph at lines 499--501
 []\OT1/phv/b/n/10.95 Twitter 
  []
 
 
-Underfull \hbox (badness 1838) in paragraph at lines 495--497
-\OT1/pcr/m/n/10.95 /account/updateo[]profileo[]banner \OT1/phv/m/sl/10.95 end-p
-oint \OT1/phv/m/n/10.95 [[]]. De af-beel-ding zelf kan base64
+Underfull \hbox (badness 2573) in paragraph at lines 499--501
+\OT1/phv/m/n/10.95 Om de om-slag-foto van een Twitter-profiel aan te pas-sen wo
+rdt ge-bruik ge-maakt van
  []
 
-[41]
-Underfull \hbox (badness 10000) in paragraph at lines 517--518
+
+Underfull \hbox (badness 1152) in paragraph at lines 499--501
+\OT1/phv/m/n/10.95 de \OT1/pcr/m/n/10.95 /account/update[]profile[]banner \OT1/
+phv/m/sl/10.95 end-point \OT1/phv/m/n/10.95 [[]]. De af-beel-ding zelf kan base
+64
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 521--522
 []\OT1/phv/m/n/10.95 Het uplo-a-den van de pro-fielfoto ver-loopt op ge-lijk-aa
 r-dige ma-nier. Via de
  []
 
 
-Underfull \hbox (badness 2418) in paragraph at lines 517--518
+Underfull \hbox (badness 2418) in paragraph at lines 521--522
 \OT1/pcr/m/n/10.95 /account/updateo[]profileo[]image \OT1/phv/m/sl/10.95 end-po
 int \OT1/phv/m/n/10.95 wordt de base64 ge[]encodeerde af-beel-
  []
 
-
-Underfull \hbox (badness 10000) in paragraph at lines 519--522
+[42]
+Underfull \hbox (badness 10000) in paragraph at lines 523--526
 []\OT1/phv/b/n/10.95 Facebook 
  []
 
-[42]) [43] [44]
+[43]) [44]
 \openout2 = `AlgemeenBesluit.aux'.
 
  (./AlgemeenBesluit.tex
@@ -1594,7 +1612,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 20--24
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 75--78
+Underfull \hbox (badness 10000) in paragraph at lines 71--74
 []\OT1/phv/m/n/10.95 J. Zaytsev, ``Fa-bric.js ob-ject ca-ching.'' $\OT1/pcr/m/n
 /10.95 http : / / fabricjs . com /
  []
@@ -1604,43 +1622,49 @@ Underfull \hbox (badness 10000) in paragraph at lines 75--78
 
 
 ]
-Underfull \hbox (badness 3179) in paragraph at lines 90--94
+Underfull \hbox (badness 3179) in paragraph at lines 86--90
 \OT1/phv/m/n/10.95 ele-ment - web apis.'' $\OT1/pcr/m/n/10.95 https : / / devel
 oper . mozilla . org / en-[]US / docs / Web / API /
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 131--135
+Underfull \hbox (badness 10000) in paragraph at lines 137--141
 []\OT1/phv/m/n/10.95 lannymcnie, ``Svg-ex-por-ter.'' $\OT1/pcr/m/n/10.95 https 
 : / / github . com / CreateJS / EaselJS / tree /
  []
 
 
-Underfull \hbox (badness 3128) in paragraph at lines 156--159
+Underfull \hbox (badness 4981) in paragraph at lines 162--165
+[]\OT1/phv/m/n/10.95 H. Tscha-bit-scher, ``How base64 en-co-ding works.'' $\OT1
+/pcr/m/n/10.95 https : / / www . lifewire . com /
+ []
+
+
+Underfull \hbox (badness 3128) in paragraph at lines 167--170
 []\OT1/phv/m/n/10.95 rajesh, ``Base64 ba-sics - what? why? how?.'' $\OT1/pcr/m/
 n/10.95 http : / / myitlearnings . com /
  []
 
 [2]
-Underfull \hbox (badness 10000) in paragraph at lines 171--174
+Underfull \hbox (badness 10000) in paragraph at lines 182--185
 []\OT1/phv/m/n/10.95 C. Hea-ron, ``node-canvas-prebuilt.'' $\OT1/pcr/m/n/10.95 
 https : / / github . com / chearon /
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 176--179
+Underfull \hbox (badness 10000) in paragraph at lines 187--190
 []\OT1/phv/m/n/10.95 Twitter, ``Twit-ter de-vel-o-per do-cu-men-ta-tion.'' $\OT
 1/pcr/m/n/10.95 https : / / dev . twitter . com / rest /
  []
 
 
-Underfull \hbox (badness 2846) in paragraph at lines 181--185
+Underfull \hbox (badness 2846) in paragraph at lines 192--196
 []\OT1/phv/m/n/10.95 F. Inc., ``Open graph page pho-tos.'' $\OT1/pcr/m/n/10.95 
 https : / / developers . facebook . com / docs /
  []
 
 
-Underfull \hbox (badness 4967) in paragraph at lines 187--191
+Underfull \hbox (badness 4967) in paragraph at lines 198--202
 []\OT1/phv/m/n/10.95 F. Inc., ``Page pic-ture.'' $\OT1/pcr/m/n/10.95 https : / 
 / developers . facebook . com / docs / graph-[]api /
  []
@@ -1650,20 +1674,20 @@ Underfull \hbox (badness 4967) in paragraph at lines 187--191
 
  (./Bijlage.tex
 B"ylage A.
-<Figuren/Inbox.png, id=210, 1844.8925pt x 971.63pt>
+<Figuren/Inbox.png, id=209, 1844.8925pt x 971.63pt>
 File: Figuren/Inbox.png Graphic file (type png)
  <use Figuren/Inbox.png>
 Package pdftex.def Info: Figuren/Inbox.png used on input line 11.
 (pdftex.def)             Requested size: 469.47046pt x 247.25089pt.
 
-<Figuren/Performance.png, id=211, 1926.19624pt x 1049.9225pt>
+<Figuren/Performance.png, id=210, 1926.19624pt x 1049.9225pt>
 File: Figuren/Performance.png Graphic file (type png)
 
 <use Figuren/Performance.png>
 Package pdftex.def Info: Figuren/Performance.png used on input line 18.
 (pdftex.def)             Requested size: 469.47046pt x 255.89555pt.
 
-<Figuren/Insights.png, id=212, 1925.1925pt x 1784.6675pt>
+<Figuren/Insights.png, id=211, 1925.1925pt x 1784.6675pt>
 File: Figuren/Insights.png Graphic file (type png)
 
 <use Figuren/Insights.png>
@@ -1690,29 +1714,28 @@ LaTeX Warning: There were multiply-defined labels.
 ### simple group (level 1) entered at line 1061 ({)
 ### bottom level 
 Here is how much of TeX's memory you used:
- 29149 strings out of 493014
- 511112 string characters out of 6133351
- 961480 words of memory out of 5000000
- 32077 multiletter control sequences out of 15000+600000
+ 28657 strings out of 493014
+ 505525 string characters out of 6133351
+ 987189 words of memory out of 5000000
+ 31585 multiletter control sequences out of 15000+600000
  51977 words of font info for 104 fonts, out of 8000000 for 9000
  1219 hyphenation exceptions out of 8191
- 53i,12n,92p,10405b,12896s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 53i,12n,92p,10405b,12945s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/local/texlive/2016/texmf-dist/fonts/enc/dvips/base/8r.enc
 }</usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb>
 </usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></
-usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy6.pfb></us
-r/local/texlive/2016/texmf-dist/fonts/type1/urw/avantgar/uagd8a.pfb></usr/local
-/texlive/2016/texmf-dist/fonts/type1/urw/avantgar/uagk8a.pfb></usr/local/texliv
-e/2016/texmf-dist/fonts/type1/urw/courier/ucrb8a.pfb></usr/local/texlive/2016/t
-exmf-dist/fonts/type1/urw/courier/ucrr8a.pfb></usr/local/texlive/2016/texmf-dis
-t/fonts/type1/urw/helvetic/uhvb8a.pfb></usr/local/texlive/2016/texmf-dist/fonts
-/type1/urw/helvetic/uhvbo8a.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1
-/urw/helvetic/uhvr8a.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/urw/he
-lvetic/uhvro8a.pfb>
-Output written on totaal.pdf (56 pages, 5866461 bytes).
+usr/local/texlive/2016/texmf-dist/fonts/type1/urw/avantgar/uagd8a.pfb></usr/loc
+al/texlive/2016/texmf-dist/fonts/type1/urw/avantgar/uagk8a.pfb></usr/local/texl
+ive/2016/texmf-dist/fonts/type1/urw/courier/ucrb8a.pfb></usr/local/texlive/2016
+/texmf-dist/fonts/type1/urw/courier/ucrr8a.pfb></usr/local/texlive/2016/texmf-d
+ist/fonts/type1/urw/helvetic/uhvb8a.pfb></usr/local/texlive/2016/texmf-dist/fon
+ts/type1/urw/helvetic/uhvbo8a.pfb></usr/local/texlive/2016/texmf-dist/fonts/typ
+e1/urw/helvetic/uhvr8a.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/urw/
+helvetic/uhvro8a.pfb>
+Output written on totaal.pdf (56 pages, 5858723 bytes).
 PDF statistics:
- 262 PDF objects out of 1000 (max. 8388607)
- 161 compressed objects within 2 object streams
+ 258 PDF objects out of 1000 (max. 8388607)
+ 158 compressed objects within 2 object streams
  0 named destinations out of 1000 (max. 500000)
  91 words of extra memory for PDF output out of 10000 (max. 10000000)
 

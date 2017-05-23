@@ -17,36 +17,36 @@ Repeated entry---line 389 of file Bibliografie.bib
  : @misc{EaselMouseInteraction
  :                            ,
 I'm skipping whatever remains of this entry
-You've used 37 entries,
+You've used 40 entries,
             1876 wiz_defined-function locations,
-            676 strings with 8619 characters,
-and the built_in function-call counts, 5414 in all, are:
-= -- 522
-> -- 230
+            691 strings with 8963 characters,
+and the built_in function-call counts, 5822 in all, are:
+= -- 564
+> -- 242
 < -- 0
-+ -- 100
-- -- 63
-* -- 242
-:= -- 831
-add.period$ -- 74
-call.type$ -- 37
-change.case$ -- 37
++ -- 106
+- -- 66
+* -- 257
+:= -- 891
+add.period$ -- 80
+call.type$ -- 40
+change.case$ -- 40
 chr.to.int$ -- 0
-cite$ -- 37
-duplicate$ -- 148
-empty$ -- 667
-format.name$ -- 63
-if$ -- 1356
+cite$ -- 40
+duplicate$ -- 160
+empty$ -- 721
+format.name$ -- 66
+if$ -- 1461
 int.to.chr$ -- 0
-int.to.str$ -- 37
+int.to.str$ -- 40
 missing$ -- 0
-newline$ -- 151
-num.names$ -- 37
-pop$ -- 222
+newline$ -- 163
+num.names$ -- 40
+pop$ -- 240
 preamble$ -- 1
 purify$ -- 0
 quote$ -- 0
-skip$ -- 111
+skip$ -- 120
 stack$ -- 0
 substring$ -- 0
 swap$ -- 0
@@ -55,7 +55,7 @@ text.prefix$ -- 0
 top$ -- 0
 type$ -- 0
 warning$ -- 0
-while$ -- 37
-width$ -- 39
-write$ -- 372
+while$ -- 40
+width$ -- 42
+write$ -- 402
 (There was 1 error message)

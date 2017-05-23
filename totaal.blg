@@ -13,40 +13,40 @@ A level-1 auxiliary file: AlgemeenBesluit.aux
 The style file: ieeetr.bst
 A level-1 auxiliary file: Bijlage.aux
 Database file #1: Bibliografie.bib
-Repeated entry---line 373 of file Bibliografie.bib
+Repeated entry---line 389 of file Bibliografie.bib
  : @misc{EaselMouseInteraction
  :                            ,
 I'm skipping whatever remains of this entry
-You've used 36 entries,
+You've used 37 entries,
             1876 wiz_defined-function locations,
-            671 strings with 8547 characters,
-and the built_in function-call counts, 5278 in all, are:
-= -- 508
-> -- 226
+            676 strings with 8619 characters,
+and the built_in function-call counts, 5414 in all, are:
+= -- 522
+> -- 230
 < -- 0
-+ -- 98
-- -- 62
-* -- 237
-:= -- 811
-add.period$ -- 72
-call.type$ -- 36
-change.case$ -- 36
++ -- 100
+- -- 63
+* -- 242
+:= -- 831
+add.period$ -- 74
+call.type$ -- 37
+change.case$ -- 37
 chr.to.int$ -- 0
-cite$ -- 36
-duplicate$ -- 144
-empty$ -- 649
-format.name$ -- 62
-if$ -- 1321
+cite$ -- 37
+duplicate$ -- 148
+empty$ -- 667
+format.name$ -- 63
+if$ -- 1356
 int.to.chr$ -- 0
-int.to.str$ -- 36
+int.to.str$ -- 37
 missing$ -- 0
-newline$ -- 147
-num.names$ -- 36
-pop$ -- 216
+newline$ -- 151
+num.names$ -- 37
+pop$ -- 222
 preamble$ -- 1
 purify$ -- 0
 quote$ -- 0
-skip$ -- 108
+skip$ -- 111
 stack$ -- 0
 substring$ -- 0
 swap$ -- 0
@@ -55,7 +55,7 @@ text.prefix$ -- 0
 top$ -- 0
 type$ -- 0
 warning$ -- 0
-while$ -- 36
-width$ -- 38
-write$ -- 362
+while$ -- 37
+width$ -- 39
+write$ -- 372
 (There was 1 error message)

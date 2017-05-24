@@ -2,7 +2,7 @@
 
 \chapter{Praktische uitwerking}
 \vspace{-3cm}
-Het annoteren van afbeeldingen is \'{e}\'{e}n van de onderdelen binnen de \textit{Profile Manager} van CX Social. De \textit{Profile Manager} is een nieuwe feature die gebruikers moet helpen bij het beheren van hun sociale media profielen. Een thema kan aangemaakt worden voor Facebook of Twitter dat een omslag-en/of profielfoto bevat. Eens een omslagfoto ge\"{u}pload is, is het mogelijk om hier annotaties aan toe te voegen. Dit kan simpelweg tekst zijn maar ook KPI's kunnen op de afbeelding geplaatst worden. Gebruikers kunnen voor geconnecteerde profielen instellen welk thema op welk tijdstip actief moet zijn. De aangemaakte afbeeldingen worden dan op de ingestelde tijdstippen ge\"{u}pload naar het juiste profiel. 
+Het annoteren van afbeeldingen is \'{e}\'{e}n van de onderdelen binnen de \textit{Profile Manager} van CX Social. De \textit{Profile Manager} is een nieuwe feature die gebruikers moet helpen bij het beheren van hun sociale media profielen. Een thema kan aangemaakt worden voor Facebook of Twitter dat een omslag- en/of profielfoto bevat. Eens een omslagfoto ge\"{u}pload is, is het mogelijk om hier annotaties aan toe te voegen. Dit kan simpelweg tekst zijn maar ook KPI's kunnen op de afbeelding geplaatst worden. Gebruikers kunnen voor geconnecteerde profielen instellen welk thema op welk tijdstip actief moet zijn. De aangemaakte afbeeldingen worden dan op de ingestelde tijdstippen ge\"{u}pload naar het juiste profiel. 
 
 
 \section{Frontend implementatie}
@@ -43,7 +43,7 @@ Ieder inputveld bevat een \texttt{onChange} event waarmee veranderingen afgehand
 	</select>
 \end{lstlisting}
 
-Naast het ingeven van een naam en \textit{service} voor het thema, kunnen ook een omslag-en profielfoto toegevoegd worden. Het uploaden van de afbeeldingen wordt afgehandeld door een reeds bestaande component. Deze zal een, door de gebruiker geselecteerde, foto uploaden naar de \textit{fileserver} en op de pagina weergeven. Eens een afbeelding aanwezig is, is het mogelijk om annotaties toe te voegen. Om een afbeelding te annoteren wordt een pop-upvenster geopend. Aangezien dit venster een volledig nieuwe \textit{template} is, dienen enkele eigenschappen van het thema meegegeven te worden. Als parameters in de URL worden zowel de \textit{service} als de bestandsnaam van de afbeelding op de fileserver meegegeven. Beide parameters zijn nodig om het canvas op te stellen. De \textit{service} bepaald immers de dimensies van het canvas aangezien deze verschillen voor zowel Facebook als Twitter. Via de bestandsnaam kan de correcte afbeelding ingeladen worden in het pop-upvenster.
+Naast het ingeven van een naam en \textit{service} voor het thema, kunnen ook een omslag- en profielfoto toegevoegd worden. Het uploaden van de afbeeldingen wordt afgehandeld door een reeds bestaande component. Deze zal een, door de gebruiker geselecteerde, foto uploaden naar de \textit{fileserver} en op de pagina weergeven. Eens een afbeelding aanwezig is, is het mogelijk om annotaties toe te voegen. Om een afbeelding te annoteren wordt een pop-upvenster geopend. Aangezien dit venster een volledig nieuwe \textit{template} is, dienen enkele eigenschappen van het thema meegegeven te worden. Als parameters in de URL worden zowel de \textit{service} als de bestandsnaam van de afbeelding op de fileserver meegegeven. Beide parameters zijn nodig om het canvas op te stellen. De \textit{service} bepaald immers de dimensies van het canvas aangezien deze verschillen voor zowel Facebook als Twitter. Via de bestandsnaam kan de correcte afbeelding ingeladen worden in het pop-upvenster.
 
 Zoals reeds besproken in sectie \ref{vergelijkingBibliotheken}, lijkt Fabric.js de beste keuze te zijn om dit project uit te werken. Aangezien niet alle functionaliteit van deze bibliotheek van toepassing is op dit project, wordt een \textit{custom build} aangemaakt. Deze bevat de tekst, interactieve tekst, animatie, serialisatie, interactie en node \textit{features}. Bij het openen van het pop-upvenster wordt de \texttt{ThemeAnnotations} component ge\"{i}nitialiseerd met de nodige eigenschappen. Deze zijn het account ID, de bestandsnaam van de afbeelding, de \textit{service} en een kleurenpallet. Tussen deze kleuren en eender welke hexadecimale waarde kan gekozen worden tijdens het stylen van de annotaties.
 
@@ -214,7 +214,7 @@ Met behulp van een check in de \texttt{render} functie van de \texttt{Theme} com
 	</TextEditor>
 \end{lstlisting}
 
-\begin{lstlisting}[caption={TextEditor component - toggle bold},label=lst:TextEditorComponentBold,language=javascript]
+\begin{lstlisting}[caption={TextEditor component - Tekst in het vet plaatsen},label=lst:TextEditorComponentBold,language=javascript]
 	<li>
 		<a className={this.getCurrentSettings().fontWeight === 'bold' ? 'button primary' : 'button'}
 			onClick={function () {
@@ -233,7 +233,7 @@ Objecten in het canvas kunnen onmiddellijk verplaatst, geschaald en geroteerd wo
 
 Om dit te voorkomen wordt ervoor gezorgd dat tekst in het canvas op een andere manier schaalt. Door gebruik te maken van het \texttt{object:scaling} event wordt de tekstgrootte aangepast in plaats van de schaal van het object (zie codefragment \ref{lst:ThemeAnnotationsScalingText}). Bij het triggeren van het event wordt gekeken of het wel degelijk om een tekst object gaat (de afbeelding kan immers normaal geschaald worden). Daarna wordt de huidige tekstgrootte vermenigvuldigd met de horizontale schalingsfactor (merk op: de horizontale schalingsfactor wordt gebruikt omdat de \texttt{lockUniScaling} eigenschap van het object actief is waardoor zowel x-als y-as met dezelfde factor geschaald worden). Uiteindelijk wordt de tekstgrootte afgerond naar een geheel getal omdat pixels als eenheid gebruikt worden. Zowel de horizontale als verticale schaal wordt opnieuw op 1 geplaatst om eerder beschreven probleem met schaling te voorkomen. 
 
-\begin{lstlisting}[caption={ThemeAnnotations component - text scaling},label=lst:ThemeAnnotationsScalingText,language=javascript]
+\begin{lstlisting}[caption={ThemeAnnotations component - Schalen van tekst},label=lst:ThemeAnnotationsScalingText,language=javascript]
 	this.canvas.on('object:scaling', function (e) {
 		if (e.target && this.isTextSelected()) {
 			e.target.fontSize *= e.target.scaleX;
@@ -257,7 +257,7 @@ Om dit te voorkomen wordt ervoor gezorgd dat tekst in het canvas op een andere m
 \subsection{Verwijderen van objecten}
 Naast het toevoegen van tekst moet de gebruiker in staat zijn om tekst te verwijderen. De Fabric.js bibliotheek bezit hiervoor reeds de benodigde functionaliteit. Via de \texttt{remove()} functie van het canvas, kan een object van het canvas verwijdert worden. Gebruikers mogen niet in staat zijn om de afbeelding te verwijderen dus moet eerst bepaald worden of de geselecteerde objecten wel degelijk tekst objecten zijn. Wanneer slechts \'{e}\'{e}n object geselecteerd wordt, is dit eenvoudig te verwezenlijken. Moeilijker wordt het wanneer meerdere objecten geselecteerd worden. Hiervoor moeten alle objecten in de actieve groep (de groep van geselecteerde objecten) overlopen worden. Wanneer het type van de objecten overeen komt met het type van tekst, kan het object verwijdert worden. 
 
-\begin{lstlisting}[caption={ThemeAnnotations component - delete group},label=lst:ThemeAnnotationsDeleteGroup,language=javascript]
+\begin{lstlisting}[caption={ThemeAnnotations component - Verwijderen van een groep},label=lst:ThemeAnnotationsDeleteGroup,language=javascript]
 	if (this.canvas.getActiveGroup()) {
 		var objectsInGroup = this.canvas.getActiveGroup().getObjects();
 		objectsInGroup.forEach(function (object) {
@@ -274,7 +274,7 @@ Hoewel dus geen vaste limiet staat op de lengte van een URL is het aangeraden om
 
 Om de annotaties over te brengen naar de \texttt{ThemeAnnotations} component wordt gebruik gemaakt van events. Een globaal \texttt{ThemeDispatcher} object wordt gedefinieerd waar verschillende events aan toegevoegd worden. Wanneer de \texttt{Theme} component gemount is, worden de nodige events aangemaakt in de \texttt{ThemeDispatcher} (zie codefragment \ref{lst:ThemeDispatcherEventsTheme}). Ook worden de nodige \textit{handlers} voor deze events uitgewerkt.
 
-\begin{lstlisting}[caption={Theme component - events},label=lst:ThemeDispatcherEventsTheme,language=javascript]
+\begin{lstlisting}[caption={Theme component - Events},label=lst:ThemeDispatcherEventsTheme,language=javascript]
 componentDidMount: function () {
 	$(ThemeDispatcher).on('annotations', this.annotationHandler);
 	$(ThemeDispatcher).on('request-annotations', this.requestHandler);
@@ -294,7 +294,7 @@ getAnnotations: function () {
 
 Voor het ophalen van annotaties zorgen de \texttt{request-annotations} en \texttt{response-annotations} events. Bij het afhandelen van het \textit{request} event wordt onmiddellijk een \textit{response} gestuurd naar de \texttt{ThemeAnnotations} component met ofwel de annotaties uit de database of de reeds aangepaste annotaties uit de state van e component. 
 
-\begin{lstlisting}[caption={ThemeAnnotations component - events},label=lst:ThemeDispatcherEventsThemeAnnotations,language=javascript]
+\begin{lstlisting}[caption={ThemeAnnotations component - Events},label=lst:ThemeDispatcherEventsThemeAnnotations,language=javascript]
 	componentDidMount: function () {
 	  	$(ThemeDispatcher).on('response-annotations', this.handleAnnotations);
 		$(ThemeDispatcher).trigger('request-annotations');
@@ -312,7 +312,7 @@ Wanneer de gebruiker zijn/haar annotaties opslaat (zie codefragment \ref{lst:The
 
 Het omzetten van het canvas naar JSON data is zeer eenvoudig te verwezenlijken dankzij de \texttt{toJSON()} methode die het canvas bezit. Als argument van deze functie kan een array met extra eigenschappen, die ge\"{e}xporteerd moeten worden, meegegeven worden (zie codefragment \ref{lst:ThemeDispatcherEventsThemeAnnotationsExport}). Dit is zeer handig wanneer extra informatie noodzakelijk is tijdens het terug opbouwen van het canvas. Zo worden de breedte, hoogte, ratio (breedt/hoogte), service, tekst type, KPI type en de dimensies van het canvas ook opgeslagen. Elk van deze eigenschappen zijn onmisbaar tijdens het heropbouwen van het canvas in de backend. Meer hierover in sectie \ref{BackendImplementatie}. 
 
-\begin{lstlisting}[caption={ThemeAnnotations component - exporteren van het canvas},label=lst:ThemeDispatcherEventsThemeAnnotationsExport,language=javascript]
+\begin{lstlisting}[caption={ThemeAnnotations component - Exporteren van het canvas},label=lst:ThemeDispatcherEventsThemeAnnotationsExport,language=javascript]
 	exportCanvas: function () {
 		if (this.canvas) {
 			var data = JSON.stringify(this.canvas.toJSON(['width', 'height', 'multiply', 'service', 'textType', 'kpiType', 'dimensions']));
@@ -376,7 +376,7 @@ E\'{e}nmaal de routes opgesteld zijn, kan de logica ge\"{i}mplementeerd worden. 
 
 Deze schalingsfactor zal gebruikt worden om elk object in het canvas correct te schalen zodat exact dezelfde afbeelding bekomen wordt zoals deze door de gebruiker werd aangemaakt (zie Figuur \ref{fig:FrontToBackend}).
 
-\begin{lstlisting}[caption={renderer.js - Image renderer},label=lst:NodeServicePromise,language=javascript]
+\begin{lstlisting}[caption={renderer.js - Genereren van de afbeelding},label=lst:NodeServicePromise,language=javascript]
 	return new Promise(function(resolve, reject) {
 		var originalHeight = data["height"];
 		var originalWidth = data["width"];
@@ -422,7 +422,7 @@ Om te vermijden dat de foto eerst nog op de fileserver geplaatst moet worden, wo
 
 %2 mogelijkheden: base64 doorsturen of op fileserver pushen en url doorsturen en dan terug afhalen. 
  %MSS IETS OVEr DE RESOLVE NOG ZEGGEN???!!!
-\begin{lstlisting}[caption={renderer.js - aanmaken van base64},label=lst:Base64Generation,language=javascript]
+\begin{lstlisting}[caption={renderer.js - Aanmaken van base64},label=lst:Base64Generation,language=javascript]
 	var stream = fabricCanvas.createPNGStream();
 	var base64data = [];
 	
@@ -502,47 +502,46 @@ Er moet dus enkel een \textit{request} gestuurd worden naar de specifieke \texti
 Om de omslagfoto van een Twitter-profiel aan te passen wordt gebruik gemaakt van de \texttt{/account/update{\_}profile{\_}banner} \textit{endpoint} \cite{TwitterAPIDoc}. De afbeelding zelf kan base64 ge\"{e}ncodeerd of als \textit{raw image data} meegegeven worden. Aangezien de omslagfoto's telkens door de Node.js service worden gegenereerd en dus in het base64 formaat ontvangen worden (zie sectie \ref{ExporterenVanHetCanvas}), kan de afbeelding rechtstreeks meegegeven worden aan het \textit{endpoint}. Zoals te zien in codefragment \ref{lst:TwitterAPICall} worden de URL naar de \textit{endpoint}, de afbeelding, \textit{request} methode en enkele opties verwacht om de \textit{call} te maken. Een van de opties is het verwachte antwoord op de \textit{request}. Dit kunnen zowel een HTTP status codes 200 (OK), 201 (Created) of 202 (Accepted) zijn. 
 
 \begin{lstlisting}[caption={Uploaden van omslagfoto naar Twitter},label=lst:TwitterAPICall,language=PHP]
-try {
-	$updateBanner = $this->call(
-		self::API_VERSION . '/account/update_profile_banner',
-		array(
-			'banner' => $image
-		),
-		'POST',
-    	/* $multipart = */ false,
-		/* $options = */ array(
-		'expectedResponseCodes' => array(200, 201, 202)
-	)
-);
-
-} catch (Exception $ex) {
-	throw $ex;
-}
+	try {
+		$updateBanner = $this->call(
+			self::API_VERSION . '/account/update_profile_banner',
+			array(
+				'banner' => $image
+			),
+			'POST',
+			/* $multipart = */ false,
+			/* $options = */ array(
+			'expectedResponseCodes' => array(200, 201, 202)
+		)
+	);
+	
+	} catch (Exception $ex) {
+		throw $ex;
+	}
 \end{lstlisting}
 
 Het uploaden van de profielfoto verloopt op gelijkaardige manier. Via de \texttt{/account/update{\_}profile{\_}image} \textit{endpoint} wordt de base64 ge\"{e}ncodeerde afbeelding naar Twitter gestuurd \cite{TwitterAPIDoc}. In tegenstelling tot de omslagfoto moet een profielfoto niet geannoteerd worden. Hierdoor kan de afbeelding simpelweg vanop de fileserver gehaald worden. Deze foto wordt dan enkel nog base64 ge\"{e}ncodeerd voor gebruik op Twitter.
 
 \textbf{Facebook} \break
-De Graph API van Facebook biedt de mogelijkheid om omslag-en profielfoto aan te passen. Dit is echter een heel stuk complexer bij Facebook dan bij Twitter. %MSS REMOVE? <--
+De Graph API van Facebook biedt de mogelijkheid om omslag- en profielfoto aan te passen. Dit is echter een heel stuk complexer bij Facebook dan bij Twitter. %MSS REMOVE? <--
 Facebook verwacht namelijk dat gebruikers een foto, die reeds op hun tijdlijn staat, zullen instellen als omslagfoto. Dit betekent dat een foto eerst ge\"{u}pload wordt naar Facebook waarna deze als omslagfoto of profielfoto wordt ingesteld. Dit zorgt ervoor dat de foto niet enkel in het album met tijdlijnfoto's maar ook in het album met omslagfoto's of profielfoto's terecht komt. Wordt aangenomen dat een foto om de vijf minuten ge\"{u}pload wordt, is al snel duidelijk dat de verschillende albums rond de 300 foto's zullen bevatten na \'{e}\'{e}n dag. Dit is natuurlijk niet gewenst dus wordt dit probleem op volgende manier opgelost. %ISDA JUIST??? <--
 
-Met behulp van de \texttt{/page-id/photos} \textit{edge} wordt een foto naar Facebook ge\"{u}pload. Een foto naar een pagina uploaden kan op twee manieren: via een verwijzing naar een foto die reeds op het internet staat (dus via een URL) of de afbeelding toevoegen als \texttt{multipart/form-data}. Mits de gegenereerde foto's nog niet beschikbaar zijn op het internet, wordt voor de laatste methode geopteerd. Naast een \textit{access token} en wat opties, wordt het pad naar het bestand als \textit{source} parameter meegegeven. Aangezien het niet gewenst is om een notificatie te krijgen wanneer een omslag-of profielfoto wordt gewijzigd, wordt de \textit{no{\_}story} parameter ook actief gezet (zie codefragment \ref{lst:FacebookAPICallUpload}) \cite{FacebookPagePhotos}. 
+Met behulp van de \texttt{/page-id/photos} \textit{edge} wordt een foto naar Facebook ge\"{u}pload. Een foto naar een pagina uploaden kan op twee manieren: via een verwijzing naar een foto die reeds op het internet staat (dus via een URL) of de afbeelding toevoegen als \texttt{multipart/form-data}. Mits de gegenereerde foto's nog niet beschikbaar zijn op het internet, wordt voor de laatste methode geopteerd. Naast een \textit{access token} en wat opties, wordt het pad naar het bestand als \textit{source} parameter meegegeven. Aangezien het niet gewenst is om een notificatie te krijgen wanneer een omslag- of profielfoto wordt gewijzigd, wordt de \textit{no{\_}story} parameter ook actief gezet (zie codefragment \ref{lst:FacebookAPICallUpload}) \cite{FacebookPagePhotos}. 
 
 \begin{lstlisting}[caption={Uploaden van een foto naar Facebook},label=lst:FacebookAPICallUpload,language=PHP]
-$uploadedPhotoId = $this->call(
-	'/' . Services_Facebook_Migrations::VERSION_2_8 . '/' . $this->getServiceId() . '/photos',
-	$this->getAccessToken(),
-	Services_Facebook_Manager::MODE_JSON,
-	'POST',
-	array(
-		'source' => '@' . realpath($tempFile),
-		'no_story' => true,
-	),
-	/* options */ array( 
-		'postFieldsAsString' => false,
-		'timeout' => static::UPLOAD_TIMEOUT,
-	)
-);
+	$uploadedPhotoId = $this->call(
+		'/' . Services_Facebook_Migrations::VERSION_2_8 . '/' . $this->getServiceId() . '/photos',
+		$this->getAccessToken(),
+		Services_Facebook_Manager::MODE_JSON,
+		'POST',
+		array(
+			'source' => '@' . realpath($tempFile),
+			'no_story' => true,
+		),
+		/* options */ array( 
+			'postFieldsAsString' => false,
+			'timeout' => static::UPLOAD_TIMEOUT,
+		));
 \end{lstlisting}
 
 %ASK WHERE THE AUTH TOKEN COMES FROM! https://developers.facebook.com/tools/explorer?method=GET&path=me%2Faccounts&version=v2.9
@@ -554,21 +553,20 @@ Na het uploaden van een foto naar de tijdlijn wordt als antwoord het ID van deze
 Uiteindelijk worden nog enkele maatregelen getroffen om het aantal foto's in de albums te beperken. Zo wordt v\'{o}\'{o}r het uploaden van een nieuwe omslagfoto, het ID van de huidige afbeelding opgehaald. Na het instellen van de nieuwe afbeelding, kan de andere foto via het ID uit het album verwijdert worden. Uiteindelijk wordt de foto ook uit het tijdlijn album verwijdert. Op deze manier wordt het aantal foto's in de albums tot een minimum beperkt.
 
 \begin{lstlisting}[caption={Instellen van omslagfoto op Facebook},label=lst:FacebookAPICallCover,language=PHP]
-$coverPhoto = $this->call(
-	'/' . Services_Facebook_Migrations::VERSION_2_8 . '/' . $this->getServiceId(),
-	$this->getAccessToken(),
-	Services_Facebook_Manager::MODE_JSON,
-	'POST',
-	array(
-		'cover' => $uploadedPhotoId['id'],
-		'offset_x' => 0,
-		'offset_y' => 0,
-		'no_feed_story' => true
-	),
-	array(
-		'timeout' => static::UPLOAD_TIMEOUT,
-	)
-);
+	$coverPhoto = $this->call(
+		'/' . Services_Facebook_Migrations::VERSION_2_8 . '/' . $this->getServiceId(),
+		$this->getAccessToken(),
+		Services_Facebook_Manager::MODE_JSON,
+		'POST',
+		array(
+			'cover' => $uploadedPhotoId['id'],
+			'offset_x' => 0,
+			'offset_y' => 0,
+			'no_feed_story' => true
+		),
+		array(
+			'timeout' => static::UPLOAD_TIMEOUT,
+		));
 \end{lstlisting}
 
 Het uploaden van een profielfoto verloopt op gelijkaardige manier. Het instellen als avatar gebeurt hier via de \texttt{/page-id/picture} edge van de Graph API \cite{FacebookPagePicture}. Als parameters worden \textit{photo} (het ID van de foto in het tijdlijn album), \textit{width}, \textit{height} en \textit{no{\_}feed{\_}story} meegegeven. De hoogte en breedte van de foto worden ingesteld op 200 pixels omdat Facebook een foto van minimum 180 op 180 pixels verwacht \cite{FacebookDimensions}. 
